@@ -31,18 +31,19 @@ export default function RootLayout({
           MESH GRADIENT BACKGROUND - EASY THEME SWITCHING
 
           Available themes (just change the class name below):
-          - mesh-lavender  → Purple/Blue (Original)
-          - mesh-emerald   → Green Paradise
-          - mesh-ocean     → Deep Blue
-          - mesh-grayscale → Monochrome
-          - mesh-rainbow   → Full Spectrum
-          - mesh-sunset    → Warm Orange/Pink
-          - mesh-forest    → Deep Green/Earth
-          - mesh-candy     → Pink/Purple Sweet
-          - mesh-cyber     → Neon Tech
-          - mesh-peach     → Soft Warm
+          - mesh-lavender        → Purple/Blue (Original)
+          - mesh-emerald         → Green Paradise
+          - mesh-ocean           → Deep Blue
+          - mesh-grayscale       → Monochrome
+          - mesh-rainbow         → Full Spectrum
+          - mesh-sunset          → Warm Orange/Pink
+          - mesh-forest          → Deep Green/Earth
+          - mesh-candy           → Pink/Purple Sweet
+          - mesh-cyber           → Neon Tech
+          - mesh-peach           → Soft Warm
+          - mesh-northern-lights → Aurora Borealis (ANIMATED!)
         */}
-        <div className='mesh-gradient-container mesh-rainbow'>
+        <div className='mesh-gradient-container mesh-northern-lights'>
           <div className='gradient-blob blob-1'></div>
           <div className='gradient-blob blob-2'></div>
           <div className='gradient-blob blob-3'></div>

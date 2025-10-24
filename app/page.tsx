@@ -1,13 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '@/components/ui/accordion'
-import { Calendar, Globe, ChevronDown, Briefcase } from 'lucide-react'
+import { Calendar, Globe, Briefcase, ChevronDown, MapPin } from 'lucide-react'
 import {
   Convex,
   Nextjs,
@@ -30,6 +24,12 @@ import {
   JavaScript,
   Stripe
 } from '@/components/tech-icons'
+import {
+  AccordionContent,
+  AccordionItem,
+  Accordion,
+  AccordionTrigger
+} from '@/components/ui/accordion'
 
 export default function Home() {
   return (
@@ -221,128 +221,87 @@ export default function Home() {
           <h2 className='text-2xl font-semibold text-black dark:text-zinc-50'>
             Experience
           </h2>
-          <Accordion
-            type='single'
-            collapsible
-            className='w-full [&>div]:border-0'
-          >
-            <AccordionItem value='item-1'>
-              <AccordionTrigger className='[&>svg]:hidden'>
-                <div className='flex w-full items-start justify-between gap-4'>
-                  <div className='flex items-start gap-2 text-left'>
-                    <Briefcase className='h-5 w-5 text-zinc-400 mt-0.5 flex-shrink-0' />
-                    <div>
-                      <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
-                        Fullstack Developer
-                      </h3>
-                      <p className='text-xs text-zinc-600 dark:text-zinc-400'>
-                        27.works • Remote, UK
-                      </p>
-                    </div>
-                    <ChevronDown className='h-4 w-4 text-zinc-400 mt-1' />
-                  </div>
-                  <div className=' text-xs flex items-center gap-1.5 text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
-                    <Calendar className='h-4 w-4 text-red-500' />
-                    <span>2024+</span>
-                  </div>
+          <div className='w-full space-y-8 pl-6'>
+            <div className='flex items-start justify-between gap-4'>
+              <div className='space-y-2'>
+                <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
+                  Fullstack Developer
+                </h3>
+                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                  <Briefcase className='h-4 w-4' />
+                  <span>27.works</span>
                 </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className='text-zinc-600 dark:text-zinc-400'>
-                  Building modern web applications with React, Next.js, and
-                  TypeScript. Focused on creating scalable solutions and
-                  exceptional user experiences.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                  <MapPin className='h-4 w-4' />
+                  <span>Remote, UK</span>
+                </div>
+              </div>
+              <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
+                <Calendar className='h-4 w-4 text-red-500' />
+                <span>2024+</span>
+              </div>
+            </div>
 
-            <AccordionItem value='item-2'>
-              <AccordionTrigger className='[&>svg]:hidden'>
-                <div className='flex w-full items-start justify-between gap-4'>
-                  <div className='flex items-start gap-2 text-left'>
-                    <Briefcase className='h-5 w-5 text-zinc-400 mt-0.5 flex-shrink-0' />
-                    <div>
-                      <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
-                        Freelance Developer
-                      </h3>
-                      <p className='text-xs text-zinc-600 dark:text-zinc-400'>
-                        LittleCraftsLondon • Remote, UK
-                      </p>
-                    </div>
-                    <ChevronDown className='h-4 w-4 text-zinc-400 mt-1' />
-                  </div>
-                  <div className='flex items-center gap-1.5 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
-                    <Calendar className='h-4 w-4 text-red-500' />
-                    <span>2023 - 2024</span>
-                  </div>
+            <div className='flex items-start justify-between gap-4'>
+              <div className='space-y-2'>
+                <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
+                  Freelance Developer
+                </h3>
+                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                  <Briefcase className='h-4 w-4' />
+                  <span>LittleCraftsLondon</span>
                 </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className='text-zinc-600 dark:text-zinc-400'>
-                  Delivered custom web solutions for various clients,
-                  specializing in React and modern JavaScript frameworks.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                  <MapPin className='h-4 w-4' />
+                  <span>Remote, UK</span>
+                </div>
+              </div>
+              <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
+                <Calendar className='h-4 w-4 text-red-500' />
+                <span>2023 - 2024</span>
+              </div>
+            </div>
 
-            <AccordionItem value='item-3'>
-              <AccordionTrigger className='[&>svg]:hidden'>
-                <div className='flex w-full items-start justify-between gap-4'>
-                  <div className='flex items-start gap-2 text-left'>
-                    <Briefcase className='h-5 w-5 text-zinc-400 mt-0.5 flex-shrink-0' />
-                    <div>
-                      <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
-                        Junior Developer
-                      </h3>
-                      <p className='text-xs text-zinc-600 dark:text-zinc-400'>
-                        NorthCoders • Remote, UK
-                      </p>
-                    </div>
-                    <ChevronDown className='h-4 w-4 text-zinc-400 mt-1' />
-                  </div>
-                  <div className='flex items-center gap-1.5 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
-                    <Calendar className='h-4 w-4 text-red-500' />
-                    <span>2023</span>
-                  </div>
+            <div className='flex items-start justify-between gap-4'>
+              <div className='space-y-2'>
+                <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
+                  Junior Developer
+                </h3>
+                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                  <Briefcase className='h-4 w-4' />
+                  <span>NorthCoders</span>
                 </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className='text-zinc-600 dark:text-zinc-400'>
-                  Started my development journey learning full-stack web
-                  development with a focus on modern JavaScript technologies.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                  <MapPin className='h-4 w-4' />
+                  <span>Remote, UK</span>
+                </div>
+              </div>
+              <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
+                <Calendar className='h-4 w-4 text-red-500' />
+                <span>2023</span>
+              </div>
+            </div>
 
-            <AccordionItem value='item-4'>
-              <AccordionTrigger className='[&>svg]:hidden'>
-                <div className='flex w-full items-start justify-between gap-4'>
-                  <div className='flex items-start gap-2 text-left'>
-                    <Briefcase className='h-5 w-5 text-zinc-400 mt-0.5 shrink-0' />
-                    <div>
-                      <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
-                        IT Consultant
-                      </h3>
-                      <p className='text-xs text-zinc-600 dark:text-zinc-400'>
-                        MacSeven • London, UK
-                      </p>
-                    </div>
-                    <ChevronDown className='h-4 w-4 text-zinc-400 mt-1' />
-                  </div>
-                  <div className='flex items-center gap-1.5 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
-                    <Calendar className='h-4 w-4 text-red-500' />
-                    <span>2018 - 2022</span>
-                  </div>
+            <div className='flex items-start justify-between gap-4'>
+              <div className='space-y-2'>
+                <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
+                  IT Consultant
+                </h3>
+                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                  <Briefcase className='h-4 w-4' />
+                  <span>MacSeven</span>
                 </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className='text-zinc-600 dark:text-zinc-400'>
-                  Provided IT consulting services, helping businesses optimize
-                  their technology infrastructure and workflows.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                  <MapPin className='h-4 w-4' />
+                  <span>London, UK</span>
+                </div>
+              </div>
+              <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
+                <Calendar className='h-4 w-4 text-red-500' />
+                <span>2018 - 2022</span>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Projects Section */}
@@ -353,14 +312,14 @@ export default function Home() {
           <Accordion
             type='single'
             collapsible
-            className='w-full [&>div]:border-0'
+            className='w-full [&>div]:border-0 pl-6'
           >
             <AccordionItem value='project-1'>
               <AccordionTrigger className='[&>svg]:hidden'>
                 <div className='flex w-full items-start justify-between gap-4'>
                   <div className='flex items-center gap-2 text-left'>
-                    <Globe className='h-5 w-5 text-blue-500' />
-                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                    <Globe className='h-4 w-4 text-blue-500' />
+                    <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
                       Coffee Dial
                     </h3>
                     <ChevronDown className='h-4 w-4 text-zinc-400' />
@@ -372,7 +331,7 @@ export default function Home() {
                       onClick={e => e.stopPropagation()}
                     >
                       <svg
-                        className='h-5 w-5'
+                        className='h-4 w-4'
                         fill='none'
                         stroke='currentColor'
                         viewBox='0 0 24 24'
@@ -391,7 +350,7 @@ export default function Home() {
                       onClick={e => e.stopPropagation()}
                     >
                       <svg
-                        className='h-5 w-5'
+                        className='h-4 w-4'
                         fill='currentColor'
                         viewBox='0 0 24 24'
                       >
@@ -413,8 +372,8 @@ export default function Home() {
               <AccordionTrigger className='[&>svg]:hidden'>
                 <div className='flex w-full items-start justify-between gap-4'>
                   <div className='flex items-center gap-2 text-left'>
-                    <Globe className='h-5 w-5 text-blue-500' />
-                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                    <Globe className='h-4 w-4 text-blue-500' />
+                    <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
                       Win98 Portfolio
                     </h3>
                     <ChevronDown className='h-4 w-4 text-zinc-400' />
@@ -426,7 +385,7 @@ export default function Home() {
                       onClick={e => e.stopPropagation()}
                     >
                       <svg
-                        className='h-5 w-5'
+                        className='h-4 w-4'
                         fill='none'
                         stroke='currentColor'
                         viewBox='0 0 24 24'
@@ -445,7 +404,7 @@ export default function Home() {
                       onClick={e => e.stopPropagation()}
                     >
                       <svg
-                        className='h-5 w-5'
+                        className='h-4 w-4'
                         fill='currentColor'
                         viewBox='0 0 24 24'
                       >
@@ -467,8 +426,8 @@ export default function Home() {
               <AccordionTrigger className='[&>svg]:hidden'>
                 <div className='flex w-full items-start justify-between gap-4'>
                   <div className='flex items-center gap-2 text-left'>
-                    <Globe className='h-5 w-5 text-blue-500' />
-                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                    <Globe className='h-4 w-4 text-blue-500' />
+                    <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
                       Layout Lab
                     </h3>
                     <ChevronDown className='h-4 w-4 text-zinc-400' />
@@ -480,7 +439,7 @@ export default function Home() {
                       onClick={e => e.stopPropagation()}
                     >
                       <svg
-                        className='h-5 w-5'
+                        className='h-4 w-4'
                         fill='none'
                         stroke='currentColor'
                         viewBox='0 0 24 24'
@@ -499,7 +458,7 @@ export default function Home() {
                       onClick={e => e.stopPropagation()}
                     >
                       <svg
-                        className='h-5 w-5'
+                        className='h-4 w-4'
                         fill='currentColor'
                         viewBox='0 0 24 24'
                       >
@@ -521,8 +480,8 @@ export default function Home() {
               <AccordionTrigger className='[&>svg]:hidden'>
                 <div className='flex w-full items-start justify-between gap-4'>
                   <div className='flex items-center gap-2 text-left'>
-                    <Globe className='h-5 w-5 text-blue-500' />
-                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                    <Globe className='h-4 w-4 text-blue-500' />
+                    <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
                       Streak Git
                     </h3>
                     <ChevronDown className='h-4 w-4 text-zinc-400' />
@@ -534,7 +493,7 @@ export default function Home() {
                       onClick={e => e.stopPropagation()}
                     >
                       <svg
-                        className='h-5 w-5'
+                        className='h-4 w-4'
                         fill='none'
                         stroke='currentColor'
                         viewBox='0 0 24 24'
@@ -553,7 +512,7 @@ export default function Home() {
                       onClick={e => e.stopPropagation()}
                     >
                       <svg
-                        className='h-5 w-5'
+                        className='h-4 w-4'
                         fill='currentColor'
                         viewBox='0 0 24 24'
                       >

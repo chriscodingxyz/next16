@@ -34,7 +34,7 @@ import {
 export default function Home() {
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-32 space-y-16 px-4 md:px-16 sm:items-start mx-2 md:mx-0'>
+      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-32 space-y-16 px-4 md:px-16 sm:items-start mx-2 my-2'>
         <div className='w-full space-y-8'>
           {/* Name & Bio */}
           <div className='flex flex-col gap-4'>
@@ -47,10 +47,9 @@ export default function Home() {
                 London, UK
               </p>
             </div>
-            <p className='text-lg leading-8 text-zinc-600 dark:text-zinc-400'>
-              I build exceptional digital experiences. Currently focused on
-              React, Next.js, and modern web technologies.
-            </p>
+            {/* <p className='text-lg leading-8 text-zinc-600 dark:text-zinc-400'>
+              I like React/Next.js and I'm always learning new things.
+            </p> */}
           </div>
 
           {/* Tech Stack */}
@@ -224,11 +223,14 @@ export default function Home() {
           <div className='w-full space-y-8 pl-6'>
             <div className='flex items-start justify-between gap-4'>
               <div className='space-y-2'>
-                <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
-                  Fullstack Developer
-                </h3>
+                <div className='flex items-center gap-2'>
+                  <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
+                  <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
+                    Fullstack Developer
+                  </h3>
+                </div>
                 <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <Briefcase className='h-4 w-4' />
+                  <Globe className='h-4 w-4' />
                   <span>27.works</span>
                 </div>
                 <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
@@ -244,11 +246,14 @@ export default function Home() {
 
             <div className='flex items-start justify-between gap-4'>
               <div className='space-y-2'>
-                <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
-                  Freelance Developer
-                </h3>
+                <div className='flex items-center gap-2'>
+                  <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
+                  <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
+                    Freelance Developer
+                  </h3>
+                </div>
                 <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <Briefcase className='h-4 w-4' />
+                  <Globe className='h-4 w-4' />
                   <span>LittleCraftsLondon</span>
                 </div>
                 <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
@@ -264,11 +269,14 @@ export default function Home() {
 
             <div className='flex items-start justify-between gap-4'>
               <div className='space-y-2'>
-                <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
-                  Junior Developer
-                </h3>
+                <div className='flex items-center gap-2'>
+                  <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
+                  <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
+                    Junior Developer
+                  </h3>
+                </div>
                 <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <Briefcase className='h-4 w-4' />
+                  <Globe className='h-4 w-4' />
                   <span>NorthCoders</span>
                 </div>
                 <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
@@ -284,11 +292,14 @@ export default function Home() {
 
             <div className='flex items-start justify-between gap-4'>
               <div className='space-y-2'>
-                <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
-                  IT Consultant
-                </h3>
+                <div className='flex items-center gap-2'>
+                  <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
+                  <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
+                    IT Consultant
+                  </h3>
+                </div>
                 <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <Briefcase className='h-4 w-4' />
+                  <Globe className='h-4 w-4' />
                   <span>MacSeven</span>
                 </div>
                 <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>

@@ -217,10 +217,10 @@ export default function Home() {
 
         {/* Experience Section */}
         <section className='w-full space-y-6'>
-          <h2 className='text-2xl font-semibold text-black dark:text-zinc-50'>
+          <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
             Experience
           </h2>
-          <div className='w-full space-y-8 pl-6'>
+          <div className='w-full space-y-8 pl-2'>
             <div className='flex items-start justify-between gap-4'>
               <div className='space-y-2'>
                 <div className='flex items-center gap-2'>
@@ -317,13 +317,13 @@ export default function Home() {
 
         {/* Projects Section */}
         <section className='w-full space-y-6'>
-          <h2 className='text-2xl font-semibold text-black dark:text-zinc-50'>
+          <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
             Projects
           </h2>
           <Accordion
             type='single'
             collapsible
-            className='w-full [&>div]:border-0 pl-6'
+            className='w-full [&>div]:border-0 pl-2'
           >
             <AccordionItem value='project-1'>
               <AccordionTrigger className='[&>svg]:hidden'>

@@ -27,7 +27,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* Mesh Gradient Background */}
+        <div className="mesh-gradient-container">
+          <div className="gradient-blob blob-1"></div>
+          <div className="gradient-blob blob-2"></div>
+          <div className="gradient-blob blob-3"></div>
+          <div className="gradient-blob blob-4"></div>
+          <div className="gradient-blob blob-5"></div>
+          <div className="mesh-overlay"></div>
+          <div className="fade-to-white"></div>
+        </div>
+
+        {/* Main Content */}
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   );

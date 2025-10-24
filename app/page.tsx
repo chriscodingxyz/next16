@@ -34,7 +34,7 @@ import {
 export default function Home() {
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-16 space-y-16 px-4 md:px-16 sm:items-start mx-2 my-32'>
+      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-16 space-y-16 px-4 md:px-16 sm:items-start mx-2 mt-24'>
         <div className='w-full space-y-8'>
           {/* Name & Bio */}
           <div className='flex flex-col gap-4'>

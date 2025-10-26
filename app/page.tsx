@@ -113,14 +113,14 @@ const techStackItems = [
 export default function Home() {
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-16 space-y-16 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
+      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
         <div className='w-full space-y-8'>
           {/* Name & Bio */}
           <div className='flex flex-col gap-4'>
             <div>
-              {/* <h1 className='text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50'>
-                Chris Wisniewski.
-              </h1> */}
+              <h1 className='text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50'>
+                Cdub{' '}
+              </h1>
               <p className='flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400 mt-1'>
                 <Globe className='h-4 w-4' />
                 London, UK
@@ -269,19 +269,19 @@ export default function Home() {
         </div>
 
         {/* Projects Section */}
-        <section className='w-full overflow-hidden'>
+        <section className='w-full overflow-y-hidden'>
           <h2 className='text-4xl font-semibold text-black dark:text-zinc-50 mb-6'>
             Projects
           </h2>
           {/* Desktop: Single Row */}
-          <div className='hidden md:block'>
+          <div className='hidden md:block overflow-y-hidden'>
             <Marquee
               speed={50}
               gradient={true}
               gradientColor='white'
               gradientWidth={50}
               pauseOnHover={true}
-              className='py-8'
+              className=''
             >
               {[...projects, ...projects].map((project, index) => (
                 <a
@@ -291,7 +291,7 @@ export default function Home() {
                   rel='noopener noreferrer'
                   className='group mr-4 block'
                 >
-                  <div className='relative w-64 h-40 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1'>
+                  <div className='relative w-64 h-40 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-xl'>
                     <Image
                       src={project.image}
                       alt={project.name}
@@ -314,7 +314,7 @@ export default function Home() {
           </div>
 
           {/* Mobile: Two Rows Going Opposite Directions */}
-          <div className='md:hidden space-y-0'>
+          <div className='md:hidden space-y-2 overflow-y-hidden'>
             {/* First Row - Left to Right */}
             <Marquee
               speed={40}
@@ -363,7 +363,7 @@ export default function Home() {
               gradientColor='white'
               gradientWidth={30}
               pauseOnHover={true}
-              className='py-4'
+              className='py-0'
               direction='right'
             >
               {[...projects.slice(2, 4), ...projects.slice(2, 4)].map(
@@ -404,96 +404,116 @@ export default function Home() {
           <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
             Experience
           </h2>
-          <div className='w-full space-y-8 pl-2'>
-            <div className='flex items-start justify-between gap-4'>
-              <div className='space-y-2'>
-                <div className='flex items-center gap-2'>
-                  <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
-                  <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
-                    Fullstack Developer
-                  </h3>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
+            {/* Fullstack Developer */}
+            <div className='group relative p-6 border-dotted border-b md:border-r border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-default'>
+              <div className='flex flex-col gap-3 h-full justify-between'>
+                <div className='space-y-3'>
+                  <div className='flex items-center gap-2'>
+                    <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400 transition-colors group-hover:text-black dark:group-hover:text-zinc-50' />
+                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                      Fullstack Developer
+                    </h3>
+                  </div>
+                  <div className='flex flex-col gap-2'>
+                    <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                      <Globe className='h-4 w-4' />
+                      <span>27.works</span>
+                    </div>
+                    <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                      <MapPin className='h-4 w-4' />
+                      <span>Remote, UK</span>
+                    </div>
+                  </div>
                 </div>
-                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <Globe className='h-4 w-4' />
-                  <span>27.works</span>
+                <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400'>
+                  <Calendar className='h-4 w-4 text-red-500' />
+                  <span>2024+</span>
                 </div>
-                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <MapPin className='h-4 w-4' />
-                  <span>Remote, UK</span>
-                </div>
-              </div>
-              <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
-                <Calendar className='h-4 w-4 text-red-500' />
-                <span>2024+</span>
               </div>
             </div>
 
-            <div className='flex items-start justify-between gap-4'>
-              <div className='space-y-2'>
-                <div className='flex items-center gap-2'>
-                  <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
-                  <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
-                    Freelance Developer
-                  </h3>
+            {/* Freelance Developer */}
+            <div className='group relative p-6 border-dotted border-b border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-default'>
+              <div className='flex flex-col gap-3 h-full justify-between'>
+                <div className='space-y-3'>
+                  <div className='flex items-center gap-2'>
+                    <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400 transition-colors group-hover:text-black dark:group-hover:text-zinc-50' />
+                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                      Freelance Developer
+                    </h3>
+                  </div>
+                  <div className='flex flex-col gap-2'>
+                    <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                      <Globe className='h-4 w-4' />
+                      <span>LittleCraftsLondon</span>
+                    </div>
+                    <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                      <MapPin className='h-4 w-4' />
+                      <span>Remote, UK</span>
+                    </div>
+                  </div>
                 </div>
-                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <Globe className='h-4 w-4' />
-                  <span>LittleCraftsLondon</span>
+                <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400'>
+                  <Calendar className='h-4 w-4 text-red-500' />
+                  <span>2023 - 2024</span>
                 </div>
-                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <MapPin className='h-4 w-4' />
-                  <span>Remote, UK</span>
-                </div>
-              </div>
-              <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
-                <Calendar className='h-4 w-4 text-red-500' />
-                <span>2023 - 2024</span>
               </div>
             </div>
 
-            <div className='flex items-start justify-between gap-4'>
-              <div className='space-y-2'>
-                <div className='flex items-center gap-2'>
-                  <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
-                  <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
-                    Junior Developer
-                  </h3>
+            {/* Junior Developer */}
+            <div className='group relative p-6 border-dotted md:border-r border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-default md:border-b-0 border-b'>
+              <div className='flex flex-col gap-3 h-full justify-between'>
+                <div className='space-y-3'>
+                  <div className='flex items-center gap-2'>
+                    <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400 transition-colors group-hover:text-black dark:group-hover:text-zinc-50' />
+                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                      Junior Developer
+                    </h3>
+                  </div>
+                  <div className='flex flex-col gap-2'>
+                    <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                      <Globe className='h-4 w-4' />
+                      <span>NorthCoders</span>
+                    </div>
+                    <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                      <MapPin className='h-4 w-4' />
+                      <span>Remote, UK</span>
+                    </div>
+                  </div>
                 </div>
-                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <Globe className='h-4 w-4' />
-                  <span>NorthCoders</span>
+                <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400'>
+                  <Calendar className='h-4 w-4 text-red-500' />
+                  <span>2023</span>
                 </div>
-                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <MapPin className='h-4 w-4' />
-                  <span>Remote, UK</span>
-                </div>
-              </div>
-              <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
-                <Calendar className='h-4 w-4 text-red-500' />
-                <span>2023</span>
               </div>
             </div>
 
-            <div className='flex items-start justify-between gap-4'>
-              <div className='space-y-2'>
-                <div className='flex items-center gap-2'>
-                  <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
-                  <h3 className='text-sm font-semibold text-black dark:text-zinc-50'>
-                    IT Consultant
-                  </h3>
+            {/* IT Consultant */}
+            <div className='group relative p-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-default'>
+              <div className='flex flex-col gap-3 h-full justify-between'>
+                <div className='space-y-3'>
+                  <div className='flex items-center gap-2'>
+                    <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400 transition-colors group-hover:text-black dark:group-hover:text-zinc-50' />
+                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                      IT Consultant
+                    </h3>
+                  </div>
+                  <div className='flex flex-col gap-2'>
+                    <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                      <Globe className='h-4 w-4' />
+                      <span>MacSeven</span>
+                    </div>
+                    <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                      <MapPin className='h-4 w-4' />
+                      <span>London, UK</span>
+                    </div>
+                  </div>
                 </div>
-                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <Globe className='h-4 w-4' />
-                  <span>MacSeven</span>
+                <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400'>
+                  <Calendar className='h-4 w-4 text-red-500' />
+                  <span>2018 - 2022</span>
                 </div>
-                <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
-                  <MapPin className='h-4 w-4' />
-                  <span>London, UK</span>
-                </div>
-              </div>
-              <div className='flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400 whitespace-nowrap'>
-                <Calendar className='h-4 w-4 text-red-500' />
-                <span>2018 - 2022</span>
               </div>
             </div>
           </div>

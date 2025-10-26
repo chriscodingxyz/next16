@@ -167,30 +167,100 @@ export default function Home() {
     <div className='flex min-h-screen items-center justify-center font-sans'>
       <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden dot-mesh-pattern'>
         <div className='w-full space-y-8 relative z-10'>
-          {/* Name & Bio */}
-          <div className='flex flex-col items-center gap-4 md:gap-5 text-center'>
-            <div className='w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shrink-0 border-[3px] border-black dark:border-white'>
-              <Image
-                src='/dalle.png'
-                alt='Chris with dog'
-                width={96}
-                height={96}
-                className='w-full h-full object-cover'
-              />
+          {/* Name & Bio with Tech Stack Background */}
+          <div className='relative border border-dotted border-zinc-200 dark:border-zinc-800 overflow-hidden'>
+            {/* Tech Stack Icon Grid Background */}
+            <div className='absolute inset-0 grid grid-cols-7 gap-0 opacity-[0.08] dark:opacity-[0.05] pointer-events-none'>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <JavaScript className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <TypeScript className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Nextjs className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <React className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <TailwindCSS className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Shadcnui className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <TanStack className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Nodejs className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Convex className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Supabase className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <PostgreSQL className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <DrizzleORM className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <BetterAuth className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-b border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Git className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800'>
+                <GitHub className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Docker className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Vercel className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Figma className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800'>
+                <ClaudeAI className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Stripe className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
+              <div className='flex items-center justify-center p-4 border-dotted border-zinc-200 dark:border-zinc-800'>
+                <Nodejs className='h-8 w-8 md:h-10 md:w-10' />
+              </div>
             </div>
-            <div>
-              <h1 className='text-3xl md:text-4xl font-bold font-space-grotesk leading-none tracking-tight text-black dark:text-zinc-50'>
-                chriscodingxyz
-              </h1>
-              <p className='flex items-center justify-center gap-2 text-sm md:text-base text-zinc-600 dark:text-zinc-400 mt-2'>
-                <Globe className='h-4 w-4 md:h-5 md:w-5' />
-                London, UK
-              </p>
+
+            {/* Header Content (on top of background) */}
+            <div className='relative z-10 flex flex-col items-center gap-4 md:gap-5 text-center py-12 md:py-16 px-6'>
+              <div className='w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shrink-0 border-[3px] border-black dark:border-white shadow-lg'>
+                <Image
+                  src='/dalle.png'
+                  alt='Chris with dog'
+                  width={96}
+                  height={96}
+                  className='w-full h-full object-cover'
+                />
+              </div>
+              <div>
+                <h1 className='text-3xl md:text-4xl font-bold font-space-grotesk leading-none tracking-tight text-black dark:text-zinc-50'>
+                  chriscodingxyz
+                </h1>
+                <p className='flex items-center justify-center gap-2 text-sm md:text-base text-zinc-600 dark:text-zinc-400 mt-2'>
+                  <Globe className='h-4 w-4 md:h-5 md:w-5' />
+                  London, UK
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Tech Stack */}
-          <section className='w-full space-y-6 relative z-10'>
+          {/* <section className='w-full space-y-6 relative z-10'>
             <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
               .techstack
             </h2>
@@ -328,7 +398,7 @@ export default function Home() {
                 </span>
               </div>
             </div>
-          </section>
+          </section> */}
         </div>
 
         {/* GitHub Contributions Section */}
@@ -493,7 +563,9 @@ export default function Home() {
                 {/* Date */}
                 <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
                   <Calendar className='h-4 w-4 text-red-500 flex-shrink-0' />
-                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>2024+</span>
+                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>
+                    2024+
+                  </span>
                 </div>
 
                 {/* Role & Details */}
@@ -530,7 +602,9 @@ export default function Home() {
                 {/* Date */}
                 <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
                   <Calendar className='h-4 w-4 text-red-500 flex-shrink-0' />
-                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>2023-2024</span>
+                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>
+                    2023-2024
+                  </span>
                 </div>
 
                 {/* Role & Details */}
@@ -567,7 +641,9 @@ export default function Home() {
                 {/* Date */}
                 <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
                   <Calendar className='h-4 w-4 text-red-500 flex-shrink-0' />
-                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>2023</span>
+                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>
+                    2023
+                  </span>
                 </div>
 
                 {/* Role & Details */}
@@ -604,7 +680,9 @@ export default function Home() {
                 {/* Date */}
                 <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
                   <Calendar className='h-4 w-4 text-red-500 flex-shrink-0' />
-                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>2018-2022</span>
+                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>
+                    2018-2022
+                  </span>
                 </div>
 
                 {/* Role & Details */}

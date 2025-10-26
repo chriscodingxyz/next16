@@ -299,7 +299,7 @@ export default function Home() {
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:19s]'>
                 <ClaudeAI className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:19s]'>
-                  Claude AI
+                  Claude
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:20s]'>

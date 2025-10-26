@@ -294,4 +294,3 @@ const Stripe = (props: SVGProps<SVGSVGElement>) => (
 )
 
 export { Stripe }
-

@@ -126,6 +126,7 @@ const techStackItems = [
 ]
 
 export default function Home() {
+  const [currentSection, setCurrentSection] = useState('home')
   const [showContactForm, setShowContactForm] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -165,164 +166,175 @@ export default function Home() {
       <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden dot-mesh-pattern'>
         <div className='w-full space-y-8 relative z-10'>
           {/* Name & Bio */}
-          <div className='flex flex-col gap-4'>
+          <div className='flex items-center gap-4 md:gap-6'>
+            <div className='w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden shrink-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
+              <Image
+                src='/dalle.png'
+                alt='Chris with dog'
+                width={80}
+                height={80}
+                className='w-full h-full object-cover'
+              />
+            </div>
             <div>
-              <h1 className='text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50'>
-                Cdub{' '}
+              <h1 className='text-3xl md:text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50'>
+                chriscodingxyz{' '}
               </h1>
               <p className='flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400 mt-1'>
                 <Globe className='h-4 w-4' />
                 London, UK
               </p>
             </div>
-            {/* <p className='text-lg leading-8 text-zinc-600 dark:text-zinc-400'>
-              I like React/Next.js and I'm always learning new things.
-            </p> */}
           </div>
 
           {/* Tech Stack */}
-          <div className='grid grid-cols-7 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <JavaScript className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                JavaScript
-              </span>
+          <section className='w-full space-y-6 relative z-10'>
+            <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
+              .techstack
+            </h2>
+            <div className='grid grid-cols-7 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <JavaScript className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  JavaScript
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <TypeScript className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  TypeScript
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <Nextjs className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Next.js
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <React className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  React
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <TailwindCSS className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Tailwind
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <Shadcnui className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  shadcn/ui
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <TanStack className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  TanStack
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <Nodejs className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Node.js
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <Convex className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Convex
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <Supabase className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Supabase
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <PostgreSQL className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  PSQL
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <DrizzleORM className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Drizzle
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <BetterAuth className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Better Auth
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <Image
+                  src='/zod.svg'
+                  alt='Zod'
+                  width={32}
+                  height={32}
+                  className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8'
+                />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Zod
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <Git className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Git
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <GitHub className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  GitHub
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <Docker className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Docker
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <Vercel className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Vercel
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <Figma className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Figma
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+                <ClaudeAI className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Claude
+                </span>
+              </div>
+              <div className='flex flex-col items-center gap-1 p-2 sm:p-3 md:p-4'>
+                <Stripe className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
+                <span className='text-[10px] text-zinc-400 hidden md:block'>
+                  Stripe
+                </span>
+              </div>
             </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <TypeScript className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                TypeScript
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <Nextjs className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Next.js
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <React className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                React
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <TailwindCSS className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Tailwind
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <Shadcnui className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                shadcn/ui
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <TanStack className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                TanStack
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <Nodejs className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Node.js
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <Convex className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Convex
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <Supabase className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Supabase
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <PostgreSQL className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                PSQL
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <DrizzleORM className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Drizzle
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <BetterAuth className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Better Auth
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <Image
-                src='/zod.svg'
-                alt='Zod'
-                width={32}
-                height={32}
-                className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8'
-              />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Zod
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <Git className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Git
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <GitHub className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                GitHub
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <Docker className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Docker
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <Vercel className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Vercel
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <Figma className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Figma
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
-              <ClaudeAI className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Claude
-              </span>
-            </div>
-            <div className='flex flex-col items-center gap-1 p-2 sm:p-3 md:p-4'>
-              <Stripe className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
-              <span className='text-[10px] text-zinc-400 hidden md:block'>
-                Stripe
-              </span>
-            </div>
-          </div>
+          </section>
         </div>
 
         {/* GitHub Contributions Section */}
         <section className='w-full space-y-6 relative z-10'>
-          {/* <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
-            Contributions
-          </h2> */}
-          <div className='w-full [&>div]:!w-full [&_svg]:!w-full [&_svg]:!h-auto'>
+          <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
+            .contributions
+          </h2>
+          <div className='w-full [&>div]:w-full! [&_svg]:w-full! [&_svg]:h-auto!'>
             <GitHubCalendar
               username='chriscodingxyz'
               blockSize={10}
@@ -339,7 +351,7 @@ export default function Home() {
         {/* Projects Section */}
         <section className='w-full overflow-y-hidden relative z-10'>
           <h2 className='text-4xl font-semibold text-black dark:text-zinc-50 mb-6'>
-            Projects
+            .projects
           </h2>
           {/* Desktop: Single Row */}
           <div className='hidden md:block overflow-y-hidden'>
@@ -470,7 +482,7 @@ export default function Home() {
         {/* Experience Section */}
         <section className='w-full space-y-6 relative z-10'>
           <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
-            Experience
+            .experience
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
             {/* Fullstack Developer */}
@@ -589,7 +601,7 @@ export default function Home() {
 
         <section ref={formRef} className='w-full space-y-6 relative z-10'>
           <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
-            Contact
+            .contact
           </h2>
           {/* Contact Form */}
           {showContactForm && (

@@ -166,8 +166,8 @@ export default function Home() {
       <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden dot-mesh-pattern'>
         <div className='w-full space-y-8 relative z-10'>
           {/* Name & Bio */}
-          <div className='flex items-center gap-4 md:gap-6'>
-            <div className='w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden shrink-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
+          <div className='flex items-center gap-5 md:gap-6'>
+            <div className='w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden shrink-0 border-[3px] border-black dark:border-white'>
               <Image
                 src='/dalle.png'
                 alt='Chris with dog'
@@ -177,11 +177,11 @@ export default function Home() {
               />
             </div>
             <div>
-              <h1 className='text-3xl md:text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50'>
-                chriscodingxyz{' '}
+              <h1 className='text-3xl md:text-4xl font-bold font-space-grotesk leading-none tracking-tight text-black dark:text-zinc-50'>
+                chriscodingxyz
               </h1>
-              <p className='flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400 mt-1'>
-                <Globe className='h-4 w-4' />
+              <p className='flex items-center gap-2 text-sm md:text-base text-zinc-600 dark:text-zinc-400 mt-2'>
+                <Globe className='h-4 w-4 md:h-5 md:w-5' />
                 London, UK
               </p>
             </div>
@@ -189,7 +189,7 @@ export default function Home() {
 
           {/* Tech Stack */}
           <section className='w-full space-y-6 relative z-10'>
-            <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
+            <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
               .techstack
             </h2>
             <div className='grid grid-cols-7 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
@@ -331,7 +331,7 @@ export default function Home() {
 
         {/* GitHub Contributions Section */}
         <section className='w-full space-y-6 relative z-10'>
-          <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
+          <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
             .contributions
           </h2>
           <div className='w-full [&>div]:w-full! [&_svg]:w-full! [&_svg]:h-auto!'>
@@ -350,7 +350,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <section className='w-full overflow-y-hidden relative z-10'>
-          <h2 className='text-4xl font-semibold text-black dark:text-zinc-50 mb-6'>
+          <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50 mb-6'>
             .projects
           </h2>
           {/* Desktop: Single Row */}
@@ -481,7 +481,7 @@ export default function Home() {
 
         {/* Experience Section */}
         <section className='w-full space-y-6 relative z-10'>
-          <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
+          <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
             .experience
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
@@ -600,7 +600,7 @@ export default function Home() {
         </section>
 
         <section ref={formRef} className='w-full space-y-6 relative z-10'>
-          <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
+          <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
             .contact
           </h2>
           {/* Contact Form */}

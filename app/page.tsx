@@ -168,13 +168,13 @@ export default function Home() {
       <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden dot-mesh-pattern'>
         <div className='w-full space-y-8 relative z-10'>
           {/* Name & Bio */}
-          <div className='flex items-center gap-5 md:gap-6'>
-            <div className='w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden shrink-0 border-[3px] border-black dark:border-white'>
+          <div className='flex flex-col items-center gap-4 md:gap-5 text-center'>
+            <div className='w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shrink-0 border-[3px] border-black dark:border-white'>
               <Image
                 src='/dalle.png'
                 alt='Chris with dog'
-                width={80}
-                height={80}
+                width={96}
+                height={96}
                 className='w-full h-full object-cover'
               />
             </div>
@@ -182,7 +182,7 @@ export default function Home() {
               <h1 className='text-3xl md:text-4xl font-bold font-space-grotesk leading-none tracking-tight text-black dark:text-zinc-50'>
                 chriscodingxyz
               </h1>
-              <p className='flex items-center gap-2 text-sm md:text-base text-zinc-600 dark:text-zinc-400 mt-2'>
+              <p className='flex items-center justify-center gap-2 text-sm md:text-base text-zinc-600 dark:text-zinc-400 mt-2'>
                 <Globe className='h-4 w-4 md:h-5 md:w-5' />
                 London, UK
               </p>

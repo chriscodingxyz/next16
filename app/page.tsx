@@ -103,38 +103,38 @@ const projects = [
   }
 ]
 
-const techStackItems = [
-  { id: 'JavaScript', name: 'JavaScript', Icon: JavaScript },
-  { id: 'TypeScript', name: 'TypeScript', Icon: TypeScript },
-  { id: 'Next.js', name: 'Next.js', Icon: Nextjs },
-  { id: 'React', name: 'React', Icon: React },
-  { id: 'Tailwind', name: 'Tailwind', Icon: TailwindCSS },
-  { id: 'shadcn/ui', name: 'shadcn/ui', Icon: Shadcnui },
-  { id: 'TanStack', name: 'TanStack', Icon: TanStack },
-  { id: 'Node.js', name: 'Node.js', Icon: Nodejs },
-  { id: 'Convex', name: 'Convex', Icon: Convex },
-  { id: 'Supabase', name: 'Supabase', Icon: Supabase },
-  { id: 'PSQL', name: 'PSQL', Icon: PostgreSQL },
-  { id: 'Drizzle', name: 'Drizzle', Icon: DrizzleORM },
-  { id: 'Better Auth', name: 'Better Auth', Icon: BetterAuth },
-  { id: 'Zod', name: 'Zod', Icon: null },
-  { id: 'Git', name: 'Git', Icon: Git },
-  { id: 'GitHub', name: 'GitHub', Icon: GitHub },
-  { id: 'Docker', name: 'Docker', Icon: Docker },
-  { id: 'Vercel', name: 'Vercel', Icon: Vercel },
-  { id: 'Figma', name: 'Figma', Icon: Figma },
-  { id: 'Claude', name: 'Claude', Icon: ClaudeAI },
-  { id: 'Stripe', name: 'Stripe', Icon: Stripe }
-]
+// const techStackItems = [
+//   { id: 'JavaScript', name: 'JavaScript', Icon: JavaScript },
+//   { id: 'TypeScript', name: 'TypeScript', Icon: TypeScript },
+//   { id: 'Next.js', name: 'Next.js', Icon: Nextjs },
+//   { id: 'React', name: 'React', Icon: React },
+//   { id: 'Tailwind', name: 'Tailwind', Icon: TailwindCSS },
+//   { id: 'shadcn/ui', name: 'shadcn/ui', Icon: Shadcnui },
+//   { id: 'TanStack', name: 'TanStack', Icon: TanStack },
+//   { id: 'Node.js', name: 'Node.js', Icon: Nodejs },
+//   { id: 'Convex', name: 'Convex', Icon: Convex },
+//   { id: 'Supabase', name: 'Supabase', Icon: Supabase },
+//   { id: 'PSQL', name: 'PSQL', Icon: PostgreSQL },
+//   { id: 'Drizzle', name: 'Drizzle', Icon: DrizzleORM },
+//   { id: 'Better Auth', name: 'Better Auth', Icon: BetterAuth },
+//   { id: 'Zod', name: 'Zod', Icon: null },
+//   { id: 'Git', name: 'Git', Icon: Git },
+//   { id: 'GitHub', name: 'GitHub', Icon: GitHub },
+//   { id: 'Docker', name: 'Docker', Icon: Docker },
+//   { id: 'Vercel', name: 'Vercel', Icon: Vercel },
+//   { id: 'Figma', name: 'Figma', Icon: Figma },
+//   { id: 'Claude', name: 'Claude', Icon: ClaudeAI },
+//   { id: 'Stripe', name: 'Stripe', Icon: Stripe }
+// ]
 
 export default function Home() {
-  const [currentSection, setCurrentSection] = useState('home')
   const [showContactForm, setShowContactForm] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   })
+  const [expandedExperience, setExpandedExperience] = useState<number | null>(null)
   const formRef = useRef<HTMLDivElement>(null)
   const nameInputRef = useRef<HTMLInputElement>(null)
 
@@ -172,43 +172,43 @@ export default function Home() {
             {/* Tech Stack Icon Grid Background with Sequential Animation */}
             <div className='absolute inset-0 grid grid-cols-7 gap-0 pointer-events-none'>
               {/* Row 1 */}
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:0s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:0s]'>
                 <JavaScript className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:0s]'>
                   JavaScript
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:1s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:1s]'>
                 <TypeScript className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   TypeScript
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:2s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:2s]'>
                 <Nextjs className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Next.js
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:3s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:3s]'>
                 <React className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   React
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:4s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:4s]'>
                 <TailwindCSS className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Tailwind
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:5s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:5s]'>
                 <Shadcnui className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   shadcn/ui
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:6s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:6s]'>
                 <TanStack className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   TanStack
@@ -216,43 +216,43 @@ export default function Home() {
               </div>
 
               {/* Row 2 */}
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:7s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:7s]'>
                 <Nodejs className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Node.js
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:8s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:8s]'>
                 <Convex className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Convex
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:9s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:9s]'>
                 <Supabase className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Supabase
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:10s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:10s]'>
                 <PostgreSQL className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   PSQL
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:11s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:11s]'>
                 <DrizzleORM className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Drizzle
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:12s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:12s]'>
                 <BetterAuth className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   BetterAuth
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:13s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:13s]'>
                 <Image
                   src='/zod.svg'
                   alt='Zod'
@@ -266,43 +266,43 @@ export default function Home() {
               </div>
 
               {/* Row 3 */}
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:14s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:14s]'>
                 <Git className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:14s]'>
                   Git
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:15s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:15s]'>
                 <GitHub className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:15s]'>
                   GitHub
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:16s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:16s]'>
                 <Docker className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:16s]'>
                   Docker
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:17s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:17s]'>
                 <Vercel className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:17s]'>
                   Vercel
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:18s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:18s]'>
                 <Figma className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:18s]'>
                   Figma
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:19s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:19s]'>
                 <ClaudeAI className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:19s]'>
                   Claude
                 </span>
               </div>
-              <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:20s]'>
+              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:20s]'>
                 <Stripe className='h-7 w-7 md:h-9 md:w-9' />
                 <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:20s]'>
                   Stripe
@@ -339,85 +339,85 @@ export default function Home() {
               .techstack
             </h2>
             <div className='grid grid-cols-7 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <JavaScript className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   JavaScript
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <TypeScript className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   TypeScript
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Nextjs className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Next.js
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <React className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   React
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <TailwindCSS className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Tailwind
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Shadcnui className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   shadcn/ui
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <TanStack className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   TanStack
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Nodejs className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Node.js
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Convex className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Convex
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Supabase className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Supabase
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <PostgreSQL className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   PSQL
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <DrizzleORM className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Drizzle
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <BetterAuth className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Better Auth
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-b border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-b border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Image
                   src='/zod.svg'
                   alt='Zod'
@@ -429,43 +429,43 @@ export default function Home() {
                   Zod
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Git className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Git
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <GitHub className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   GitHub
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Docker className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Docker
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Vercel className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Vercel
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Figma className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Figma
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 border-dotted border-r border-zinc-200 dark:border-zinc-800 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <ClaudeAI className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Claude
                 </span>
               </div>
-              <div className='flex flex-col items-center gap-1 p-2 sm:p-3 md:p-4'>
+              <div className='flex flex-col items-center gap-1 p-2 sm:py-2 px-3 md:py-3 md:px-4'>
                 <Stripe className='h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8' />
                 <span className='text-[10px] text-zinc-400 hidden md:block'>
                   Stripe
@@ -632,7 +632,10 @@ export default function Home() {
           </h2>
           <div className='border border-dotted border-zinc-200 dark:border-zinc-800 divide-y divide-dotted divide-zinc-200 dark:divide-zinc-800'>
             {/* Fullstack Developer */}
-            <div className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'>
+            <div
+              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'
+              onClick={() => setExpandedExperience(expandedExperience === 0 ? null : 0)}
+            >
               <div className='flex items-start gap-4 md:gap-6'>
                 {/* Date */}
                 <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
@@ -648,13 +651,13 @@ export default function Home() {
                     <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
                       Fullstack Developer
                     </h3>
-                    <ChevronRight className='h-4 w-4 text-zinc-400 transition-transform duration-300 group-hover:rotate-90 flex-shrink-0' />
+                    <ChevronRight className={`h-4 w-4 text-zinc-400 transition-transform duration-300 flex-shrink-0 ${expandedExperience === 0 ? 'rotate-90' : ''} md:group-hover:rotate-90`} />
                   </div>
 
-                  {/* Details - Hidden by default, shown on hover */}
-                  <div className='grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300 ease-in-out'>
+                  {/* Details - Hidden by default, shown on hover or click */}
+                  <div className={`grid transition-all duration-300 ease-in-out ${expandedExperience === 0 ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'} md:group-hover:grid-rows-[1fr]`}>
                     <div className='overflow-hidden'>
-                      <div className='flex flex-col gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                      <div className={`flex flex-col gap-1 mt-2 transition-opacity duration-300 ${expandedExperience === 0 ? 'opacity-100' : 'opacity-0'} md:group-hover:opacity-100`}>
                         <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
                           <Globe className='h-4 w-4 flex-shrink-0' />
                           <span>27.works</span>
@@ -671,7 +674,10 @@ export default function Home() {
             </div>
 
             {/* Freelance Developer */}
-            <div className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'>
+            <div
+              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'
+              onClick={() => setExpandedExperience(expandedExperience === 1 ? null : 1)}
+            >
               <div className='flex items-start gap-4 md:gap-6'>
                 {/* Date */}
                 <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
@@ -687,13 +693,13 @@ export default function Home() {
                     <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
                       Freelance Developer
                     </h3>
-                    <ChevronRight className='h-4 w-4 text-zinc-400 transition-transform duration-300 group-hover:rotate-90 flex-shrink-0' />
+                    <ChevronRight className={`h-4 w-4 text-zinc-400 transition-transform duration-300 flex-shrink-0 ${expandedExperience === 1 ? 'rotate-90' : ''} md:group-hover:rotate-90`} />
                   </div>
 
-                  {/* Details - Hidden by default, shown on hover */}
-                  <div className='grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300 ease-in-out'>
+                  {/* Details - Hidden by default, shown on hover or click */}
+                  <div className={`grid transition-all duration-300 ease-in-out ${expandedExperience === 1 ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'} md:group-hover:grid-rows-[1fr]`}>
                     <div className='overflow-hidden'>
-                      <div className='flex flex-col gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                      <div className={`flex flex-col gap-1 mt-2 transition-opacity duration-300 ${expandedExperience === 1 ? 'opacity-100' : 'opacity-0'} md:group-hover:opacity-100`}>
                         <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
                           <Globe className='h-4 w-4 flex-shrink-0' />
                           <span>LittleCraftsLondon</span>
@@ -710,7 +716,10 @@ export default function Home() {
             </div>
 
             {/* Junior Developer */}
-            <div className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'>
+            <div
+              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'
+              onClick={() => setExpandedExperience(expandedExperience === 2 ? null : 2)}
+            >
               <div className='flex items-start gap-4 md:gap-6'>
                 {/* Date */}
                 <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
@@ -726,13 +735,13 @@ export default function Home() {
                     <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
                       Junior Developer
                     </h3>
-                    <ChevronRight className='h-4 w-4 text-zinc-400 transition-transform duration-300 group-hover:rotate-90 flex-shrink-0' />
+                    <ChevronRight className={`h-4 w-4 text-zinc-400 transition-transform duration-300 flex-shrink-0 ${expandedExperience === 2 ? 'rotate-90' : ''} md:group-hover:rotate-90`} />
                   </div>
 
-                  {/* Details - Hidden by default, shown on hover */}
-                  <div className='grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300 ease-in-out'>
+                  {/* Details - Hidden by default, shown on hover or click */}
+                  <div className={`grid transition-all duration-300 ease-in-out ${expandedExperience === 2 ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'} md:group-hover:grid-rows-[1fr]`}>
                     <div className='overflow-hidden'>
-                      <div className='flex flex-col gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                      <div className={`flex flex-col gap-1 mt-2 transition-opacity duration-300 ${expandedExperience === 2 ? 'opacity-100' : 'opacity-0'} md:group-hover:opacity-100`}>
                         <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
                           <Globe className='h-4 w-4 flex-shrink-0' />
                           <span>NorthCoders</span>
@@ -749,7 +758,10 @@ export default function Home() {
             </div>
 
             {/* IT Consultant */}
-            <div className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'>
+            <div
+              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'
+              onClick={() => setExpandedExperience(expandedExperience === 3 ? null : 3)}
+            >
               <div className='flex items-start gap-4 md:gap-6'>
                 {/* Date */}
                 <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
@@ -765,13 +777,13 @@ export default function Home() {
                     <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
                       IT Consultant
                     </h3>
-                    <ChevronRight className='h-4 w-4 text-zinc-400 transition-transform duration-300 group-hover:rotate-90 flex-shrink-0' />
+                    <ChevronRight className={`h-4 w-4 text-zinc-400 transition-transform duration-300 flex-shrink-0 ${expandedExperience === 3 ? 'rotate-90' : ''} md:group-hover:rotate-90`} />
                   </div>
 
-                  {/* Details - Hidden by default, shown on hover */}
-                  <div className='grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300 ease-in-out'>
+                  {/* Details - Hidden by default, shown on hover or click */}
+                  <div className={`grid transition-all duration-300 ease-in-out ${expandedExperience === 3 ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'} md:group-hover:grid-rows-[1fr]`}>
                     <div className='overflow-hidden'>
-                      <div className='flex flex-col gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                      <div className={`flex flex-col gap-1 mt-2 transition-opacity duration-300 ${expandedExperience === 3 ? 'opacity-100' : 'opacity-0'} md:group-hover:opacity-100`}>
                         <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
                           <Globe className='h-4 w-4 flex-shrink-0' />
                           <span>MacSeven</span>

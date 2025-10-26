@@ -172,6 +172,37 @@ export default function Home() {
         <div className='w-full space-y-8 relative z-10'>
           {/* Header */}
           <div className='relative border border-dotted border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950'>
+            {/* Social Icons - Top Left Corner */}
+            <div className='absolute top-4 left-4 md:top-6 md:left-6 flex items-center gap-2 md:gap-3 z-10'>
+              <a
+                href='https://x.com/chriscodingxyz'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                aria-label='X (Twitter)'
+              >
+                <XLogo className='h-4 w-4 md:h-5 md:w-5' weight='bold' />
+              </a>
+              <a
+                href='https://github.com/chriscodingxyz'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                aria-label='GitHub'
+              >
+                <GitHub className='h-4 w-4 md:h-5 md:w-5' />
+              </a>
+              <a
+                href='https://www.linkedin.com/in/wisniewskichris/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                aria-label='LinkedIn'
+              >
+                <Linkedin className='h-4 w-4 md:h-5 md:w-5' />
+              </a>
+            </div>
+
             {/* CV Download Button - Top Right Corner of div */}
             <a
               href='/cv.pdf'
@@ -202,37 +233,6 @@ export default function Home() {
                   <Globe className='h-4 w-4' />
                   <span className='font-medium'>London, UK</span>
                 </div>
-              </div>
-
-              {/* Social Icons */}
-              <div className='flex items-center gap-3'>
-                <a
-                  href='https://x.com/chriscodingxyz'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
-                  aria-label='X (Twitter)'
-                >
-                  <XLogo className='h-5 w-5' weight='bold' />
-                </a>
-                <a
-                  href='https://github.com/chriscodingxyz'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
-                  aria-label='GitHub'
-                >
-                  <GitHub className='h-5 w-5' />
-                </a>
-                <a
-                  href='https://www.linkedin.com/in/wisniewskichris/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
-                  aria-label='LinkedIn'
-                >
-                  <Linkedin className='h-5 w-5' />
-                </a>
               </div>
             </div>
           </div>

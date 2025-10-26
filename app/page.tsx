@@ -174,43 +174,43 @@ export default function Home() {
               {/* Row 1 */}
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:0s]'>
                 <JavaScript className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:0s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:0s]'>
                   JavaScript
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:1s]'>
                 <TypeScript className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   TypeScript
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:2s]'>
                 <Nextjs className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Next.js
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:3s]'>
                 <React className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   React
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:4s]'>
                 <TailwindCSS className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Tailwind
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:5s]'>
                 <Shadcnui className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   shadcn/ui
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:6s]'>
                 <TanStack className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   TanStack
                 </span>
               </div>
@@ -218,88 +218,94 @@ export default function Home() {
               {/* Row 2 */}
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:7s]'>
                 <Nodejs className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Node.js
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:8s]'>
                 <Convex className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Convex
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:9s]'>
                 <Supabase className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Supabase
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:10s]'>
                 <PostgreSQL className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
-                  PostgreSQL
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                  PSQL
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:11s]'>
                 <DrizzleORM className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
                   Drizzle
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:12s]'>
                 <BetterAuth className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
-                  Better Auth
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
+                  BetterAuth
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-b border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:13s]'>
-                <Git className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
-                  Git
+                <Image
+                  src='/zod.svg'
+                  alt='Zod'
+                  width={36}
+                  height={36}
+                  className='h-7 w-7 md:h-9 md:w-9'
+                />
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:13s]'>
+                  Zod
                 </span>
               </div>
 
               {/* Row 3 */}
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:14s]'>
-                <GitHub className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
-                  GitHub
+                <Git className='h-7 w-7 md:h-9 md:w-9' />
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:14s]'>
+                  Git
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:15s]'>
-                <Docker className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
-                  Docker
+                <GitHub className='h-7 w-7 md:h-9 md:w-9' />
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:15s]'>
+                  GitHub
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:16s]'>
-                <Vercel className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
-                  Vercel
+                <Docker className='h-7 w-7 md:h-9 md:w-9' />
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:16s]'>
+                  Docker
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:17s]'>
-                <Figma className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
-                  Figma
+                <Vercel className='h-7 w-7 md:h-9 md:w-9' />
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:17s]'>
+                  Vercel
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:18s]'>
-                <ClaudeAI className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
-                  Claude AI
+                <Figma className='h-7 w-7 md:h-9 md:w-9' />
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:18s]'>
+                  Figma
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:19s]'>
-                <Stripe className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
-                  Stripe
+                <ClaudeAI className='h-7 w-7 md:h-9 md:w-9' />
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:19s]'>
+                  Claude AI
                 </span>
               </div>
               <div className='flex flex-col items-center justify-center gap-1 p-3 md:p-4 border-dotted border-zinc-200 dark:border-zinc-800 opacity-[0.08] dark:opacity-[0.05] hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-500 animate-[techPulse_21s_ease-in-out_infinite] [animation-delay:20s]'>
-                <GitHub className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[9px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:1s]'>
-                  GitHub
+                <Stripe className='h-7 w-7 md:h-9 md:w-9' />
+                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium animate-[techTextReveal_21s_ease-in-out_infinite] [animation-delay:20s]'>
+                  Stripe
                 </span>
               </div>
             </div>
@@ -319,10 +325,10 @@ export default function Home() {
                 <h1 className='text-3xl md:text-4xl font-bold font-space-grotesk leading-none tracking-tight text-black dark:text-zinc-50'>
                   chriscodingxyz
                 </h1>
-                <p className='flex items-center justify-center gap-2 text-sm md:text-base text-zinc-600 dark:text-zinc-400 mt-2'>
-                  <Globe className='h-4 w-4 md:h-5 md:w-5' />
-                  London, UK
-                </p>
+                <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-dotted border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900/50 text-sm text-zinc-700 dark:text-zinc-300 mt-2'>
+                  <Globe className='h-4 w-4' />
+                  <span className='font-medium'>London, UK</span>
+                </div>
               </div>
             </div>
           </div>

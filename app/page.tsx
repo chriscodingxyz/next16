@@ -136,7 +136,7 @@ export default function Home() {
 
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-4 md:py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden dot-mesh-pattern'>
+      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center pt-4 pb-16 md:py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden dot-mesh-pattern'>
         <div className='w-full space-y-8 relative z-10'>
           {/* Header */}
           <div className='relative border border-dotted border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950'>

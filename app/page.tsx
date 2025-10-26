@@ -249,7 +249,7 @@ export default function Home() {
             <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
               .techstack
             </h2>
-            <div className='grid grid-cols-7 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
+            <div className='grid grid-cols-7 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800 bg-white'>
               {/* Row 1 */}
               <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
                 <JavaScript className='h-7 w-7 md:h-9 md:w-9' />
@@ -546,7 +546,7 @@ export default function Home() {
           <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
             .experience
           </h2>
-          <div className='border border-dotted border-zinc-200 dark:border-zinc-800 divide-y divide-dotted divide-zinc-200 dark:divide-zinc-800'>
+          <div className='border border-dotted border-zinc-200 dark:border-zinc-800 divide-y divide-dotted divide-zinc-200 dark:divide-zinc-800 bg-white'>
             {/* Fullstack Developer */}
             <div
               className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'
@@ -788,9 +788,10 @@ export default function Home() {
           {/* Contact Form */}
           {showContactForm && (
             <form onSubmit={handleSubmit} className='space-y-5'>
-              <Field className='space-y-2'>
+              <Field className='space-y-0'>
                 <FieldLabel htmlFor='name'>Name</FieldLabel>
                 <Input
+                  className='bg-white'
                   ref={nameInputRef}
                   id='name'
                   value={formData.name}
@@ -802,9 +803,10 @@ export default function Home() {
                 />
               </Field>
 
-              <Field className='space-y-2'>
+              <Field className='space-y-0'>
                 <FieldLabel htmlFor='email'>Email</FieldLabel>
                 <Input
+                  className='bg-white'
                   id='email'
                   type='email'
                   value={formData.email}
@@ -816,9 +818,10 @@ export default function Home() {
                 />
               </Field>
 
-              <Field className='space-y-2'>
+              <Field className='space-y-0'>
                 <FieldLabel htmlFor='message'>Message</FieldLabel>
                 <Textarea
+                  className='bg-white'
                   id='message'
                   value={formData.message}
                   onChange={e =>
@@ -831,7 +834,7 @@ export default function Home() {
               </Field>
 
               <div className='flex gap-3'>
-                <Button type='submit' className='flex-1'>
+                <Button type='submit' className='flex-1 cursor-pointer'>
                   <Send className='h-4 w-4 mr-2' />
                   Send Message
                 </Button>
@@ -839,7 +842,7 @@ export default function Home() {
                   type='button'
                   variant='destructive'
                   onClick={() => setShowContactForm(false)}
-                  className='flex-1'
+                  className='flex-1 cursor-pointer'
                 >
                   <X className='h-4 w-4 mr-2' />
                   Close Form
@@ -861,7 +864,7 @@ export default function Home() {
 
             <div className='flex flex-col sm:flex-row gap-4 w-full'>
               <a
-                className='flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a]'
+                className='flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] bg-white'
                 href='https://github.com/chriscodingxyz'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -870,7 +873,7 @@ export default function Home() {
                 Github
               </a>
               <a
-                className='flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a]'
+                className='bg-white flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a]'
                 href='https://x.com/chriscodingxyz'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -879,7 +882,7 @@ export default function Home() {
                 Twitter
               </a>
               <a
-                className='flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a]'
+                className='bg-white flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a]'
                 href='https://www.linkedin.com/in/wisniewskichris/'
                 target='_blank'
                 rel='noopener noreferrer'

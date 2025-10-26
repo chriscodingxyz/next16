@@ -1,9 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
-import { Calendar, Globe, Briefcase, MapPin } from 'lucide-react'
+import { Calendar, Globe, Briefcase, MapPin, X } from 'lucide-react'
 import Marquee from 'react-fast-marquee'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Field, FieldLabel } from '@/components/ui/field'
 import {
   Convex,
   Nextjs,
@@ -111,10 +115,44 @@ const techStackItems = [
 ]
 
 export default function Home() {
+  const [showContactForm, setShowContactForm] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+  const formRef = useRef<HTMLDivElement>(null)
+  const nameInputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (showContactForm && formRef.current) {
+      // Scroll to form with smooth behavior
+      setTimeout(() => {
+        formRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        })
+        // Focus on name input after scroll
+        setTimeout(() => {
+          nameInputRef.current?.focus()
+        }, 500)
+      }, 100)
+    }
+  }, [showContactForm])
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log('Form submitted:', formData)
+    // Handle form submission here
+    alert("Thanks for reaching out! I'll get back to you soon.")
+    setShowContactForm(false)
+    setFormData({ name: '', email: '', message: '' })
+  }
+
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
-        <div className='w-full space-y-8'>
+      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden dot-mesh-pattern'>
+        <div className='w-full space-y-8 relative z-10'>
           {/* Name & Bio */}
           <div className='flex flex-col gap-4'>
             <div>
@@ -269,7 +307,7 @@ export default function Home() {
         </div>
 
         {/* Projects Section */}
-        <section className='w-full overflow-y-hidden'>
+        <section className='w-full overflow-y-hidden relative z-10'>
           <h2 className='text-4xl font-semibold text-black dark:text-zinc-50 mb-6'>
             Projects
           </h2>
@@ -400,22 +438,22 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section className='w-full space-y-6'>
+        <section className='w-full space-y-6 relative z-10'>
           <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
             Experience
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800'>
             {/* Fullstack Developer */}
             <div className='group relative p-6 border-dotted border-b md:border-r border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-default'>
-              <div className='flex flex-col gap-3 h-full justify-between'>
-                <div className='space-y-3'>
+              <div className='flex flex-col gap-2 h-full justify-between'>
+                <div className='space-y-2'>
                   <div className='flex items-center gap-2'>
                     <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400 transition-colors group-hover:text-black dark:group-hover:text-zinc-50' />
                     <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
                       Fullstack Developer
                     </h3>
                   </div>
-                  <div className='flex flex-col gap-2'>
+                  <div className='flex flex-col gap-1'>
                     <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
                       <Globe className='h-4 w-4' />
                       <span>27.works</span>
@@ -435,15 +473,15 @@ export default function Home() {
 
             {/* Freelance Developer */}
             <div className='group relative p-6 border-dotted border-b border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-default'>
-              <div className='flex flex-col gap-3 h-full justify-between'>
-                <div className='space-y-3'>
+              <div className='flex flex-col gap-2 h-full justify-between'>
+                <div className='space-y-2'>
                   <div className='flex items-center gap-2'>
                     <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400 transition-colors group-hover:text-black dark:group-hover:text-zinc-50' />
                     <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
                       Freelance Developer
                     </h3>
                   </div>
-                  <div className='flex flex-col gap-2'>
+                  <div className='flex flex-col gap-1'>
                     <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
                       <Globe className='h-4 w-4' />
                       <span>LittleCraftsLondon</span>
@@ -463,15 +501,15 @@ export default function Home() {
 
             {/* Junior Developer */}
             <div className='group relative p-6 border-dotted md:border-r border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-default md:border-b-0 border-b'>
-              <div className='flex flex-col gap-3 h-full justify-between'>
-                <div className='space-y-3'>
+              <div className='flex flex-col gap-2 h-full justify-between'>
+                <div className='space-y-2'>
                   <div className='flex items-center gap-2'>
                     <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400 transition-colors group-hover:text-black dark:group-hover:text-zinc-50' />
                     <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
                       Junior Developer
                     </h3>
                   </div>
-                  <div className='flex flex-col gap-2'>
+                  <div className='flex flex-col gap-1'>
                     <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
                       <Globe className='h-4 w-4' />
                       <span>NorthCoders</span>
@@ -491,15 +529,15 @@ export default function Home() {
 
             {/* IT Consultant */}
             <div className='group relative p-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-default'>
-              <div className='flex flex-col gap-3 h-full justify-between'>
-                <div className='space-y-3'>
+              <div className='flex flex-col gap-2 h-full justify-between'>
+                <div className='space-y-2'>
                   <div className='flex items-center gap-2'>
                     <Briefcase className='h-4 w-4 text-zinc-600 dark:text-zinc-400 transition-colors group-hover:text-black dark:group-hover:text-zinc-50' />
                     <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
                       IT Consultant
                     </h3>
                   </div>
-                  <div className='flex flex-col gap-2'>
+                  <div className='flex flex-col gap-1'>
                     <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
                       <Globe className='h-4 w-4' />
                       <span>MacSeven</span>
@@ -519,31 +557,93 @@ export default function Home() {
           </div>
         </section>
 
-        <section className='flex w-full flex-col gap-4 text-base font-medium sm:flex-row'>
-          <a
-            className='flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]'
-            href='https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Image
-              className='dark:invert'
-              src='/vercel.svg'
-              alt='Vercel logomark'
-              width={16}
-              height={16}
-            />
-            Get in touch
-          </a>
-          <a
-            className='flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]'
-            href='https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Github
-          </a>
-        </section>
+        <div ref={formRef} className='w-full space-y-4 relative z-10'>
+          <section className='flex w-full flex-col gap-4 text-base font-medium sm:flex-row'>
+            <button
+              onClick={() => setShowContactForm(!showContactForm)}
+              className='flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]'
+            >
+              {showContactForm ? (
+                <>
+                  <X className='h-4 w-4' />
+                  Close Form
+                </>
+              ) : (
+                <>
+                  <Image
+                    className='dark:invert'
+                    src='/vercel.svg'
+                    alt='Vercel logomark'
+                    width={16}
+                    height={16}
+                  />
+                  Get in touch
+                </>
+              )}
+            </button>
+            <a
+              className='flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]'
+              href='https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Github
+            </a>
+          </section>
+
+          {/* Contact Form */}
+          {showContactForm && (
+            <div className='border border-dotted border-zinc-200 dark:border-zinc-800 p-6'>
+              <form onSubmit={handleSubmit} className='space-y-5'>
+                <Field className='space-y-2'>
+                  <FieldLabel htmlFor='name'>Name</FieldLabel>
+                  <Input
+                    ref={nameInputRef}
+                    id='name'
+                    value={formData.name}
+                    onChange={e =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    placeholder='Your name'
+                    required
+                  />
+                </Field>
+
+                <Field className='space-y-2'>
+                  <FieldLabel htmlFor='email'>Email</FieldLabel>
+                  <Input
+                    id='email'
+                    type='email'
+                    value={formData.email}
+                    onChange={e =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    placeholder='your@email.com'
+                    required
+                  />
+                </Field>
+
+                <Field className='space-y-2'>
+                  <FieldLabel htmlFor='message'>Message</FieldLabel>
+                  <Textarea
+                    id='message'
+                    value={formData.message}
+                    onChange={e =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    placeholder='Your message...'
+                    rows={5}
+                    required
+                  />
+                </Field>
+
+                <Button type='submit' className='w-full'>
+                  Send Message
+                </Button>
+              </form>
+            </div>
+          )}
+        </div>
       </main>
     </div>
   )

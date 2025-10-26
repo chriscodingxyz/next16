@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -181,219 +181,440 @@
    THEME: LAVENDER (Original Purple/Blue)
    ======================================== */
 .mesh-lavender .blob-1 {
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.6) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(167, 139, 250, 0.6) 0%,
+    transparent 70%
+  );
 }
 .mesh-lavender .blob-2 {
-  background: radial-gradient(circle, rgba(147, 197, 253, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(147, 197, 253, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-lavender .blob-3 {
-  background: radial-gradient(circle, rgba(252, 165, 165, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(252, 165, 165, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-lavender .blob-4 {
-  background: radial-gradient(circle, rgba(196, 181, 253, 0.45) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(196, 181, 253, 0.45) 0%,
+    transparent 70%
+  );
 }
 .mesh-lavender .blob-5 {
-  background: radial-gradient(circle, rgba(165, 243, 252, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(165, 243, 252, 0.4) 0%,
+    transparent 70%
+  );
 }
 
 /* ========================================
    THEME: EMERALD (Green Paradise)
    ======================================== */
 .mesh-emerald .blob-1 {
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.6) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(52, 211, 153, 0.6) 0%,
+    transparent 70%
+  );
 }
 .mesh-emerald .blob-2 {
-  background: radial-gradient(circle, rgba(134, 239, 172, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(134, 239, 172, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-emerald .blob-3 {
-  background: radial-gradient(circle, rgba(74, 222, 128, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(74, 222, 128, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-emerald .blob-4 {
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.45) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.45) 0%,
+    transparent 70%
+  );
 }
 .mesh-emerald .blob-5 {
-  background: radial-gradient(circle, rgba(167, 243, 208, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(167, 243, 208, 0.4) 0%,
+    transparent 70%
+  );
 }
 
 /* ========================================
    THEME: OCEAN (Deep Blue)
    ======================================== */
 .mesh-ocean .blob-1 {
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.6) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.6) 0%,
+    transparent 70%
+  );
 }
 .mesh-ocean .blob-2 {
-  background: radial-gradient(circle, rgba(96, 165, 250, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(96, 165, 250, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-ocean .blob-3 {
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-ocean .blob-4 {
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.45) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.45) 0%,
+    transparent 70%
+  );
 }
 .mesh-ocean .blob-5 {
-  background: radial-gradient(circle, rgba(125, 211, 252, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(125, 211, 252, 0.4) 0%,
+    transparent 70%
+  );
 }
 
 /* ========================================
    THEME: GRAYSCALE (Monochrome)
    ======================================== */
 .mesh-grayscale .blob-1 {
-  background: radial-gradient(circle, rgba(107, 114, 128, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(107, 114, 128, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-grayscale .blob-2 {
-  background: radial-gradient(circle, rgba(156, 163, 175, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(156, 163, 175, 0.4) 0%,
+    transparent 70%
+  );
 }
 .mesh-grayscale .blob-3 {
-  background: radial-gradient(circle, rgba(75, 85, 99, 0.45) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(75, 85, 99, 0.45) 0%,
+    transparent 70%
+  );
 }
 .mesh-grayscale .blob-4 {
-  background: radial-gradient(circle, rgba(209, 213, 219, 0.35) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(209, 213, 219, 0.35) 0%,
+    transparent 70%
+  );
 }
 .mesh-grayscale .blob-5 {
-  background: radial-gradient(circle, rgba(156, 163, 175, 0.3) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(156, 163, 175, 0.3) 0%,
+    transparent 70%
+  );
 }
 
 /* ========================================
    THEME: RAINBOW (Full Spectrum)
    ======================================== */
 .mesh-rainbow .blob-1 {
-  background: radial-gradient(circle, rgba(239, 68, 68, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(239, 68, 68, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-rainbow .blob-2 {
-  background: radial-gradient(circle, rgba(251, 191, 36, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(251, 191, 36, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-rainbow .blob-3 {
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-rainbow .blob-4 {
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-rainbow .blob-5 {
-  background: radial-gradient(circle, rgba(34, 197, 94, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(34, 197, 94, 0.4) 0%,
+    transparent 70%
+  );
 }
 
 /* ========================================
    THEME: SUNSET (Warm Orange/Pink)
    ======================================== */
 .mesh-sunset .blob-1 {
-  background: radial-gradient(circle, rgba(251, 146, 60, 0.6) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(251, 146, 60, 0.6) 0%,
+    transparent 70%
+  );
 }
 .mesh-sunset .blob-2 {
-  background: radial-gradient(circle, rgba(252, 165, 165, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(252, 165, 165, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-sunset .blob-3 {
-  background: radial-gradient(circle, rgba(251, 113, 133, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(251, 113, 133, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-sunset .blob-4 {
-  background: radial-gradient(circle, rgba(249, 115, 22, 0.45) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(249, 115, 22, 0.45) 0%,
+    transparent 70%
+  );
 }
 .mesh-sunset .blob-5 {
-  background: radial-gradient(circle, rgba(254, 215, 170, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(254, 215, 170, 0.4) 0%,
+    transparent 70%
+  );
 }
 
 /* ========================================
    THEME: FOREST (Deep Green/Earth)
    ======================================== */
 .mesh-forest .blob-1 {
-  background: radial-gradient(circle, rgba(34, 197, 94, 0.6) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(34, 197, 94, 0.6) 0%,
+    transparent 70%
+  );
 }
 .mesh-forest .blob-2 {
-  background: radial-gradient(circle, rgba(132, 204, 22, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(132, 204, 22, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-forest .blob-3 {
-  background: radial-gradient(circle, rgba(101, 163, 13, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(101, 163, 13, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-forest .blob-4 {
-  background: radial-gradient(circle, rgba(22, 163, 74, 0.45) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(22, 163, 74, 0.45) 0%,
+    transparent 70%
+  );
 }
 .mesh-forest .blob-5 {
-  background: radial-gradient(circle, rgba(163, 230, 53, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(163, 230, 53, 0.4) 0%,
+    transparent 70%
+  );
 }
 
 /* ========================================
    THEME: CANDY (Pink/Purple Sweet)
    ======================================== */
 .mesh-candy .blob-1 {
-  background: radial-gradient(circle, rgba(236, 72, 153, 0.6) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.6) 0%,
+    transparent 70%
+  );
 }
 .mesh-candy .blob-2 {
-  background: radial-gradient(circle, rgba(249, 168, 212, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(249, 168, 212, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-candy .blob-3 {
-  background: radial-gradient(circle, rgba(192, 132, 252, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(192, 132, 252, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-candy .blob-4 {
-  background: radial-gradient(circle, rgba(217, 70, 239, 0.45) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(217, 70, 239, 0.45) 0%,
+    transparent 70%
+  );
 }
 .mesh-candy .blob-5 {
-  background: radial-gradient(circle, rgba(251, 207, 232, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(251, 207, 232, 0.4) 0%,
+    transparent 70%
+  );
 }
 
 /* ========================================
    THEME: CYBER (Neon Tech)
    ======================================== */
 .mesh-cyber .blob-1 {
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.6) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(6, 182, 212, 0.6) 0%,
+    transparent 70%
+  );
 }
 .mesh-cyber .blob-2 {
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-cyber .blob-3 {
-  background: radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-cyber .blob-4 {
-  background: radial-gradient(circle, rgba(20, 184, 166, 0.45) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(20, 184, 166, 0.45) 0%,
+    transparent 70%
+  );
 }
 .mesh-cyber .blob-5 {
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(167, 139, 250, 0.4) 0%,
+    transparent 70%
+  );
 }
 
 /* ========================================
    THEME: PEACH (Soft Warm)
    ======================================== */
 .mesh-peach .blob-1 {
-  background: radial-gradient(circle, rgba(254, 215, 170, 0.6) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(254, 215, 170, 0.6) 0%,
+    transparent 70%
+  );
 }
 .mesh-peach .blob-2 {
-  background: radial-gradient(circle, rgba(253, 186, 116, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(253, 186, 116, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-peach .blob-3 {
-  background: radial-gradient(circle, rgba(251, 207, 232, 0.5) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(251, 207, 232, 0.5) 0%,
+    transparent 70%
+  );
 }
 .mesh-peach .blob-4 {
-  background: radial-gradient(circle, rgba(252, 165, 165, 0.45) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(252, 165, 165, 0.45) 0%,
+    transparent 70%
+  );
 }
 .mesh-peach .blob-5 {
-  background: radial-gradient(circle, rgba(254, 240, 138, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(254, 240, 138, 0.4) 0%,
+    transparent 70%
+  );
 }
 
 /* ========================================
    THEME: NORTHERN LIGHTS (Aurora Borealis)
    ======================================== */
 .mesh-northern-lights .blob-1 {
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.7) 0%, transparent 70%) !important;
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.7) 0%,
+    transparent 70%
+  ) !important;
   animation: aurora-drift-1 12s ease-in-out infinite;
 }
 .mesh-northern-lights .blob-2 {
-  background: radial-gradient(circle, rgba(20, 184, 166, 0.65) 0%, transparent 70%) !important;
+  background: radial-gradient(
+    circle,
+    rgba(20, 184, 166, 0.65) 0%,
+    transparent 70%
+  ) !important;
   animation: aurora-drift-2 15s ease-in-out infinite;
 }
 .mesh-northern-lights .blob-3 {
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, transparent 70%) !important;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.6) 0%,
+    transparent 70%
+  ) !important;
   animation: aurora-drift-3 13s ease-in-out infinite;
 }
 .mesh-northern-lights .blob-4 {
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.55) 0%, transparent 70%) !important;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.55) 0%,
+    transparent 70%
+  ) !important;
   animation: aurora-drift-4 16s ease-in-out infinite;
 }
 .mesh-northern-lights .blob-5 {
-  background: radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, transparent 70%) !important;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.5) 0%,
+    transparent 70%
+  ) !important;
   animation: aurora-drift-5 14s ease-in-out infinite;
 }
 
 /* Aurora Animation Keyframes */
 @keyframes aurora-drift-1 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   25% {
@@ -408,7 +629,8 @@
 }
 
 @keyframes aurora-drift-2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   30% {
@@ -423,7 +645,8 @@
 }
 
 @keyframes aurora-drift-3 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   20% {
@@ -438,7 +661,8 @@
 }
 
 @keyframes aurora-drift-4 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   35% {
@@ -453,7 +677,8 @@
 }
 
 @keyframes aurora-drift-5 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(-50%) translate(0, 0) scale(1);
   }
   25% {
@@ -471,7 +696,11 @@
 .mesh-overlay {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0.5px, transparent 0.5px);
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6) 0.5px,
+    transparent 0.5px
+  );
   background-size: 2px 2px;
   pointer-events: none;
 }
@@ -485,4 +714,15 @@
   height: 256px;
   background: linear-gradient(to bottom, transparent 0%, white 100%);
   pointer-events: none;
+}
+
+/* Gray dot mesh overlay for main content */
+.dot-mesh-pattern {
+  position: relative;
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.05) 0.5px,
+    transparent 0.5px
+  );
+  background-size: 2px 2px;
 }

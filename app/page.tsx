@@ -5,14 +5,12 @@ import Image from 'next/image'
 import {
   Calendar,
   Globe,
-  Briefcase,
   MapPin,
   Mail,
   Linkedin,
   X,
   Send,
   ChevronRight,
-  ChevronDown,
   Download
 } from 'lucide-react'
 import { XLogo } from '@phosphor-icons/react'
@@ -44,12 +42,6 @@ import {
   JavaScript,
   Stripe
 } from '@/components/tech-icons'
-// import {
-//   AccordionContent,
-//   AccordionItem,
-//   Accordion,
-//   AccordionTrigger
-// } from '@/components/ui/accordion'
 import projectWin98 from '@/public/projects/win98.webp'
 import projectBicesterMotion from '@/public/projects/bicestermotion.webp'
 import projectWebsiteViewer from '@/public/projects/websiteviewer.webp'
@@ -104,30 +96,6 @@ const projects = [
   }
 ]
 
-// const techStackItems = [
-//   { id: 'JavaScript', name: 'JavaScript', Icon: JavaScript },
-//   { id: 'TypeScript', name: 'TypeScript', Icon: TypeScript },
-//   { id: 'Next.js', name: 'Next.js', Icon: Nextjs },
-//   { id: 'React', name: 'React', Icon: React },
-//   { id: 'Tailwind', name: 'Tailwind', Icon: TailwindCSS },
-//   { id: 'shadcn/ui', name: 'shadcn/ui', Icon: Shadcnui },
-//   { id: 'TanStack', name: 'TanStack', Icon: TanStack },
-//   { id: 'Node.js', name: 'Node.js', Icon: Nodejs },
-//   { id: 'Convex', name: 'Convex', Icon: Convex },
-//   { id: 'Supabase', name: 'Supabase', Icon: Supabase },
-//   { id: 'PSQL', name: 'PSQL', Icon: PostgreSQL },
-//   { id: 'Drizzle', name: 'Drizzle', Icon: DrizzleORM },
-//   { id: 'Better Auth', name: 'Better Auth', Icon: BetterAuth },
-//   { id: 'Zod', name: 'Zod', Icon: null },
-//   { id: 'Git', name: 'Git', Icon: Git },
-//   { id: 'GitHub', name: 'GitHub', Icon: GitHub },
-//   { id: 'Docker', name: 'Docker', Icon: Docker },
-//   { id: 'Vercel', name: 'Vercel', Icon: Vercel },
-//   { id: 'Figma', name: 'Figma', Icon: Figma },
-//   { id: 'Claude', name: 'Claude', Icon: ClaudeAI },
-//   { id: 'Stripe', name: 'Stripe', Icon: Stripe }
-// ]
-
 export default function Home() {
   const [showContactForm, setShowContactForm] = useState(false)
   const [formData, setFormData] = useState({
@@ -172,46 +140,45 @@ export default function Home() {
         <div className='w-full space-y-8 relative z-10'>
           {/* Header */}
           <div className='relative border border-dotted border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950'>
-            {/* Social Icons - Top Left Corner */}
-            <div className='absolute top-4 left-4 md:top-6 md:left-6 flex items-center gap-2 md:gap-3 z-10'>
+            {/* Social Icons - Top Left Corner - Desktop Only */}
+            <div className='hidden md:flex absolute top-6 left-6 items-center gap-3 z-10'>
               <a
                 href='https://x.com/chriscodingxyz'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
                 aria-label='X (Twitter)'
               >
-                <XLogo className='h-4 w-4 md:h-5 md:w-5' weight='bold' />
+                <XLogo className='h-5 w-5' weight='bold' />
               </a>
               <a
                 href='https://github.com/chriscodingxyz'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
                 aria-label='GitHub'
               >
-                <GitHub className='h-4 w-4 md:h-5 md:w-5' />
+                <GitHub className='h-5 w-5' />
               </a>
               <a
                 href='https://www.linkedin.com/in/wisniewskichris/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
                 aria-label='LinkedIn'
               >
-                <Linkedin className='h-4 w-4 md:h-5 md:w-5' />
+                <Linkedin className='h-5 w-5' />
               </a>
             </div>
 
-            {/* CV Download Button - Top Right Corner of div */}
+            {/* CV Download Button - Top Right Corner - Desktop Only */}
             <a
               href='/cv.pdf'
               download
-              className='absolute top-4 right-4 md:top-6 md:right-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black font-medium text-xs md:text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all duration-300 shadow-sm hover:shadow-md z-10'
+              className='hidden md:inline-flex absolute top-6 right-6 items-center gap-2 px-4 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black font-medium text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all duration-300 shadow-sm hover:shadow-md z-10'
             >
-              <Download className='h-3.5 w-3.5 md:h-4 md:w-4' />
-              <span className='hidden sm:inline'>Download CV</span>
-              <span className='sm:hidden'>CV</span>
+              <Download className='h-4 w-4' />
+              <span>Download CV</span>
             </a>
 
             <div className='flex flex-col items-center gap-4 md:gap-5 text-center py-8 md:py-10 px-6'>
@@ -233,6 +200,46 @@ export default function Home() {
                   <Globe className='h-4 w-4' />
                   <span className='font-medium'>London, UK</span>
                 </div>
+              </div>
+
+              {/* Social Icons & CV Button - Mobile Only */}
+              <div className='flex md:hidden items-center justify-center gap-3'>
+                <a
+                  href='https://x.com/chriscodingxyz'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                  aria-label='X (Twitter)'
+                >
+                  <XLogo className='h-5 w-5' weight='bold' />
+                </a>
+                <a
+                  href='https://github.com/chriscodingxyz'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                  aria-label='GitHub'
+                >
+                  <GitHub className='h-5 w-5' />
+                </a>
+                <a
+                  href='https://www.linkedin.com/in/wisniewskichris/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                  aria-label='LinkedIn'
+                >
+                  <Linkedin className='h-5 w-5' />
+                </a>
+                <a
+                  href='/cv.pdf'
+                  download
+                  className='inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black font-medium text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all duration-300 shadow-sm hover:shadow-md'
+                  aria-label='Download CV'
+                >
+                  <Download className='h-4 w-4' />
+                  <span>CV</span>
+                </a>
               </div>
             </div>
           </div>

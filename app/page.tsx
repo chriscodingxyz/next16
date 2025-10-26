@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { XLogo } from '@phosphor-icons/react'
 import Marquee from 'react-fast-marquee'
+import GitHubCalendar from 'react-github-calendar'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -315,6 +316,25 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* GitHub Contributions Section */}
+        <section className='w-full space-y-6 relative z-10'>
+          {/* <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
+            Contributions
+          </h2> */}
+          <div className='w-full [&>div]:!w-full [&_svg]:!w-full [&_svg]:!h-auto'>
+            <GitHubCalendar
+              username='chriscodingxyz'
+              blockSize={10}
+              blockMargin={3}
+              fontSize={12}
+              colorScheme='light'
+              hideColorLegend={false}
+              hideMonthLabels={false}
+              hideTotalCount={false}
+            />
+          </div>
+        </section>
 
         {/* Projects Section */}
         <section className='w-full overflow-y-hidden relative z-10'>

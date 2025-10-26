@@ -118,9 +118,9 @@ export default function Home() {
           {/* Name & Bio */}
           <div className='flex flex-col gap-4'>
             <div>
-              <h1 className='text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50'>
+              {/* <h1 className='text-4xl font-semibold leading-tight tracking-tight text-black dark:text-zinc-50'>
                 Chris Wisniewski.
-              </h1>
+              </h1> */}
               <p className='flex items-center gap-1.5 text-sm text-zinc-500 dark:text-zinc-400 mt-1'>
                 <Globe className='h-4 w-4' />
                 London, UK
@@ -268,71 +268,135 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='flex w-full flex-col gap-4 text-base font-medium sm:flex-row'>
-          <a
-            className='flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]'
-            href='https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Image
-              className='dark:invert'
-              src='/vercel.svg'
-              alt='Vercel logomark'
-              width={16}
-              height={16}
-            />
-            Get in touch
-          </a>
-          <a
-            className='flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]'
-            href='https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Github
-          </a>
-        </div>
-
         {/* Projects Section */}
-        <section className='w-full space-y-6'>
-          <h2 className='text-4xl font-semibold text-black dark:text-zinc-50'>
+        <section className='w-full overflow-hidden'>
+          <h2 className='text-4xl font-semibold text-black dark:text-zinc-50 mb-6'>
             Projects
           </h2>
-          <Marquee
-            speed={50}
-            gradient={true}
-            gradientColor='white'
-            gradientWidth={100}
-            pauseOnHover={true}
-            className='py-6'
-          >
-            {[...projects, ...projects].map((project, index) => (
-              <a
-                key={index}
-                href={project.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='group relative mr-4 block w-64 h-40 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1'
-              >
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  className='w-full h-full object-cover transition-all duration-300'
-                />
-                {/* Overlay */}
-                <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center'>
-                  {/* Badge */}
-                  <div className='flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-full shadow-lg'>
-                    <Globe className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
-                    <span className='text-sm font-medium text-zinc-900 dark:text-zinc-100'>
-                      Visit Project
-                    </span>
+          {/* Desktop: Single Row */}
+          <div className='hidden md:block'>
+            <Marquee
+              speed={50}
+              gradient={true}
+              gradientColor='white'
+              gradientWidth={50}
+              pauseOnHover={true}
+              className='py-8'
+            >
+              {[...projects, ...projects].map((project, index) => (
+                <a
+                  key={index}
+                  href={project.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='group mr-4 block'
+                >
+                  <div className='relative w-64 h-40 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1'>
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      className='w-full h-full object-cover transition-all duration-300'
+                    />
+                    {/* Overlay */}
+                    <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
+                      {/* Badge */}
+                      <div className='flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-full shadow-lg'>
+                        <Globe className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
+                        <span className='text-sm font-medium text-zinc-900 dark:text-zinc-100'>
+                          Visit Project
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </a>
-            ))}
-          </Marquee>
+                </a>
+              ))}
+            </Marquee>
+          </div>
+
+          {/* Mobile: Two Rows Going Opposite Directions */}
+          <div className='md:hidden space-y-0'>
+            {/* First Row - Left to Right */}
+            <Marquee
+              speed={40}
+              gradient={true}
+              gradientColor='white'
+              gradientWidth={30}
+              pauseOnHover={true}
+              className='py-0'
+              direction='left'
+            >
+              {[...projects.slice(0, 2), ...projects.slice(0, 2)].map(
+                (project, index) => (
+                  <a
+                    key={index}
+                    href={project.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='group mr-3 block'
+                  >
+                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800 transition-all duration-300'>
+                      <Image
+                        src={project.image}
+                        alt={project.name}
+                        className='w-full h-full object-cover transition-all duration-300'
+                      />
+                      {/* Overlay */}
+                      <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
+                        {/* Badge */}
+                        <div className='flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-full shadow-lg'>
+                          <Globe className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
+                          <span className='text-sm font-medium text-zinc-900 dark:text-zinc-100'>
+                            Visit Project
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                )
+              )}
+            </Marquee>
+
+            {/* Second Row - Right to Left */}
+            <Marquee
+              speed={40}
+              gradient={true}
+              gradientColor='white'
+              gradientWidth={30}
+              pauseOnHover={true}
+              className='py-4'
+              direction='right'
+            >
+              {[...projects.slice(2, 4), ...projects.slice(2, 4)].map(
+                (project, index) => (
+                  <a
+                    key={index}
+                    href={project.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='group mr-3 block'
+                  >
+                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800 transition-all duration-300'>
+                      <Image
+                        src={project.image}
+                        alt={project.name}
+                        className='w-full h-full object-cover transition-all duration-300'
+                      />
+                      {/* Overlay */}
+                      <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
+                        {/* Badge */}
+                        <div className='flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-full shadow-lg'>
+                          <Globe className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
+                          <span className='text-sm font-medium text-zinc-900 dark:text-zinc-100'>
+                            Visit Project
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                )
+              )}
+            </Marquee>
+          </div>
         </section>
 
         {/* Experience Section */}
@@ -433,6 +497,32 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className='flex w-full flex-col gap-4 text-base font-medium sm:flex-row'>
+          <a
+            className='flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]'
+            href='https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Image
+              className='dark:invert'
+              src='/vercel.svg'
+              alt='Vercel logomark'
+              width={16}
+              height={16}
+            />
+            Get in touch
+          </a>
+          <a
+            className='flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]'
+            href='https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Github
+          </a>
         </section>
       </main>
     </div>

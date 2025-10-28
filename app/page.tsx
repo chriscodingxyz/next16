@@ -281,6 +281,20 @@ export default function Home() {
                 </Tooltip>
               </div>
 
+              {/* GitHub Contributions - Compact */}
+              <div className='w-full [&>div]:w-full! [&_svg]:w-full! [&_svg]:h-auto!'>
+                <GitHubCalendar
+                  username='chriscodingxyz'
+                  blockSize={6}
+                  blockMargin={2}
+                  fontSize={10}
+                  colorScheme='light'
+                  hideColorLegend={true}
+                  hideMonthLabels={false}
+                  hideTotalCount={false}
+                />
+              </div>
+
               {/* Location and Social Icons */}
               <div className='flex items-center gap-3'>
                 <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-dotted border-zinc-300 bg-zinc-50 text-sm text-zinc-700'>
@@ -328,31 +342,13 @@ export default function Home() {
                   className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white font-medium text-sm hover:bg-zinc-800 transition-all duration-300 shadow-sm hover:shadow-md'
                 >
                   <Download className='h-4 w-4' />
-                  <span>Download CV</span>
+                  <span className='hidden sm:inline'>Download CV</span>
+                  <span className='sm:hidden'>CV</span>
                 </a>
               </div>
             </div>
           </section>
         </div>
-
-        {/* GitHub Contributions Section */}
-        <section className='w-full space-y-6 relative z-10'>
-          <h2 className='text-4xl font-semibold font-space-grotesk text-black'>
-            .contributions
-          </h2>
-          <div className='w-full [&>div]:w-full! [&_svg]:w-full! [&_svg]:h-auto!'>
-            <GitHubCalendar
-              username='chriscodingxyz'
-              blockSize={10}
-              blockMargin={3}
-              fontSize={12}
-              colorScheme='light'
-              hideColorLegend={false}
-              hideMonthLabels={false}
-              hideTotalCount={false}
-            />
-          </div>
-        </section>
 
         {/* Projects Section */}
         <section className='w-full overflow-y-hidden relative z-10'>

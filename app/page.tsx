@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Field, FieldLabel } from '@/components/ui/field'
+import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 import {
   Convex,
   Nextjs,
@@ -136,79 +137,162 @@ export default function Home() {
 
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center pt-4 pb-16 md:py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden dot-mesh-pattern'>
+      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center pt-4 pb-16 md:py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
         <div className='w-full space-y-8 relative z-10'>
           {/* Header */}
-          <div className='relative border border-dotted border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950'>
-            {/* Social Icons - Top Left Corner - Desktop Only */}
-            <div className='hidden md:flex absolute top-6 left-6 items-center gap-3 z-10'>
-              <a
-                href='https://x.com/chriscodingxyz'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
-                aria-label='X (Twitter)'
-              >
-                <XLogo className='h-5 w-5' weight='bold' />
-              </a>
-              <a
-                href='https://github.com/chriscodingxyz'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
-                aria-label='GitHub'
-              >
-                <GitHub className='h-5 w-5' />
-              </a>
-              <a
-                href='https://www.linkedin.com/in/wisniewskichris/'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
-                aria-label='LinkedIn'
-              >
-                <Linkedin className='h-5 w-5' />
-              </a>
-            </div>
-
-            {/* CV Download Button - Top Right Corner - Desktop Only */}
-            <a
-              href='/cv.pdf'
-              download
-              className='hidden md:inline-flex absolute top-6 right-6 items-center gap-2 px-4 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black font-medium text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all duration-300 shadow-sm hover:shadow-md z-10'
-            >
-              <Download className='h-4 w-4' />
-              <span>Download CV</span>
-            </a>
-
-            <div className='flex flex-col items-center gap-4 md:gap-5 text-center py-8 md:py-10 px-6'>
-              <div className='w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shrink-0 border-[3px] border-black dark:border-white shadow-lg'>
-                <Image
-                  src='/dalle.png'
-                  alt='Chris with dog'
-                  width={96}
-                  height={96}
-                  className='w-full h-full object-cover'
-                />
+          <section className='w-full space-y-6 relative z-10'>
+            <h1 className='text-4xl font-semibold font-space-grotesk text-black'>
+              .chris wiz
+            </h1>
+            <div className='flex flex-col gap-4'>
+              {/* Tech Stack Icons - Compact */}
+              <div className='flex flex-wrap items-center gap-2'>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <JavaScript className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>JavaScript</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <TypeScript className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>TypeScript</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Nextjs className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Next.js</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <React className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>React</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <TailwindCSS className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Tailwind CSS</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Shadcnui className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>shadcn/ui</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <TanStack className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>TanStack</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Nodejs className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Node.js</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Convex className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Convex</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Supabase className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Supabase</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <PostgreSQL className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>PostgreSQL</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <DrizzleORM className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Drizzle ORM</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <BetterAuth className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Better Auth</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Image
+                      src='/zod.svg'
+                      alt='Zod'
+                      width={20}
+                      height={20}
+                      className='h-5 w-5'
+                    />
+                  </TooltipTrigger>
+                  <TooltipContent>Zod</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Git className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Git</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <GitHub className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>GitHub</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Docker className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Docker</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Vercel className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Vercel</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Figma className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Figma</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <ClaudeAI className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Claude AI</TooltipContent>
+                </Tooltip>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <Stripe className='h-5 w-5' />
+                  </TooltipTrigger>
+                  <TooltipContent>Stripe</TooltipContent>
+                </Tooltip>
               </div>
 
-              <div className='flex flex-col items-center gap-3'>
-                <h1 className='text-4xl md:text-4xl font-bold font-space-grotesk leading-none tracking-tight text-black dark:text-zinc-50'>
-                  .chris wiz
-                </h1>
-                <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-dotted border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900/50 text-sm text-zinc-700 dark:text-zinc-300'>
+              {/* Location and Social Icons */}
+              <div className='flex items-center gap-3'>
+                <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-dotted border-zinc-300 bg-zinc-50 text-sm text-zinc-700'>
                   <Globe className='h-4 w-4' />
                   <span className='font-medium'>London, UK</span>
                 </div>
-              </div>
 
-              {/* Social Icons & CV Button - Mobile Only */}
-              <div className='flex md:hidden items-center justify-center gap-3'>
                 <a
                   href='https://x.com/chriscodingxyz'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 text-zinc-600 hover:border-black hover:text-black hover:bg-zinc-50 transition-all duration-300'
                   aria-label='X (Twitter)'
                 >
                   <XLogo className='h-5 w-5' weight='bold' />
@@ -217,7 +301,7 @@ export default function Home() {
                   href='https://github.com/chriscodingxyz'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 text-zinc-600 hover:border-black hover:text-black hover:bg-zinc-50 transition-all duration-300'
                   aria-label='GitHub'
                 >
                   <GitHub className='h-5 w-5' />
@@ -226,166 +310,26 @@ export default function Home() {
                   href='https://www.linkedin.com/in/wisniewskichris/'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300'
+                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 text-zinc-600 hover:border-black hover:text-black hover:bg-zinc-50 transition-all duration-300'
                   aria-label='LinkedIn'
                 >
                   <Linkedin className='h-5 w-5' />
                 </a>
+                <button
+                  onClick={() => setShowContactForm(true)}
+                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 text-zinc-600 hover:border-black hover:text-black hover:bg-zinc-50 transition-all duration-300'
+                  aria-label='Contact'
+                >
+                  <Mail className='h-5 w-5' />
+                </button>
                 <a
                   href='/cv.pdf'
                   download
-                  className='inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-black dark:bg-white text-white dark:text-black font-medium text-sm hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all duration-300 shadow-sm hover:shadow-md'
-                  aria-label='Download CV'
+                  className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white font-medium text-sm hover:bg-zinc-800 transition-all duration-300 shadow-sm hover:shadow-md'
                 >
                   <Download className='h-4 w-4' />
-                  <span>CV</span>
+                  <span>Download CV</span>
                 </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Tech Stack */}
-          <section className='w-full space-y-6 relative z-10'>
-            <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
-              .techstack
-            </h2>
-            <div className='grid grid-cols-7 gap-0 border border-dotted border-zinc-200 dark:border-zinc-800 bg-white'>
-              {/* Row 1 */}
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <JavaScript className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  JavaScript
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <TypeScript className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  TypeScript
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Nextjs className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Next.js
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <React className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  React
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <TailwindCSS className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Tailwind
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Shadcnui className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  shadcn/ui
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <TanStack className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  TanStack
-                </span>
-              </div>
-
-              {/* Row 2 */}
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Nodejs className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Node.js
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Convex className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Convex
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Supabase className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Supabase
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <PostgreSQL className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  PSQL
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <DrizzleORM className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Drizzle
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <BetterAuth className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  BetterAuth
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-b border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Image
-                  src='/zod.svg'
-                  alt='Zod'
-                  width={36}
-                  height={36}
-                  className='h-7 w-7 md:h-9 md:w-9'
-                />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Zod
-                </span>
-              </div>
-
-              {/* Row 3 */}
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Git className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Git
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <GitHub className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  GitHub
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Docker className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Docker
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Vercel className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Vercel
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Figma className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Figma
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 border-r border-dotted border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <ClaudeAI className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Claude
-                </span>
-              </div>
-              <div className='flex flex-col items-center justify-center gap-1 py-2 px-3 md:py-3 md:px-4 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-300'>
-                <Stripe className='h-7 w-7 md:h-9 md:w-9' />
-                <span className='text-[7px] md:text-[10px] text-zinc-600 dark:text-zinc-400 font-medium'>
-                  Stripe
-                </span>
               </div>
             </div>
           </section>
@@ -393,7 +337,7 @@ export default function Home() {
 
         {/* GitHub Contributions Section */}
         <section className='w-full space-y-6 relative z-10'>
-          <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
+          <h2 className='text-4xl font-semibold font-space-grotesk text-black'>
             .contributions
           </h2>
           <div className='w-full [&>div]:w-full! [&_svg]:w-full! [&_svg]:h-auto!'>
@@ -412,7 +356,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <section className='w-full overflow-y-hidden relative z-10'>
-          <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50 mb-6'>
+          <h2 className='text-4xl font-semibold font-space-grotesk text-black mb-6'>
             .projects
           </h2>
           {/* Desktop: Single Row */}
@@ -433,7 +377,7 @@ export default function Home() {
                   rel='noopener noreferrer'
                   className='group mr-4 block'
                 >
-                  <div className='relative w-64 h-40 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-xl'>
+                  <div className='relative w-64 h-40 overflow-hidden rounded-lg border border-zinc-200 transition-all duration-300 hover:shadow-xl'>
                     <Image
                       src={project.image}
                       alt={project.name}
@@ -442,9 +386,9 @@ export default function Home() {
                     {/* Overlay */}
                     <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
                       {/* Badge */}
-                      <div className='flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-full shadow-lg'>
-                        <Globe className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
-                        <span className='text-sm font-medium text-zinc-900 dark:text-zinc-100'>
+                      <div className='flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg'>
+                        <Globe className='h-4 w-4 text-zinc-600' />
+                        <span className='text-sm font-medium text-zinc-900'>
                           Visit Project
                         </span>
                       </div>
@@ -476,7 +420,7 @@ export default function Home() {
                     rel='noopener noreferrer'
                     className='group mr-3 block'
                   >
-                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800 transition-all duration-300'>
+                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 transition-all duration-300'>
                       <Image
                         src={project.image}
                         alt={project.name}
@@ -485,9 +429,9 @@ export default function Home() {
                       {/* Overlay */}
                       <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
                         {/* Badge */}
-                        <div className='flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-full shadow-lg'>
-                          <Globe className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
-                          <span className='text-sm font-medium text-zinc-900 dark:text-zinc-100'>
+                        <div className='flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg'>
+                          <Globe className='h-4 w-4 text-zinc-600' />
+                          <span className='text-sm font-medium text-zinc-900'>
                             Visit Project
                           </span>
                         </div>
@@ -517,7 +461,7 @@ export default function Home() {
                     rel='noopener noreferrer'
                     className='group mr-3 block'
                   >
-                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 dark:border-zinc-800 transition-all duration-300'>
+                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 transition-all duration-300'>
                       <Image
                         src={project.image}
                         alt={project.name}
@@ -526,9 +470,9 @@ export default function Home() {
                       {/* Overlay */}
                       <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
                         {/* Badge */}
-                        <div className='flex items-center gap-2 bg-white dark:bg-zinc-900 px-4 py-2 rounded-full shadow-lg'>
-                          <Globe className='h-4 w-4 text-zinc-600 dark:text-zinc-400' />
-                          <span className='text-sm font-medium text-zinc-900 dark:text-zinc-100'>
+                        <div className='flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg'>
+                          <Globe className='h-4 w-4 text-zinc-600' />
+                          <span className='text-sm font-medium text-zinc-900'>
                             Visit Project
                           </span>
                         </div>
@@ -543,13 +487,13 @@ export default function Home() {
 
         {/* Experience Section */}
         <section className='w-full space-y-6 relative z-10'>
-          <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
+          <h2 className='text-4xl font-semibold font-space-grotesk text-black'>
             .experience
           </h2>
-          <div className='border border-dotted border-zinc-200 dark:border-zinc-800 divide-y divide-dotted divide-zinc-200 dark:divide-zinc-800 bg-white'>
+          <div className='border border-dotted border-zinc-200 divide-y divide-dotted divide-zinc-200 bg-white'>
             {/* Fullstack Developer */}
             <div
-              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'
+              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 cursor-pointer'
               onClick={() =>
                 setExpandedExperience(expandedExperience === 0 ? null : 0)
               }
@@ -566,7 +510,7 @@ export default function Home() {
                 {/* Role & Details */}
                 <div className='flex-1 min-w-0'>
                   <div className='flex items-center justify-between gap-2'>
-                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                    <h3 className='text-base font-semibold text-black'>
                       Fullstack Developer
                     </h3>
                     <ChevronRight
@@ -590,11 +534,11 @@ export default function Home() {
                           expandedExperience === 0 ? 'opacity-100' : 'opacity-0'
                         } md:group-hover:opacity-100`}
                       >
-                        <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
                           <Globe className='h-4 w-4 flex-shrink-0' />
                           <span>27.works</span>
                         </div>
-                        <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
                           <MapPin className='h-4 w-4 flex-shrink-0' />
                           <span>Remote, UK</span>
                         </div>
@@ -607,7 +551,7 @@ export default function Home() {
 
             {/* Freelance Developer */}
             <div
-              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'
+              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 cursor-pointer'
               onClick={() =>
                 setExpandedExperience(expandedExperience === 1 ? null : 1)
               }
@@ -624,7 +568,7 @@ export default function Home() {
                 {/* Role & Details */}
                 <div className='flex-1 min-w-0'>
                   <div className='flex items-center justify-between gap-2'>
-                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                    <h3 className='text-base font-semibold text-black'>
                       Freelance Developer
                     </h3>
                     <ChevronRight
@@ -648,11 +592,11 @@ export default function Home() {
                           expandedExperience === 1 ? 'opacity-100' : 'opacity-0'
                         } md:group-hover:opacity-100`}
                       >
-                        <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
                           <Globe className='h-4 w-4 flex-shrink-0' />
                           <span>LittleCraftsLondon</span>
                         </div>
-                        <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
                           <MapPin className='h-4 w-4 flex-shrink-0' />
                           <span>Remote, UK</span>
                         </div>
@@ -665,7 +609,7 @@ export default function Home() {
 
             {/* Junior Developer */}
             <div
-              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'
+              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 cursor-pointer'
               onClick={() =>
                 setExpandedExperience(expandedExperience === 2 ? null : 2)
               }
@@ -682,7 +626,7 @@ export default function Home() {
                 {/* Role & Details */}
                 <div className='flex-1 min-w-0'>
                   <div className='flex items-center justify-between gap-2'>
-                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                    <h3 className='text-base font-semibold text-black'>
                       Junior Developer
                     </h3>
                     <ChevronRight
@@ -706,11 +650,11 @@ export default function Home() {
                           expandedExperience === 2 ? 'opacity-100' : 'opacity-0'
                         } md:group-hover:opacity-100`}
                       >
-                        <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
                           <Globe className='h-4 w-4 flex-shrink-0' />
                           <span>NorthCoders</span>
                         </div>
-                        <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
                           <MapPin className='h-4 w-4 flex-shrink-0' />
                           <span>Remote, UK</span>
                         </div>
@@ -723,7 +667,7 @@ export default function Home() {
 
             {/* IT Consultant */}
             <div
-              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 cursor-pointer'
+              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 cursor-pointer'
               onClick={() =>
                 setExpandedExperience(expandedExperience === 3 ? null : 3)
               }
@@ -740,7 +684,7 @@ export default function Home() {
                 {/* Role & Details */}
                 <div className='flex-1 min-w-0'>
                   <div className='flex items-center justify-between gap-2'>
-                    <h3 className='text-base font-semibold text-black dark:text-zinc-50'>
+                    <h3 className='text-base font-semibold text-black'>
                       IT Consultant
                     </h3>
                     <ChevronRight
@@ -764,11 +708,11 @@ export default function Home() {
                           expandedExperience === 3 ? 'opacity-100' : 'opacity-0'
                         } md:group-hover:opacity-100`}
                       >
-                        <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
                           <Globe className='h-4 w-4 flex-shrink-0' />
                           <span>MacSeven</span>
                         </div>
-                        <div className='flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400'>
+                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
                           <MapPin className='h-4 w-4 flex-shrink-0' />
                           <span>London, UK</span>
                         </div>
@@ -782,7 +726,7 @@ export default function Home() {
         </section>
 
         <section ref={formRef} className='w-full space-y-6 relative z-10'>
-          <h2 className='text-4xl font-semibold font-space-grotesk text-black dark:text-zinc-50'>
+          <h2 className='text-4xl font-semibold font-space-grotesk text-black'>
             .contact
           </h2>
           {/* Contact Form */}
@@ -855,7 +799,7 @@ export default function Home() {
             {!showContactForm && (
               <button
                 onClick={() => setShowContactForm(true)}
-                className='flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 transition-colors bg-foreground text-background hover:bg-[#383838] dark:hover:bg-[#ccc]'
+                className='flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 transition-colors bg-foreground text-background hover:bg-[#383838]'
               >
                 <Mail className='h-4 w-4' />
                 Get in touch
@@ -864,7 +808,7 @@ export default function Home() {
 
             <div className='flex flex-col sm:flex-row gap-4 w-full'>
               <a
-                className='flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] bg-white'
+                className='flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 bg-white'
                 href='https://github.com/chriscodingxyz'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -873,7 +817,7 @@ export default function Home() {
                 Github
               </a>
               <a
-                className='bg-white flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a]'
+                className='bg-white flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4'
                 href='https://x.com/chriscodingxyz'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -882,7 +826,7 @@ export default function Home() {
                 Twitter
               </a>
               <a
-                className='bg-white flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a]'
+                className='bg-white flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4'
                 href='https://www.linkedin.com/in/wisniewskichris/'
                 target='_blank'
                 rel='noopener noreferrer'

@@ -55,7 +55,7 @@ export default function RootLayout({
           - mesh-peach           → Soft Warm
           - mesh-northern-lights → Aurora Borealis (ANIMATED!)
         */}
-        <div className='mesh-gradient-container mesh-northern-lights'>
+        <div className='mesh-gradient-container mesh-grayscale'>
           <div className='gradient-blob blob-1'></div>
           <div className='gradient-blob blob-2'></div>
           <div className='gradient-blob blob-3'></div>

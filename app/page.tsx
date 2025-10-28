@@ -14,7 +14,6 @@ import {
   Github
 } from 'lucide-react'
 import { XLogo } from '@phosphor-icons/react'
-import Marquee from 'react-fast-marquee'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -97,6 +96,8 @@ const projects = [
 
 export default function Home() {
   const [showContactForm, setShowContactForm] = useState(false)
+  const [activeProject, setActiveProject] = useState(0)
+  const [isHovering, setIsHovering] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -124,6 +125,16 @@ export default function Home() {
     }
   }, [showContactForm])
 
+  // Auto-rotate featured project (only when not hovering)
+  useEffect(() => {
+    if (isHovering) return // Don't auto-rotate when user is hovering
+
+    const interval = setInterval(() => {
+      setActiveProject(prev => (prev + 1) % projects.length)
+    }, 3000) // Change every 3 seconds
+    return () => clearInterval(interval)
+  }, [isHovering])
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log('Form submitted:', formData)
@@ -135,8 +146,8 @@ export default function Home() {
 
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className='flex h-full w-full max-w-3xl bg-white flex-col items-center pt-8 pb-24 md:py-20 space-y-16 md:space-y-24 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
-        <div className='w-full space-y-16 md:space-y-24 relative z-10'>
+      <main className='flex h-full w-full max-w-3xl bg-white flex-col items-center pt-8 pb-24 md:py-20 space-y-12 md:space-y-16 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
+        <div className='w-full space-y-12 md:space-y-16 relative z-10'>
           {/* Header */}
           <section className='w-full space-y-8 relative z-10'>
             {/* Name & Intro */}
@@ -282,133 +293,57 @@ export default function Home() {
         </div>
 
         {/* Projects Section */}
-        <section className='w-full overflow-y-hidden relative z-10'>
+        <section className='w-full relative z-10'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black mb-8 tracking-tight'>
             Projects
           </h2>
-          {/* Desktop: Single Row */}
-          <div className='hidden md:block overflow-y-hidden'>
-            <Marquee
-              speed={50}
-              gradient={true}
-              gradientColor='white'
-              gradientWidth={50}
-              pauseOnHover={true}
-              className=''
-            >
-              {[...projects, ...projects].map((project, index) => (
+
+          {/* Rotating Width Layout - Mobile: stack, Desktop: 4 columns */}
+          <div className='flex flex-col md:flex-row gap-3'>
+            {projects.map((project, index) => {
+              const isActive = index === activeProject
+              return (
                 <a
                   key={index}
                   href={project.url}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='group mr-4 block'
+                  className='group relative block transition-all duration-700 ease-in-out'
+                  style={{
+                    flex: isActive ? '2' : '1'
+                  }}
+                  onMouseEnter={() => {
+                    setIsHovering(true)
+                    setActiveProject(index)
+                  }}
+                  onMouseLeave={() => setIsHovering(false)}
                 >
-                  <div className='relative w-64 h-40 overflow-hidden rounded-lg border border-zinc-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
+                  <div className='relative w-full h-64 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
                     <Image
                       src={project.image}
                       alt={project.name}
-                      className='w-full h-full object-cover transition-all duration-300'
+                      className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
                     />
-                    {/* Overlay */}
-                    <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
-                      {/* Badge */}
-                      <div className='flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg'>
-                        <Globe className='h-4 w-4 text-zinc-600' />
-                        <span className='text-sm font-medium text-zinc-900'>
-                          Visit Project
-                        </span>
+
+                    {/* Overlay with project name - visible when active or on hover */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 transition-opacity duration-300 ${
+                        isActive || 'opacity-0 group-hover:opacity-100'
+                      }`}
+                    >
+                      <div className='absolute bottom-0 left-0 right-0 p-4'>
+                        <div className='flex items-center justify-between'>
+                          <h3 className='text-base font-semibold text-white drop-shadow-lg'>
+                            {project.name}
+                          </h3>
+                          <Globe className='h-4 w-4 text-white drop-shadow-lg' />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </a>
-              ))}
-            </Marquee>
-          </div>
-
-          {/* Mobile: Two Rows Going Opposite Directions */}
-          <div className='md:hidden space-y-2 overflow-y-hidden'>
-            {/* First Row - Left to Right */}
-            <Marquee
-              speed={40}
-              gradient={true}
-              gradientColor='white'
-              gradientWidth={30}
-              pauseOnHover={true}
-              className='py-0'
-              direction='left'
-            >
-              {[...projects.slice(0, 2), ...projects.slice(0, 2)].map(
-                (project, index) => (
-                  <a
-                    key={index}
-                    href={project.url}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='group mr-3 block'
-                  >
-                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
-                      <Image
-                        src={project.image}
-                        alt={project.name}
-                        className='w-full h-full object-cover transition-all duration-300'
-                      />
-                      {/* Overlay */}
-                      <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
-                        {/* Badge */}
-                        <div className='flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg'>
-                          <Globe className='h-4 w-4 text-zinc-600' />
-                          <span className='text-sm font-medium text-zinc-900'>
-                            Visit Project
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                )
-              )}
-            </Marquee>
-
-            {/* Second Row - Right to Left */}
-            <Marquee
-              speed={40}
-              gradient={true}
-              gradientColor='white'
-              gradientWidth={30}
-              pauseOnHover={true}
-              className='py-0'
-              direction='right'
-            >
-              {[...projects.slice(2, 4), ...projects.slice(2, 4)].map(
-                (project, index) => (
-                  <a
-                    key={index}
-                    href={project.url}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='group mr-3 block'
-                  >
-                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
-                      <Image
-                        src={project.image}
-                        alt={project.name}
-                        className='w-full h-full object-cover transition-all duration-300'
-                      />
-                      {/* Overlay */}
-                      <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center'>
-                        {/* Badge */}
-                        <div className='flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg'>
-                          <Globe className='h-4 w-4 text-zinc-600' />
-                          <span className='text-sm font-medium text-zinc-900'>
-                            Visit Project
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                )
-              )}
-            </Marquee>
+              )
+            })}
           </div>
         </section>
 

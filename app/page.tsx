@@ -20,7 +20,11 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Field, FieldLabel } from '@/components/ui/field'
-import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent
+} from '@/components/ui/tooltip'
 import {
   Convex,
   Nextjs,
@@ -141,9 +145,26 @@ export default function Home() {
         <div className='w-full space-y-8 relative z-10'>
           {/* Header */}
           <section className='w-full space-y-6 relative z-10'>
-            <h1 className='text-4xl font-semibold font-space-grotesk text-black'>
-              .chris wiz
-            </h1>
+            <div className='flex items-center justify-between gap-3'>
+              <div className='flex items-center gap-3'>
+                <h1 className='text-4xl font-semibold font-space-grotesk text-black'>
+                  .chris wiz
+                </h1>
+                <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-dotted border-zinc-300 bg-zinc-50 text-sm text-zinc-700'>
+                  <Globe className='h-4 w-4' />
+                  <span className='font-medium'>London, UK</span>
+                </div>
+              </div>
+              <a
+                href='/cv.pdf'
+                download
+                className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white font-medium text-sm hover:bg-zinc-800 transition-all duration-300 shadow-sm hover:shadow-md'
+              >
+                <Download className='h-4 w-4' />
+                <span className='hidden sm:inline'>Download CV</span>
+                <span className='sm:hidden'>CV</span>
+              </a>
+            </div>
             <div className='flex flex-col gap-4'>
               {/* Tech Stack Icons - Compact */}
               <div className='flex flex-wrap items-center gap-2'>
@@ -281,7 +302,7 @@ export default function Home() {
                 </Tooltip>
               </div>
 
-              {/* GitHub Contributions - Compact */}
+              {/* GitHub Contributions */}
               <div className='w-full [&>div]:w-full! [&_svg]:w-full! [&_svg]:h-auto!'>
                 <GitHubCalendar
                   username='chriscodingxyz'
@@ -295,13 +316,8 @@ export default function Home() {
                 />
               </div>
 
-              {/* Location and Social Icons */}
-              <div className='flex items-center gap-3'>
-                <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-dotted border-zinc-300 bg-zinc-50 text-sm text-zinc-700'>
-                  <Globe className='h-4 w-4' />
-                  <span className='font-medium'>London, UK</span>
-                </div>
-
+              {/* Social Icons - Commented out, contact available at bottom */}
+              {/* <div className='flex flex-wrap items-center gap-2 lg:gap-3'>
                 <a
                   href='https://x.com/chriscodingxyz'
                   target='_blank'
@@ -336,16 +352,7 @@ export default function Home() {
                 >
                   <Mail className='h-5 w-5' />
                 </button>
-                <a
-                  href='/cv.pdf'
-                  download
-                  className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white font-medium text-sm hover:bg-zinc-800 transition-all duration-300 shadow-sm hover:shadow-md'
-                >
-                  <Download className='h-4 w-4' />
-                  <span className='hidden sm:inline'>Download CV</span>
-                  <span className='sm:hidden'>CV</span>
-                </a>
-              </div>
+              </div> */}
             </div>
           </section>
         </div>

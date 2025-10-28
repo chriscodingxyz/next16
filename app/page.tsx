@@ -11,40 +11,34 @@ import {
   X,
   Send,
   ChevronRight,
-  Download
+  Github
 } from 'lucide-react'
 import { XLogo } from '@phosphor-icons/react'
 import Marquee from 'react-fast-marquee'
-import GitHubCalendar from 'react-github-calendar'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Field, FieldLabel } from '@/components/ui/field'
+import { Badge } from '@/components/ui/badge'
 import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent
-} from '@/components/ui/tooltip'
-import {
-  Convex,
   Nextjs,
-  Supabase,
-  TanStack,
-  BetterAuth,
-  ClaudeAI,
-  React,
-  TypeScript,
-  Nodejs,
+  React as ReactIcon,
+  TypeScript as TypeScriptIcon,
   TailwindCSS,
+  Nodejs,
+  PostgreSQL,
+  Supabase,
+  Vercel,
+  Shadcnui,
+  TanStack,
+  Convex,
+  DrizzleORM,
+  BetterAuth,
+  Git,
+  GitHub as GitHubIcon,
   Docker,
   Figma,
-  Git,
-  DrizzleORM,
-  Shadcnui,
-  Vercel,
-  PostgreSQL,
-  GitHub,
-  JavaScript,
+  ClaudeAI,
   Stripe
 } from '@/components/tech-icons'
 import projectWin98 from '@/public/projects/win98.webp'
@@ -141,226 +135,156 @@ export default function Home() {
 
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className=' flex h-full w-full max-w-3xl bg-white flex-col items-center pt-4 pb-16 md:py-16 space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
-        <div className='w-full space-y-8 relative z-10'>
+      <main className='flex h-full w-full max-w-3xl bg-white flex-col items-center pt-8 pb-24 md:py-20 space-y-16 md:space-y-24 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
+        <div className='w-full space-y-16 md:space-y-24 relative z-10'>
           {/* Header */}
-          <section className='w-full space-y-6 relative z-10'>
-            <div className='flex items-center justify-between gap-3'>
-              <div className='flex items-center gap-3'>
-                <h1 className='text-4xl font-semibold font-space-grotesk text-black'>
-                  .chris wiz
+          <section className='w-full space-y-8 relative z-10'>
+            {/* Name & Intro */}
+            <div className='space-y-4'>
+              <div className='space-y-2'>
+                <h1 className='text-5xl md:text-6xl font-bold font-space-grotesk text-black tracking-tight'>
+                  chris wiz
                 </h1>
-                <div className='inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-dotted border-zinc-300 bg-zinc-50 text-sm text-zinc-700'>
-                  <Globe className='h-4 w-4' />
-                  <span className='font-medium'>London, UK</span>
-                </div>
-              </div>
-              {/* <a
-                href='/cv.pdf'
-                download
-                className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white font-medium text-sm hover:bg-zinc-800 transition-all duration-300 shadow-sm hover:shadow-md'
-              >
-                <Download className='h-4 w-4' />
-                <span className='hidden sm:inline'>Download CV</span>
-                <span className='sm:hidden'>CV</span>
-              </a> */}
-            </div>
-            <div className='flex flex-col gap-4'>
-              {/* Tech Stack Icons - Compact */}
-              <div className='flex flex-wrap items-center gap-2'>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <JavaScript className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>JavaScript</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <TypeScript className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>TypeScript</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Nextjs className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Next.js</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <React className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>React</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <TailwindCSS className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Tailwind CSS</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Shadcnui className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>shadcn/ui</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <TanStack className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>TanStack</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Nodejs className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Node.js</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Convex className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Convex</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Supabase className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Supabase</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <PostgreSQL className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>PostgreSQL</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <DrizzleORM className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Drizzle ORM</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <BetterAuth className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Better Auth</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Image
-                      src='/zod.svg'
-                      alt='Zod'
-                      width={20}
-                      height={20}
-                      className='h-5 w-5'
-                    />
-                  </TooltipTrigger>
-                  <TooltipContent>Zod</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Git className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Git</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <GitHub className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>GitHub</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Docker className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Docker</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Vercel className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Vercel</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Figma className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Figma</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <ClaudeAI className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Claude AI</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Stripe className='h-5 w-5' />
-                  </TooltipTrigger>
-                  <TooltipContent>Stripe</TooltipContent>
-                </Tooltip>
+                <p className='text-lg md:text-xl text-zinc-600 font-medium'>
+                  Fullstack Developer crafting modern web experiences
+                </p>
               </div>
 
-              {/* GitHub Contributions */}
-              <div className='w-full [&>div]:w-full! [&_svg]:w-full! [&_svg]:h-auto!'>
-                <GitHubCalendar
-                  username='chriscodingxyz'
-                  blockSize={6}
-                  blockMargin={2}
-                  fontSize={10}
-                  colorScheme='light'
-                  hideColorLegend={true}
-                  hideMonthLabels={false}
-                  hideTotalCount={false}
-                />
-              </div>
-
-              {/* Social Icons - Commented out, contact available at bottom */}
-              {/* <div className='flex flex-wrap items-center gap-2 lg:gap-3'>
-                <a
-                  href='https://x.com/chriscodingxyz'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 text-zinc-600 hover:border-black hover:text-black hover:bg-zinc-50 transition-all duration-300'
-                  aria-label='X (Twitter)'
+              {/* Location & CTA */}
+              <div className='flex flex-col sm:flex-row items-start sm:items-center gap-3'>
+                <Badge
+                  variant='secondary'
+                  className='rounded-full px-3 py-1.5 text-sm font-normal'
                 >
-                  <XLogo className='h-5 w-5' weight='bold' />
-                </a>
-                <a
-                  href='https://github.com/chriscodingxyz'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 text-zinc-600 hover:border-black hover:text-black hover:bg-zinc-50 transition-all duration-300'
-                  aria-label='GitHub'
-                >
-                  <GitHub className='h-5 w-5' />
-                </a>
-                <a
-                  href='https://www.linkedin.com/in/wisniewskichris/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 text-zinc-600 hover:border-black hover:text-black hover:bg-zinc-50 transition-all duration-300'
-                  aria-label='LinkedIn'
-                >
-                  <Linkedin className='h-5 w-5' />
-                </a>
-                <button
+                  <MapPin className='h-3.5 w-3.5 mr-1.5' />
+                  London, UK
+                </Badge>
+                <Button
                   onClick={() => setShowContactForm(true)}
-                  className='flex h-10 w-10 items-center justify-center rounded-full border border-dotted border-zinc-200 text-zinc-600 hover:border-black hover:text-black hover:bg-zinc-50 transition-all duration-300'
-                  aria-label='Contact'
+                  className='rounded-full px-6'
                 >
-                  <Mail className='h-5 w-5' />
-                </button>
-              </div> */}
+                  <Mail className='h-4 w-4 mr-2' />
+                  Get in touch
+                </Button>
+              </div>
             </div>
+
+            {/* Tech Stack - Tiny Monochrome Icons */}
+            <div className='flex flex-wrap items-center gap-x-3 gap-y-2.5'>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <TypeScriptIcon className='h-3.5 w-3.5 grayscale opacity-60' />
+                TypeScript
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <ReactIcon className='h-3.5 w-3.5 grayscale opacity-60' />
+                React
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Nextjs className='h-3.5 w-3.5 grayscale opacity-60' />
+                Next.js
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <TailwindCSS className='h-3.5 w-3.5 grayscale opacity-60' />
+                Tailwind
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Shadcnui className='h-3.5 w-3.5 grayscale opacity-60' />
+                shadcn/ui
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <TanStack className='h-3.5 w-3.5 grayscale opacity-60' />
+                TanStack
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Nodejs className='h-3.5 w-3.5 grayscale opacity-60' />
+                Node.js
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Convex className='h-3.5 w-3.5 grayscale opacity-60' />
+                Convex
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Supabase className='h-3.5 w-3.5 grayscale opacity-60' />
+                Supabase
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <PostgreSQL className='h-3.5 w-3.5 grayscale opacity-60' />
+                PostgreSQL
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <DrizzleORM className='h-3.5 w-3.5 grayscale opacity-60' />
+                Drizzle
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <BetterAuth className='h-3.5 w-3.5 grayscale opacity-60' />
+                Better Auth
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Git className='h-3.5 w-3.5 grayscale opacity-60' />
+                Git
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <GitHubIcon className='h-3.5 w-3.5 grayscale opacity-60' />
+                GitHub
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Docker className='h-3.5 w-3.5 grayscale opacity-60' />
+                Docker
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Vercel className='h-3.5 w-3.5 grayscale opacity-60' />
+                Vercel
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Figma className='h-3.5 w-3.5 grayscale opacity-60' />
+                Figma
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <ClaudeAI className='h-3.5 w-3.5 grayscale opacity-60' />
+                Claude
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Stripe className='h-3.5 w-3.5 grayscale opacity-60' />
+                Stripe
+              </span>
+            </div>
+
+            {/* GitHub Calendar - Toggleable */}
+            {/* <div className='space-y-3'>
+              <button
+                onClick={() => setShowGitHubCalendar(!showGitHubCalendar)}
+                className='inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-black transition-colors'
+              >
+                <ChevronRight
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    showGitHubCalendar ? 'rotate-90' : ''
+                  }`}
+                />
+                {showGitHubCalendar ? 'Hide' : 'View'} GitHub Activity
+              </button>
+
+              {showGitHubCalendar && (
+                <div className='w-full overflow-hidden animate-in fade-in slide-in-from-top-2 duration-300 [&>div]:w-full! [&_svg]:w-full! [&_svg]:h-auto!'>
+                  <GitHubCalendar
+                    username='chriscodingxyz'
+                    blockSize={6}
+                    blockMargin={2}
+                    fontSize={10}
+                    colorScheme='light'
+                    hideColorLegend={true}
+                    hideMonthLabels={false}
+                    hideTotalCount={false}
+                  />
+                </div>
+              )}
+            </div> */}
           </section>
         </div>
 
         {/* Projects Section */}
         <section className='w-full overflow-y-hidden relative z-10'>
-          <h2 className='text-4xl font-semibold font-space-grotesk text-black mb-6'>
-            .projects
+          <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black mb-8 tracking-tight'>
+            Projects
           </h2>
           {/* Desktop: Single Row */}
           <div className='hidden md:block overflow-y-hidden'>
@@ -380,7 +304,7 @@ export default function Home() {
                   rel='noopener noreferrer'
                   className='group mr-4 block'
                 >
-                  <div className='relative w-64 h-40 overflow-hidden rounded-lg border border-zinc-200 transition-all duration-300 hover:shadow-xl'>
+                  <div className='relative w-64 h-40 overflow-hidden rounded-lg border border-zinc-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
                     <Image
                       src={project.image}
                       alt={project.name}
@@ -423,7 +347,7 @@ export default function Home() {
                     rel='noopener noreferrer'
                     className='group mr-3 block'
                   >
-                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 transition-all duration-300'>
+                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
                       <Image
                         src={project.image}
                         alt={project.name}
@@ -464,7 +388,7 @@ export default function Home() {
                     rel='noopener noreferrer'
                     className='group mr-3 block'
                   >
-                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 transition-all duration-300'>
+                    <div className='relative w-56 h-36 overflow-hidden rounded-lg border border-zinc-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
                       <Image
                         src={project.image}
                         alt={project.name}
@@ -489,11 +413,11 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section className='w-full space-y-6 relative z-10'>
-          <h2 className='text-4xl font-semibold font-space-grotesk text-black'>
-            .experience
+        <section className='w-full space-y-8 relative z-10'>
+          <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
+            Experience
           </h2>
-          <div className='border border-dotted border-zinc-200 divide-y divide-dotted divide-zinc-200 bg-white'>
+          <div className='border border-zinc-200 divide-y divide-zinc-200 rounded-lg bg-white overflow-hidden'>
             {/* Fullstack Developer */}
             <div
               className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 cursor-pointer'
@@ -728,9 +652,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section ref={formRef} className='w-full space-y-6 relative z-10'>
-          <h2 className='text-4xl font-semibold font-space-grotesk text-black'>
-            .contact
+        <section ref={formRef} className='w-full space-y-8 relative z-10'>
+          <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
+            Contact
           </h2>
           {/* Contact Form */}
           {showContactForm && (
@@ -816,7 +740,7 @@ export default function Home() {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <GitHub className='h-4 w-4' />
+                <Github className='h-4 w-4' />
                 Github
               </a>
               <a

@@ -297,7 +297,7 @@ export default function Home() {
         {/* Projects Section */}
         <section className='w-full relative z-10'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black mb-8 tracking-tight'>
-            Projects
+            projects
           </h2>
 
           {/* Rotating Width Layout - 4 columns on all screen sizes */}
@@ -353,7 +353,7 @@ export default function Home() {
         {/* Experience Section */}
         <section className='w-full space-y-8 relative z-10'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
-            Experience
+            experience
           </h2>
           <div className='border border-zinc-200 divide-y divide-zinc-200 rounded-lg bg-white overflow-hidden'>
             {/* Fullstack Developer */}
@@ -365,9 +365,9 @@ export default function Home() {
             >
               <div className='flex items-start gap-4 md:gap-6'>
                 {/* Date */}
-                <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
-                  <Calendar className='h-4 w-4 text-red-500 flex-shrink-0' />
-                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>
+                <div className='flex items-center gap-2 min-w-24 md:min-w-28 shrink-0'>
+                  <Calendar className='h-4 w-4 text-red-500 shrink-0' />
+                  <span className='font-mono text-xs md:text-sm text-zinc-600 font-medium'>
                     2024+
                   </span>
                 </div>
@@ -379,7 +379,7 @@ export default function Home() {
                       Fullstack Developer
                     </h3>
                     <ChevronRight
-                      className={`h-4 w-4 text-zinc-400 transition-transform duration-300 flex-shrink-0 ${
+                      className={`h-4 w-4 text-zinc-400 transition-transform duration-300 shrink-0 ${
                         expandedExperience === 0 ? 'rotate-90' : ''
                       } md:group-hover:rotate-90`}
                     />
@@ -400,11 +400,11 @@ export default function Home() {
                         } md:group-hover:opacity-100`}
                       >
                         <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                          <Globe className='h-4 w-4 flex-shrink-0' />
+                          <Globe className='h-4 w-4 shrink-0' />
                           <span>27.works</span>
                         </div>
                         <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                          <MapPin className='h-4 w-4 flex-shrink-0' />
+                          <MapPin className='h-4 w-4 shrink-0' />
                           <span>Remote, UK</span>
                         </div>
                       </div>
@@ -423,9 +423,9 @@ export default function Home() {
             >
               <div className='flex items-start gap-4 md:gap-6'>
                 {/* Date */}
-                <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
-                  <Calendar className='h-4 w-4 text-red-500 flex-shrink-0' />
-                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>
+                <div className='flex items-center gap-2 min-w-24 md:min-w-28 shrink-0'>
+                  <Calendar className='h-4 w-4 text-red-500 shrink-0' />
+                  <span className='font-mono text-xs md:text-sm text-zinc-600 font-medium'>
                     2023-2024
                   </span>
                 </div>
@@ -437,7 +437,7 @@ export default function Home() {
                       Freelance Developer
                     </h3>
                     <ChevronRight
-                      className={`h-4 w-4 text-zinc-400 transition-transform duration-300 flex-shrink-0 ${
+                      className={`h-4 w-4 text-zinc-400 transition-transform duration-300 shrink-0 ${
                         expandedExperience === 1 ? 'rotate-90' : ''
                       } md:group-hover:rotate-90`}
                     />
@@ -458,11 +458,11 @@ export default function Home() {
                         } md:group-hover:opacity-100`}
                       >
                         <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                          <Globe className='h-4 w-4 flex-shrink-0' />
+                          <Globe className='h-4 w-4 shrink-0' />
                           <span>LittleCraftsLondon</span>
                         </div>
                         <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                          <MapPin className='h-4 w-4 flex-shrink-0' />
+                          <MapPin className='h-4 w-4 shrink-0' />
                           <span>Remote, UK</span>
                         </div>
                       </div>
@@ -481,9 +481,9 @@ export default function Home() {
             >
               <div className='flex items-start gap-4 md:gap-6'>
                 {/* Date */}
-                <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
-                  <Calendar className='h-4 w-4 text-red-500 flex-shrink-0' />
-                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>
+                <div className='flex items-center gap-2 min-w-24 md:min-w-28 shrink-0'>
+                  <Calendar className='h-4 w-4 text-red-500 shrink-0' />
+                  <span className='font-mono text-xs md:text-sm text-zinc-600 font-medium'>
                     2023
                   </span>
                 </div>
@@ -495,7 +495,7 @@ export default function Home() {
                       Junior Developer
                     </h3>
                     <ChevronRight
-                      className={`h-4 w-4 text-zinc-400 transition-transform duration-300 flex-shrink-0 ${
+                      className={`h-4 w-4 text-zinc-400 transition-transform duration-300 shrink-0 ${
                         expandedExperience === 2 ? 'rotate-90' : ''
                       } md:group-hover:rotate-90`}
                     />
@@ -516,11 +516,11 @@ export default function Home() {
                         } md:group-hover:opacity-100`}
                       >
                         <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                          <Globe className='h-4 w-4 flex-shrink-0' />
+                          <Globe className='h-4 w-4 shrink-0' />
                           <span>NorthCoders</span>
                         </div>
                         <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                          <MapPin className='h-4 w-4 flex-shrink-0' />
+                          <MapPin className='h-4 w-4 shrink-0' />
                           <span>Remote, UK</span>
                         </div>
                       </div>
@@ -539,9 +539,9 @@ export default function Home() {
             >
               <div className='flex items-start gap-4 md:gap-6'>
                 {/* Date */}
-                <div className='flex items-center gap-2 min-w-[6rem] md:min-w-[7rem] flex-shrink-0'>
-                  <Calendar className='h-4 w-4 text-red-500 flex-shrink-0' />
-                  <span className='font-mono text-xs md:text-sm text-red-500 font-medium'>
+                <div className='flex items-center gap-2 min-w-24 md:min-w-28 shrink-0'>
+                  <Calendar className='h-4 w-4 text-red-500 shrink-0' />
+                  <span className='font-mono text-xs md:text-sm text-zinc-600 font-medium'>
                     2018-2022
                   </span>
                 </div>
@@ -553,7 +553,7 @@ export default function Home() {
                       IT Consultant
                     </h3>
                     <ChevronRight
-                      className={`h-4 w-4 text-zinc-400 transition-transform duration-300 flex-shrink-0 ${
+                      className={`h-4 w-4 text-zinc-400 transition-transform duration-300 shrink-0 ${
                         expandedExperience === 3 ? 'rotate-90' : ''
                       } md:group-hover:rotate-90`}
                     />
@@ -574,11 +574,11 @@ export default function Home() {
                         } md:group-hover:opacity-100`}
                       >
                         <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                          <Globe className='h-4 w-4 flex-shrink-0' />
+                          <Globe className='h-4 w-4 shrink-0' />
                           <span>MacSeven</span>
                         </div>
                         <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                          <MapPin className='h-4 w-4 flex-shrink-0' />
+                          <MapPin className='h-4 w-4 shrink-0' />
                           <span>London, UK</span>
                         </div>
                       </div>
@@ -592,7 +592,7 @@ export default function Home() {
 
         <section ref={formRef} className='w-full space-y-8 relative z-10'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
-            Contact
+            contact
           </h2>
           {/* Contact Form */}
           {showContactForm && (

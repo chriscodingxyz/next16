@@ -155,7 +155,7 @@ export default function Home() {
                   <span className='font-medium'>London, UK</span>
                 </div>
               </div>
-              <a
+              {/* <a
                 href='/cv.pdf'
                 download
                 className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white font-medium text-sm hover:bg-zinc-800 transition-all duration-300 shadow-sm hover:shadow-md'
@@ -163,7 +163,7 @@ export default function Home() {
                 <Download className='h-4 w-4' />
                 <span className='hidden sm:inline'>Download CV</span>
                 <span className='sm:hidden'>CV</span>
-              </a>
+              </a> */}
             </div>
             <div className='flex flex-col gap-4'>
               {/* Tech Stack Icons - Compact */}

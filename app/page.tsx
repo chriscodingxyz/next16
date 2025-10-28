@@ -153,26 +153,28 @@ export default function Home() {
             {/* Name & Intro */}
             <div className='space-y-4'>
               <div className='space-y-2'>
-                <h1 className='text-5xl md:text-6xl font-bold font-space-grotesk text-black tracking-tight'>
-                  chris wiz
-                </h1>
+                <div className='flex items-center gap-3'>
+                  <h1 className='text-5xl md:text-6xl font-bold font-space-grotesk text-black tracking-tight'>
+                    chris wiz
+                  </h1>
+                  <Badge
+                    variant='secondary'
+                    className='rounded-full px-2.5 py-1 text-xs font-normal cursor-default'
+                  >
+                    <MapPin className='h-3 w-3 mr-1' />
+                    London, UK
+                  </Badge>
+                </div>
                 <p className='text-lg md:text-xl text-zinc-600 font-medium'>
                   Fullstack Developer crafting modern web experiences
                 </p>
               </div>
 
-              {/* Location & CTA */}
-              <div className='flex flex-col sm:flex-row items-start sm:items-center gap-3'>
-                <Badge
-                  variant='secondary'
-                  className='rounded-full px-3 py-1.5 text-sm font-normal'
-                >
-                  <MapPin className='h-3.5 w-3.5 mr-1.5' />
-                  London, UK
-                </Badge>
+              {/* CTA */}
+              <div>
                 <Button
                   onClick={() => setShowContactForm(true)}
-                  className='rounded-full px-6'
+                  className='rounded-full px-6 cursor-pointer'
                 >
                   <Mail className='h-4 w-4 mr-2' />
                   Get in touch
@@ -661,7 +663,7 @@ export default function Home() {
             {!showContactForm && (
               <button
                 onClick={() => setShowContactForm(true)}
-                className='flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 transition-colors bg-foreground text-background hover:bg-[#383838]'
+                className='flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 transition-colors bg-foreground text-background hover:bg-[#383838] cursor-pointer'
               >
                 <Mail className='h-4 w-4' />
                 Get in touch
@@ -670,7 +672,7 @@ export default function Home() {
 
             <div className='flex flex-col sm:flex-row gap-4 w-full'>
               <a
-                className='flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 bg-white'
+                className='flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
                 href='https://github.com/chriscodingxyz'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -679,7 +681,7 @@ export default function Home() {
                 Github
               </a>
               <a
-                className='bg-white flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4'
+                className='bg-white flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 cursor-pointer'
                 href='https://x.com/chriscodingxyz'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -688,7 +690,7 @@ export default function Home() {
                 Twitter
               </a>
               <a
-                className='bg-white flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4'
+                className='bg-white flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 cursor-pointer'
                 href='https://www.linkedin.com/in/wisniewskichris/'
                 target='_blank'
                 rel='noopener noreferrer'

@@ -300,8 +300,8 @@ export default function Home() {
             Projects
           </h2>
 
-          {/* Rotating Width Layout - Mobile: stack, Desktop: 4 columns */}
-          <div className='flex flex-col md:flex-row gap-3'>
+          {/* Rotating Width Layout - 4 columns on all screen sizes */}
+          <div className='flex flex-row gap-3'>
             {projects.map((project, index) => {
               const isActive = index === activeProject
               return (
@@ -319,6 +319,7 @@ export default function Home() {
                     setActiveProject(index)
                   }}
                   onMouseLeave={() => setIsHovering(false)}
+                  onClick={() => setActiveProject(index)}
                 >
                   <div className='relative w-full h-64 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
                     <Image

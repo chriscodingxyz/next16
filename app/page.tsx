@@ -391,11 +391,15 @@ export default function Home() {
                     {/* Overlay with project name - visible when active or on hover */}
                     <div
                       className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 transition-opacity duration-300 ${
-                        isActive || 'opacity-0 group-hover:opacity-100'
+                        isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                       }`}
                     >
                       <div className='absolute bottom-0 left-0 right-0 p-4'>
-                        <div className='flex items-center justify-between'>
+                        <div
+                          className={`flex items-center justify-between transition-opacity duration-300 delay-300 ${
+                            isActive ? 'opacity-100' : 'opacity-0'
+                          }`}
+                        >
                           <h3 className='text-base font-semibold text-white drop-shadow-lg'>
                             {project.name}
                           </h3>

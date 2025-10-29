@@ -2,7 +2,6 @@ import { CryptoPrices } from '@/components/crypto-prices'
 import { HeaderSection } from '@/components/header-section.client'
 import { ProjectsSection } from '@/components/projects-section.client'
 import { ExperienceSection } from '@/components/experience-section.client'
-import { ContactSection } from '@/components/contact-section.client'
 import { Project, Experience, CryptoPrices as CryptoPricesType } from '@/types'
 import projectWin98 from '@/public/projects/win98.webp'
 import projectBicesterMotion from '@/public/projects/bicestermotion.webp'
@@ -129,7 +128,6 @@ export default async function Home() {
           <HeaderSection />
           <ProjectsSection projects={projects} />
           <ExperienceSection experiences={experiences} />
-          <ContactSection />
         </div>
       </main>
     </div>

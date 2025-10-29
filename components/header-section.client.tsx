@@ -1,9 +1,20 @@
 'use client'
 
-import { useState } from 'react'
-import { MapPin, Mail, ChevronRight } from 'lucide-react'
+import { useState, useRef } from 'react'
+import { MapPin, Mail, ChevronRight, Send, Linkedin } from 'lucide-react'
+import { XLogo } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Field, FieldLabel } from '@/components/ui/field'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from '@/components/ui/dialog'
 import {
   Nextjs,
   React as ReactIcon,
@@ -53,13 +64,21 @@ const techStack: TechStack[] = [
 ]
 
 export function HeaderSection() {
-  const handleContactClick = () => {
-    const contactSection = document.getElementById('contact')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    }
-  }
   const [showAllTech, setShowAllTech] = useState(false)
+  const [showContactForm, setShowContactForm] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log('Form submitted:', formData)
+    alert("Thanks for reaching out! I'll get back to you soon.")
+    setShowContactForm(false)
+    setFormData({ name: '', email: '', message: '' })
+  }
 
   const mainTechCount = techStack.filter(t => t.isMain).length
   const additionalTechCount = techStack.length - mainTechCount
@@ -86,15 +105,98 @@ export function HeaderSection() {
           </p>
         </div>
 
-        {/* CTA */}
-        <div>
-          <Button
-            onClick={handleContactClick}
-            className='rounded-full px-6 cursor-pointer'
+        {/* CTA & Social Links */}
+        <div className='flex items-center gap-3'>
+          <Dialog open={showContactForm} onOpenChange={setShowContactForm}>
+            <DialogTrigger asChild>
+              <Button className='rounded-full px-6 cursor-pointer'>
+                <Mail className='h-4 w-4 mr-2' />
+                Get in touch
+              </Button>
+            </DialogTrigger>
+            <DialogContent className='sm:max-w-[425px]'>
+              <DialogHeader>
+                <DialogTitle>Get in touch</DialogTitle>
+              </DialogHeader>
+              <form onSubmit={handleSubmit} className='space-y-4 mt-4'>
+                <Field className='space-y-0'>
+                  <FieldLabel htmlFor='name'>Name</FieldLabel>
+                  <Input
+                    className='bg-white'
+                    id='name'
+                    value={formData.name}
+                    onChange={e =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    placeholder='Your name'
+                    required
+                  />
+                </Field>
+
+                <Field className='space-y-0'>
+                  <FieldLabel htmlFor='email'>Email</FieldLabel>
+                  <Input
+                    className='bg-white'
+                    id='email'
+                    type='email'
+                    value={formData.email}
+                    onChange={e =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    placeholder='your@email.com'
+                    required
+                  />
+                </Field>
+
+                <Field className='space-y-0'>
+                  <FieldLabel htmlFor='message'>Message</FieldLabel>
+                  <Textarea
+                    className='bg-white'
+                    id='message'
+                    value={formData.message}
+                    onChange={e =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    placeholder='Your message...'
+                    rows={5}
+                    required
+                  />
+                </Field>
+
+                <Button type='submit' className='w-full cursor-pointer'>
+                  <Send className='h-4 w-4 mr-2' />
+                  Send Message
+                </Button>
+              </form>
+            </DialogContent>
+          </Dialog>
+
+          <a
+            href='https://github.com/chriscodingxyz'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center justify-center h-10 w-10 rounded-full border border-solid border-black/8 transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
           >
-            <Mail className='h-4 w-4 mr-2' />
-            Get in touch
-          </Button>
+            <GitHubIcon className='h-4 w-4' />
+          </a>
+
+          <a
+            href='https://x.com/chriscodingxyz'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center justify-center h-10 w-10 rounded-full border border-solid border-black/8 transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
+          >
+            <XLogo className='h-4 w-4' weight='bold' />
+          </a>
+
+          <a
+            href='https://www.linkedin.com/in/wisniewskichris/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center justify-center h-10 w-10 rounded-full border border-solid border-black/8 transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
+          >
+            <Linkedin className='h-4 w-4' />
+          </a>
         </div>
       </div>
 

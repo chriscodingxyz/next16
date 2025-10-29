@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Mail, X, Send, Github, Linkedin } from 'lucide-react'
+import { Mail, X, Send, Linkedin } from 'lucide-react'
 import { XLogo } from '@phosphor-icons/react'
+import { GitHub } from '@/components/tech-icons'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -132,7 +133,7 @@ export function ContactSection() {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <Github className='h-4 w-4' />
+            <GitHub className='h-4 w-4' />
             Github
           </a>
           <a

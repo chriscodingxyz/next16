@@ -189,7 +189,7 @@ export default function Home() {
 
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className='flex h-full w-full max-w-3xl bg-white flex-col items-center pt-8 pb-24 md:py-20 space-y-12 md:space-y-16 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
+      <main className='flex h-full w-full max-w-3xl bg-white flex-col items-center pt-8 pb-24 md:py-20 space-y-6 md:space-y-8 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
         <div className='w-full space-y-12 md:space-y-16 relative z-10'>
           {/* Header */}
           <section className='w-full space-y-8 relative z-10'>
@@ -314,7 +314,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <section className='w-full relative z-10'>
-          <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black mb-8 tracking-tight'>
+          <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black mb-4 tracking-tight'>
             projects
           </h2>
 
@@ -325,7 +325,9 @@ export default function Home() {
               style={{
                 transform: isDesktop
                   ? 'translateX(0)'
-                  : `translateX(${activeProject >= 2 ? 'calc(-100% - 0.75rem)' : '0'})`
+                  : `translateX(${
+                      activeProject >= 2 ? 'calc(-100% - 0.75rem)' : '0'
+                    })`
               }}
             >
               {projects.map((project, index) => {
@@ -348,14 +350,14 @@ export default function Home() {
                   if (isActivePairMember) {
                     // Visible pair: active gets 2/3, inactive gets 1/3
                     // KEY FIX: Use 100% (parent container width) not 100vw
-                    mobileWidth =
-                      isActive
-                        ? 'calc((100% - 0.75rem) * 2 / 3)'
-                        : 'calc((100% - 0.75rem) / 3)'
+                    mobileWidth = isActive
+                      ? 'calc((100% - 0.75rem) * 2 / 3)'
+                      : 'calc((100% - 0.75rem) / 3)'
                   } else {
                     // Off-screen pair: maintain similar proportions
                     const wouldBeActiveInPair =
-                      (isInFirstPair && index === 0) || (!isInFirstPair && index === 2)
+                      (isInFirstPair && index === 0) ||
+                      (!isInFirstPair && index === 2)
                     mobileWidth = wouldBeActiveInPair
                       ? 'calc((100% - 0.75rem) * 2 / 3)'
                       : 'calc((100% - 0.75rem) / 3)'
@@ -380,42 +382,44 @@ export default function Home() {
                     onMouseLeave={() => setIsHovering(false)}
                     onClick={() => setActiveProject(index)}
                   >
-                  <div className='relative w-full h-64 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
-                    <Image
-                      src={project.image}
-                      alt={project.name}
-                      className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
-                    />
+                    <div className='relative w-full h-64 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
+                      <Image
+                        src={project.image}
+                        alt={project.name}
+                        className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
+                      />
 
-                    {/* Overlay with project name - visible when active or on hover */}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 transition-opacity duration-300 ${
-                        isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                      }`}
-                    >
-                      <div className='absolute bottom-0 left-0 right-0 p-4'>
-                        <div
-                          className={`flex items-center justify-between transition-opacity duration-300 delay-300 ${
-                            isActive ? 'opacity-100' : 'opacity-0'
-                          }`}
-                        >
-                          <h3 className='text-base font-semibold text-white drop-shadow-lg'>
-                            {project.name}
-                          </h3>
-                          <Globe className='h-4 w-4 text-white drop-shadow-lg' />
+                      {/* Overlay with project name - visible when active or on hover */}
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 transition-opacity duration-300 ${
+                          isActive
+                            ? 'opacity-100'
+                            : 'opacity-0 group-hover:opacity-100'
+                        }`}
+                      >
+                        <div className='absolute bottom-0 left-0 right-0 p-4'>
+                          <div
+                            className={`flex items-center justify-between transition-opacity duration-300 delay-300 ${
+                              isActive ? 'opacity-100' : 'opacity-0'
+                            }`}
+                          >
+                            <h3 className='text-base font-semibold text-white drop-shadow-lg'>
+                              {project.name}
+                            </h3>
+                            <Globe className='h-4 w-4 text-white drop-shadow-lg' />
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </a>
-              )
-            })}
+                  </a>
+                )
+              })}
             </div>
           </div>
         </section>
 
         {/* Experience Section */}
-        <section className='w-full space-y-8 relative z-10'>
+        <section className='w-full space-y-4 relative z-10'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
             experience
           </h2>
@@ -654,7 +658,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section ref={formRef} className='w-full space-y-8 relative z-10'>
+        <section ref={formRef} className='w-full space-y-4 relative z-10'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
             contact
           </h2>

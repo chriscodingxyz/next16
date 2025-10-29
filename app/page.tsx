@@ -264,14 +264,19 @@ export default function Home() {
               {/* Show more/less button */}
               <button
                 onClick={() => setShowAllTech(!showAllTech)}
-                className='text-xs font-medium text-zinc-400 hover:text-zinc-600 transition-colors flex items-center gap-1 cursor-pointer'
+                className='text-[10px] font-medium text-zinc-400 hover:text-zinc-600 transition-colors flex items-center gap-1 cursor-pointer'
               >
-                <span className='text-[10px]'>+{additionalTechCount}</span>
-                <ChevronRight
-                  className={`h-3 w-3 transition-transform duration-300 ${
-                    showAllTech ? '-rotate-90' : 'rotate-90'
-                  }`}
-                />
+                {showAllTech ? (
+                  <>
+                    <span>collapse</span>
+                    <ChevronRight className='h-3 w-3 -rotate-90 transition-transform duration-300' />
+                  </>
+                ) : (
+                  <>
+                    <span>+{additionalTechCount}</span>
+                    <ChevronRight className='h-3 w-3 rotate-90 transition-transform duration-300' />
+                  </>
+                )}
               </button>
             </div>
 

@@ -1,7 +1,14 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { MapPin, Mail, ChevronRight, Send, Linkedin } from 'lucide-react'
+import {
+  MapPin,
+  Mail,
+  ChevronRight,
+  Send,
+  Linkedin,
+  Download
+} from 'lucide-react'
 import { XLogo } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -110,8 +117,10 @@ export function HeaderSection() {
           <Dialog open={showContactForm} onOpenChange={setShowContactForm}>
             <DialogTrigger asChild>
               <Button className='rounded-full px-6 cursor-pointer'>
-                <Mail className='h-4 w-4 mr-2' />
-                Get in touch
+                <Mail className='h-4 w-4 md:mr-2' />
+                <span className='hidden md:inline font-medium'>
+                  Get in touch
+                </span>
               </Button>
             </DialogTrigger>
             <DialogContent className='sm:max-w-[425px]'>
@@ -170,6 +179,21 @@ export function HeaderSection() {
               </form>
             </DialogContent>
           </Dialog>
+
+          <Button
+            variant='secondary'
+            className='rounded-full px-6 cursor-pointer'
+            asChild
+          >
+            <a
+              href='/ChrisWisniewskiCV2025.pdf'
+              download='ChrisWisniewskiCV2025.pdf'
+            >
+              <Download className='h-4 w-4' />
+              <span className='md:hidden font-medium'>CV</span>
+              <span className='hidden md:inline font-medium'>Download CV</span>
+            </a>
+          </Button>
 
           <a
             href='https://github.com/chriscodingxyz'

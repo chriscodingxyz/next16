@@ -97,13 +97,12 @@ const experiences: Experience[] = [
 // Server-side data fetching
 async function getCryptoPrices(): Promise<CryptoPricesType | null> {
   try {
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : 'http://localhost:3000'
-
-    const response = await fetch(`${baseUrl}/api/crypto`, {
-      next: { revalidate: 3600 } // Cache for 1 hour, matching the API route
-    })
+    const response = await fetch(
+      'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,pax-gold&vs_currencies=usd&include_24hr_change=true',
+      {
+        next: { revalidate: 3600 } // Cache for 1 hour
+      }
+    )
     if (!response.ok) throw new Error('Failed to fetch crypto prices')
     return response.json()
   } catch (error) {

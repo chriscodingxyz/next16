@@ -107,8 +107,22 @@ export default function Home() {
   const [expandedExperience, setExpandedExperience] = useState<number | null>(
     null
   )
+  const [isDesktop, setIsDesktop] = useState(false)
   const formRef = useRef<HTMLDivElement>(null)
   const nameInputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768)
+    }
+
+    // Set initial value
+    handleResize()
+
+    // Add event listener
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     if (showContactForm && formRef.current) {
@@ -305,27 +319,68 @@ export default function Home() {
             projects
           </h2>
 
-          {/* Rotating Width Layout - 4 columns on all screen sizes */}
-          <div className='flex flex-row gap-3'>
-            {projects.map((project, index) => {
-              const isActive = index === activeProject
-              return (
-                <a
-                  key={index}
-                  href={project.url}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='group relative block transition-all duration-700 ease-in-out'
-                  style={{
-                    flex: isActive ? '2' : '1'
-                  }}
-                  onMouseEnter={() => {
-                    setIsHovering(true)
-                    setActiveProject(index)
-                  }}
-                  onMouseLeave={() => setIsHovering(false)}
-                  onClick={() => setActiveProject(index)}
-                >
+          {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
+          <div className='overflow-hidden md:overflow-visible'>
+            <div
+              className='flex flex-row gap-3 transition-transform duration-700 ease-in-out'
+              style={{
+                transform: isDesktop
+                  ? 'translateX(0)'
+                  : `translateX(${activeProject >= 2 ? 'calc(-100% - 0.75rem)' : '0'})`
+              }}
+            >
+              {projects.map((project, index) => {
+                const isActive = index === activeProject
+
+                // Calculate widths for mobile carousel
+                let mobileWidth
+                if (isDesktop) {
+                  mobileWidth = 'auto'
+                } else {
+                  // Determine which pair this project belongs to
+                  const isInFirstPair = index <= 1
+                  const showingFirstPair = activeProject <= 1
+
+                  // Calculate width based on whether it's active in its pair
+                  const isActivePairMember =
+                    (isInFirstPair && showingFirstPair) ||
+                    (!isInFirstPair && !showingFirstPair)
+
+                  if (isActivePairMember) {
+                    // Visible pair: active gets 2/3, inactive gets 1/3
+                    // KEY FIX: Use 100% (parent container width) not 100vw
+                    mobileWidth =
+                      isActive
+                        ? 'calc((100% - 0.75rem) * 2 / 3)'
+                        : 'calc((100% - 0.75rem) / 3)'
+                  } else {
+                    // Off-screen pair: maintain similar proportions
+                    const wouldBeActiveInPair =
+                      (isInFirstPair && index === 0) || (!isInFirstPair && index === 2)
+                    mobileWidth = wouldBeActiveInPair
+                      ? 'calc((100% - 0.75rem) * 2 / 3)'
+                      : 'calc((100% - 0.75rem) / 3)'
+                  }
+                }
+
+                return (
+                  <a
+                    key={index}
+                    href={project.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='group relative block transition-all duration-700 ease-in-out shrink-0'
+                    style={{
+                      width: mobileWidth,
+                      flex: isDesktop ? (isActive ? '2' : '1') : '0 0 auto'
+                    }}
+                    onMouseEnter={() => {
+                      setIsHovering(true)
+                      setActiveProject(index)
+                    }}
+                    onMouseLeave={() => setIsHovering(false)}
+                    onClick={() => setActiveProject(index)}
+                  >
                   <div className='relative w-full h-64 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
                     <Image
                       src={project.image}
@@ -352,6 +407,7 @@ export default function Home() {
                 </a>
               )
             })}
+            </div>
           </div>
         </section>
 

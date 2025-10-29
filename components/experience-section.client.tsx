@@ -1,7 +1,4 @@
-'use client'
-
-import { useState } from 'react'
-import { Calendar, Globe, MapPin, ChevronRight } from 'lucide-react'
+import { Calendar, Globe, MapPin } from 'lucide-react'
 import { Experience } from '@/types'
 
 interface ExperienceSectionProps {
@@ -9,15 +6,11 @@ interface ExperienceSectionProps {
 }
 
 export function ExperienceSection({ experiences }: ExperienceSectionProps) {
-  const [expandedExperience, setExpandedExperience] = useState<number | null>(
-    null
-  )
-
   return (
     <section className='w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16 relative z-20'>
       {/* Folder tab - raised portion starting from left */}
       <div className='inline-block relative z-30'>
-        <div className='bg-black px-6 py-3 rounded-tr-2xl'>
+        <div className='bg-black px-6 py-3 rounded-t-2xl'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-white tracking-tight'>
             experience
           </h2>
@@ -26,65 +19,36 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
 
       {/* Main folder body */}
       <div className='relative bg-black pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-tr-[3rem] z-20'>
-
         <div className='overflow-hidden rounded-lg'>
-          {experiences.map((experience, index) => (
+          {experiences.map((experience) => (
             <div
               key={experience.id}
-              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 cursor-pointer'
-              onClick={() =>
-                setExpandedExperience(
-                  expandedExperience === index ? null : index
-                )
-              }
+              className='relative py-3 px-4 md:py-4 md:px-6'
             >
-              <div className='flex items-start gap-4 md:gap-6'>
+              <div className='flex gap-4 md:gap-6'>
                 {/* Date */}
-                <div className='flex items-center gap-2 min-w-24 md:min-w-28 shrink-0'>
+                <div className='flex items-start gap-2 min-w-24 md:min-w-28 shrink-0 pt-1'>
                   <Calendar className='h-4 w-4 text-red-500 shrink-0' />
-                  <span className='font-mono text-xs md:text-sm text-zinc-600 font-medium'>
+                  <span className='font-mono text-xs md:text-sm text-zinc-400 font-medium'>
                     {experience.period}
                   </span>
                 </div>
 
                 {/* Role & Details */}
                 <div className='flex-1 min-w-0'>
-                  <div className='flex items-center justify-between gap-2'>
-                    <h3 className='text-base font-semibold text-secondary'>
-                      {experience.role}
-                    </h3>
-                    <ChevronRight
-                      className={`h-4 w-4 text-zinc-400 transition-transform duration-300 shrink-0 ${
-                        expandedExperience === index ? 'rotate-90' : ''
-                      } md:group-hover:rotate-90`}
-                    />
-                  </div>
+                  <h3 className='text-base md:text-lg font-semibold text-white mb-2 leading-tight'>
+                    {experience.role}
+                  </h3>
 
-                  {/* Details - Hidden by default, shown on hover or click */}
-                  <div
-                    className={`grid transition-all duration-300 ease-in-out ${
-                      expandedExperience === index
-                        ? 'grid-rows-[1fr]'
-                        : 'grid-rows-[0fr]'
-                    } md:group-hover:grid-rows-[1fr]`}
-                  >
-                    <div className='overflow-hidden'>
-                      <div
-                        className={`flex flex-col gap-1 mt-2 transition-opacity duration-300 ${
-                          expandedExperience === index
-                            ? 'opacity-100'
-                            : 'opacity-0'
-                        } md:group-hover:opacity-100`}
-                      >
-                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                          <Globe className='h-4 w-4 shrink-0' />
-                          <span>{experience.website}</span>
-                        </div>
-                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                          <MapPin className='h-4 w-4 shrink-0' />
-                          <span>{experience.location}</span>
-                        </div>
-                      </div>
+                  {/* Details - Always visible */}
+                  <div className='flex flex-col gap-1'>
+                    <div className='flex items-center gap-2 text-sm text-zinc-400'>
+                      <Globe className='h-4 w-4 shrink-0' />
+                      <span>{experience.website}</span>
+                    </div>
+                    <div className='flex items-center gap-2 text-sm text-zinc-400'>
+                      <MapPin className='h-4 w-4 shrink-0' />
+                      <span>{experience.location}</span>
                     </div>
                   </div>
                 </div>

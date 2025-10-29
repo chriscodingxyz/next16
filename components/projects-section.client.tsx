@@ -41,7 +41,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
     <section className='w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16 relative z-10'>
       {/* Folder tab - raised portion starting from left */}
       <div className='inline-block relative z-20'>
-        <div className='bg-zinc-100 px-6 py-3 rounded-tr-2xl'>
+        <div className='bg-zinc-100 px-6 py-3 rounded-t-2xl'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
             projects
           </h2>

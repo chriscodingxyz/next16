@@ -23,6 +23,7 @@ import {
   Nextjs,
   React as ReactIcon,
   TypeScript as TypeScriptIcon,
+  JavaScript as JavaScriptIcon,
   TailwindCSS,
   Nodejs,
   PostgreSQL,
@@ -185,6 +186,10 @@ export default function Home() {
             {/* Tech Stack - Tiny Monochrome Icons */}
             <div className='flex flex-wrap items-center gap-x-3 gap-y-2.5'>
               <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <JavaScriptIcon className='h-3.5 w-3.5 grayscale opacity-60' />
+                JavaScript
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
                 <TypeScriptIcon className='h-3.5 w-3.5 grayscale opacity-60' />
                 TypeScript
               </span>
@@ -213,20 +218,20 @@ export default function Home() {
                 Node.js
               </span>
               <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Convex className='h-3.5 w-3.5 grayscale opacity-60' />
-                Convex
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Supabase className='h-3.5 w-3.5 grayscale opacity-60' />
-                Supabase
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
                 <PostgreSQL className='h-3.5 w-3.5 grayscale opacity-60' />
                 PostgreSQL
               </span>
               <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
                 <DrizzleORM className='h-3.5 w-3.5 grayscale opacity-60' />
                 Drizzle
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Supabase className='h-3.5 w-3.5 grayscale opacity-60' />
+                Supabase
+              </span>
+              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
+                <Convex className='h-3.5 w-3.5 grayscale opacity-60' />
+                Convex
               </span>
               <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
                 <BetterAuth className='h-3.5 w-3.5 grayscale opacity-60' />

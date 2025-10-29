@@ -423,7 +423,7 @@ export default function Home() {
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
             experience
           </h2>
-          <div className='border border-zinc-200 divide-y divide-zinc-200 rounded-lg bg-white overflow-hidden'>
+          <div className=' bg-white overflow-hidden'>
             {/* Fullstack Developer */}
             <div
               className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 cursor-pointer'

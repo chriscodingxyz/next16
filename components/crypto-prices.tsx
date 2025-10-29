@@ -18,18 +18,18 @@ const CryptoItem = ({
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
-    minimumFractionDigits: crypto.name === 'BTC' ? 0 : 2,
-    maximumFractionDigits: crypto.name === 'BTC' ? 0 : 2
+    minimumFractionDigits: crypto.name === 'BTC' || crypto.name === 'GOLD' ? 0 : 2,
+    maximumFractionDigits: crypto.name === 'BTC' || crypto.name === 'GOLD' ? 0 : 2
   }).format(crypto.data.usd)
 
   return (
     <div className='flex items-center gap-2 text-xs font-medium text-zinc-600 whitespace-nowrap'>
       <Image
-        src={`/crypto-icons/${crypto.icon}.svg`}
+        src={`/crypto-icons/${crypto.icon}.${crypto.name === 'GOLD' ? 'png' : 'svg'}`}
         alt={crypto.name}
         width={14}
         height={14}
-        className='opacity-60 grayscale shrink-0'
+        className='shrink-0'
       />
       <span className='font-mono'>{formattedPrice}</span>
       <span
@@ -58,7 +58,8 @@ export function CryptoPrices({ initialData }: CryptoPricesProps) {
   const cryptos = [
     { name: 'BTC', data: initialData.bitcoin, icon: 'btc' },
     { name: 'ETH', data: initialData.ethereum, icon: 'eth' },
-    { name: 'SOL', data: initialData.solana, icon: 'sol' }
+    { name: 'SOL', data: initialData.solana, icon: 'sol' },
+    { name: 'GOLD', data: initialData['pax-gold'], icon: 'gold' }
   ]
 
   return (

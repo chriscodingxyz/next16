@@ -9,6 +9,7 @@ export interface CryptoPrices {
   bitcoin: CryptoData
   ethereum: CryptoData
   solana: CryptoData
+  'pax-gold': CryptoData
 }
 
 export interface Project {

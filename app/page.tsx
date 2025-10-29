@@ -102,7 +102,7 @@ async function getCryptoPrices(): Promise<CryptoPricesType | null> {
       : 'http://localhost:3000'
 
     const response = await fetch(`${baseUrl}/api/crypto`, {
-      cache: 'no-store'
+      next: { revalidate: 3600 } // Cache for 1 hour, matching the API route
     })
     if (!response.ok) throw new Error('Failed to fetch crypto prices')
     return response.json()

@@ -16,7 +16,7 @@ export interface Project {
   name: string
   image: StaticImageData
   url: string
-  techStack: string[]
+  techStack?: string[]
 }
 
 export interface TechStack {

@@ -26,7 +26,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: 'Chris Wiz | Fullstack Developer',
-  description: 'London-based Fullstack Developer crafting modern web experiences with Next.js, React, TypeScript, and Tailwind CSS. Building innovative projects like Win98, Bicester Motion, and Coffee Dial.',
+  description:
+    'London-based Fullstack Developer crafting modern web experiences with Next.js, React, TypeScript, and Tailwind CSS.',
   keywords: [
     'Chris Wiz',
     'Fullstack Developer',
@@ -48,9 +49,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://chriswiz.dev',
+    url: 'https://chriswiz.com',
     title: 'Chris Wiz | Fullstack Developer',
-    description: 'London-based Fullstack Developer crafting modern web experiences with Next.js, React, TypeScript, and Tailwind CSS.',
+    description:
+      'London-based Fullstack Developer crafting modern web experiences with Next.js, React, TypeScript, and Tailwind CSS.',
     siteName: 'Chris Wiz Portfolio',
     images: [
       {
@@ -64,7 +66,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Chris Wiz | Fullstack Developer',
-    description: 'London-based Fullstack Developer crafting modern web experiences with Next.js, React, TypeScript, and Tailwind CSS.',
+    description:
+      'London-based Fullstack Developer crafting modern web experiences with Next.js, React, TypeScript, and Tailwind CSS.',
     creator: '@chriscodingxyz',
     images: ['/og-image.png']
   },
@@ -80,7 +83,7 @@ export const metadata: Metadata = {
     }
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'your-google-verification-code'
     // yandex: 'your-yandex-verification-code',
     // yahoo: 'your-yahoo-verification-code'
   }

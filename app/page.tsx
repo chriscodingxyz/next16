@@ -13,48 +13,22 @@ const projects: Project[] = [
   {
     name: 'Win98',
     image: projectWin98,
-    url: 'https://win98.dev',
-    techStack: ['React', 'TypeScript', 'Tailwind', 'Vercel', 'GitHub', 'Figma']
+    url: 'https://98windows.vercel.app'
   },
   {
     name: 'Bicester Motion',
     image: projectBicesterMotion,
-    url: 'https://bicestermotion.com',
-    techStack: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Tailwind',
-      'Supabase',
-      'Vercel'
-    ]
+    url: 'https://bicestermotion.com'
   },
   {
     name: 'Coffee Dial',
     image: projectCoffeeDial,
-    url: 'https://coffeedial.com',
-    techStack: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Node.js',
-      'Tailwind',
-      'shadcn/ui',
-      'Vercel'
-    ]
+    url: 'https://coffeedial.vercel.app/'
   },
   {
-    name: 'Website Viewer',
+    name: 'Web Viewer',
     image: projectWebsiteViewer,
-    url: 'https://websiteviewer.dev',
-    techStack: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Tailwind',
-      'Vercel',
-      'GitHub'
-    ]
+    url: 'https://webviewer.vercel.app'
   }
 ]
 

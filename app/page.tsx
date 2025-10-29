@@ -105,7 +105,7 @@ export default async function Home() {
           <div className='pt-12 md:pt-16'>
             <ProjectsSection projects={projects} />
           </div>
-          <div className='-mt-12 md:-mt-16'>
+          <div className='-mt-16 md:-mt-20'>
             <ExperienceSection experiences={experiences} />
           </div>
         </div>

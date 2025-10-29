@@ -9,7 +9,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
   return (
     <section className='w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16 relative z-20'>
       {/* Folder tab - raised portion starting from left */}
-      <div className='inline-block relative z-30'>
+      <div className='inline-block relative z-30 ml-36 md:ml-48'>
         <div className='bg-black px-6 py-3 rounded-t-2xl'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-white tracking-tight'>
             experience
@@ -18,7 +18,7 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
       </div>
 
       {/* Main folder body */}
-      <div className='relative bg-black pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-tr-[3rem] z-20'>
+      <div className='relative bg-black pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-t-[3rem] z-20'>
         <div className='overflow-hidden rounded-lg'>
           {experiences.map((experience) => (
             <div

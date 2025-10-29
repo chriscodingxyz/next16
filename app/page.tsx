@@ -89,7 +89,7 @@ export default async function Home() {
 
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className='flex h-full w-full max-w-3xl bg-white flex-col items-center pb-20 md:pb-24 px-4 md:px-16 sm:items-start m-2 overflow-x-hidden'>
+      <main className='flex h-full w-full max-w-3xl bg-white flex-col items-center px-4 md:px-16 sm:items-start mx-2 mt-2 overflow-x-hidden'>
         {/* Crypto Prices - Top ticker */}
         {cryptoPrices && (
           <div className='w-full pt-6 md:pt-8'>
@@ -98,10 +98,16 @@ export default async function Home() {
         )}
 
         {/* Main content sections with uniform spacing */}
-        <div className='w-full space-y-12 md:space-y-16 pt-6 md:pt-8'>
-          <HeaderSection />
-          <ProjectsSection projects={projects} />
-          <ExperienceSection experiences={experiences} />
+        <div className='w-full pt-6 md:pt-8'>
+          <div className='space-y-12 md:space-y-16'>
+            <HeaderSection />
+          </div>
+          <div className='pt-12 md:pt-16'>
+            <ProjectsSection projects={projects} />
+          </div>
+          <div className='-mt-12 md:-mt-16'>
+            <ExperienceSection experiences={experiences} />
+          </div>
         </div>
       </main>
     </div>

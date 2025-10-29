@@ -38,13 +38,15 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
   }, [isHovering, projects.length])
 
   return (
-    <section className='w-full space-y-4'>
-      <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
-        projects
-      </h2>
+    <section className='w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16'>
+      {/* Rounded top container with subtle background */}
+      <div className='rounded-t-[3rem] bg-zinc-100 pt-12 pb-24 px-4 md:px-16 space-y-4'>
+        <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
+          projects
+        </h2>
 
-      {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
-      <div className='overflow-hidden md:overflow-visible'>
+        {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
+        <div className='overflow-hidden md:overflow-visible'>
             <div
               className='flex flex-row gap-3 transition-transform duration-700 ease-in-out'
               style={{
@@ -141,6 +143,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
               })}
             </div>
           </div>
+      </div>
     </section>
   )
 }

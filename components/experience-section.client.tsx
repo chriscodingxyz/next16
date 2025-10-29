@@ -14,72 +14,79 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
   )
 
   return (
-    <section className='w-full space-y-4'>
-      <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
-        experience
-      </h2>
+    <section className='w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16'>
+      {/* Rounded top container with black background */}
+      <div className='rounded-t-[3rem] bg-black pt-12 pb-8 px-4 md:px-16 space-y-4'>
+        <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-white tracking-tight'>
+          experience
+        </h2>
 
-      <div className='bg-white overflow-hidden'>
-            {experiences.map((experience, index) => (
-              <div
-                key={experience.id}
-                className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 cursor-pointer'
-                onClick={() =>
-                  setExpandedExperience(expandedExperience === index ? null : index)
-                }
-              >
-                <div className='flex items-start gap-4 md:gap-6'>
-                  {/* Date */}
-                  <div className='flex items-center gap-2 min-w-24 md:min-w-28 shrink-0'>
-                    <Calendar className='h-4 w-4 text-red-500 shrink-0' />
-                    <span className='font-mono text-xs md:text-sm text-zinc-600 font-medium'>
-                      {experience.period}
-                    </span>
+        <div className=' overflow-hidden rounded-lg'>
+          {experiences.map((experience, index) => (
+            <div
+              key={experience.id}
+              className='group relative py-3 px-4 md:py-4 md:px-6 transition-all duration-300 hover:bg-zinc-50 cursor-pointer'
+              onClick={() =>
+                setExpandedExperience(
+                  expandedExperience === index ? null : index
+                )
+              }
+            >
+              <div className='flex items-start gap-4 md:gap-6'>
+                {/* Date */}
+                <div className='flex items-center gap-2 min-w-24 md:min-w-28 shrink-0'>
+                  <Calendar className='h-4 w-4 text-red-500 shrink-0' />
+                  <span className='font-mono text-xs md:text-sm text-zinc-600 font-medium'>
+                    {experience.period}
+                  </span>
+                </div>
+
+                {/* Role & Details */}
+                <div className='flex-1 min-w-0'>
+                  <div className='flex items-center justify-between gap-2'>
+                    <h3 className='text-base font-semibold text-secondary'>
+                      {experience.role}
+                    </h3>
+                    <ChevronRight
+                      className={`h-4 w-4 text-zinc-400 transition-transform duration-300 shrink-0 ${
+                        expandedExperience === index ? 'rotate-90' : ''
+                      } md:group-hover:rotate-90`}
+                    />
                   </div>
 
-                  {/* Role & Details */}
-                  <div className='flex-1 min-w-0'>
-                    <div className='flex items-center justify-between gap-2'>
-                      <h3 className='text-base font-semibold text-black'>
-                        {experience.role}
-                      </h3>
-                      <ChevronRight
-                        className={`h-4 w-4 text-zinc-400 transition-transform duration-300 shrink-0 ${
-                          expandedExperience === index ? 'rotate-90' : ''
-                        } md:group-hover:rotate-90`}
-                      />
-                    </div>
-
-                    {/* Details - Hidden by default, shown on hover or click */}
-                    <div
-                      className={`grid transition-all duration-300 ease-in-out ${
-                        expandedExperience === index
-                          ? 'grid-rows-[1fr]'
-                          : 'grid-rows-[0fr]'
-                      } md:group-hover:grid-rows-[1fr]`}
-                    >
-                      <div className='overflow-hidden'>
-                        <div
-                          className={`flex flex-col gap-1 mt-2 transition-opacity duration-300 ${
-                            expandedExperience === index ? 'opacity-100' : 'opacity-0'
-                          } md:group-hover:opacity-100`}
-                        >
-                          <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                            <Globe className='h-4 w-4 shrink-0' />
-                            <span>{experience.website}</span>
-                          </div>
-                          <div className='flex items-center gap-2 text-sm text-zinc-600'>
-                            <MapPin className='h-4 w-4 shrink-0' />
-                            <span>{experience.location}</span>
-                          </div>
+                  {/* Details - Hidden by default, shown on hover or click */}
+                  <div
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      expandedExperience === index
+                        ? 'grid-rows-[1fr]'
+                        : 'grid-rows-[0fr]'
+                    } md:group-hover:grid-rows-[1fr]`}
+                  >
+                    <div className='overflow-hidden'>
+                      <div
+                        className={`flex flex-col gap-1 mt-2 transition-opacity duration-300 ${
+                          expandedExperience === index
+                            ? 'opacity-100'
+                            : 'opacity-0'
+                        } md:group-hover:opacity-100`}
+                      >
+                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
+                          <Globe className='h-4 w-4 shrink-0' />
+                          <span>{experience.website}</span>
+                        </div>
+                        <div className='flex items-center gap-2 text-sm text-zinc-600'>
+                          <MapPin className='h-4 w-4 shrink-0' />
+                          <span>{experience.location}</span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }

@@ -56,9 +56,9 @@ export const metadata: Metadata = {
     siteName: 'Chris Wiz Portfolio',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.webp',
         width: 1200,
-        height: 630,
+        height: 526,
         alt: 'Chris Wiz - Fullstack Developer'
       }
     ]
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     description:
       'London-based Fullstack Developer crafting modern web experiences with Next.js, React, TypeScript, and Tailwind CSS.',
     creator: '@chriscodingxyz',
-    images: ['/og-image.png']
+    images: ['/og-image.webp']
   },
   robots: {
     index: true,

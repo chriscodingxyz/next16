@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Globe } from 'lucide-react'
+import { Globe, ChevronDown } from 'lucide-react'
 import { Project } from '@/types'
 
 interface ProjectsSectionProps {
@@ -10,6 +10,7 @@ interface ProjectsSectionProps {
 }
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
+  const [isExpanded, setIsExpanded] = useState(true)
   const [activeProject, setActiveProject] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
   const [isDesktop, setIsDesktop] = useState(false)
@@ -38,107 +39,123 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
   }, [isHovering, projects.length])
 
   return (
-    <section className='w-full'>
-      <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black mb-4 tracking-tight'>
+    <section className='w-full space-y-4'>
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className='flex items-center gap-2 text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight cursor-pointer hover:text-zinc-700 transition-colors'
+      >
         projects
-      </h2>
+        <ChevronDown
+          className={`h-6 w-6 transition-transform duration-300 ${
+            isExpanded ? 'rotate-180' : ''
+          }`}
+        />
+      </button>
 
-      {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
-      <div className='overflow-hidden md:overflow-visible'>
-        <div
-          className='flex flex-row gap-3 transition-transform duration-700 ease-in-out'
-          style={{
-            transform: isDesktop
-              ? 'translateX(0)'
-              : `translateX(${
-                  activeProject >= 2 ? 'calc(-100% - 0.75rem)' : '0'
-                })`
-          }}
-        >
-          {projects.map((project, index) => {
-            const isActive = index === activeProject
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${
+          isExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+        }`}
+      >
+        <div className='overflow-hidden'>
+          {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
+          <div className='overflow-hidden md:overflow-visible'>
+            <div
+              className='flex flex-row gap-3 transition-transform duration-700 ease-in-out'
+              style={{
+                transform: isDesktop
+                  ? 'translateX(0)'
+                  : `translateX(${
+                      activeProject >= 2 ? 'calc(-100% - 0.75rem)' : '0'
+                    })`
+              }}
+            >
+              {projects.map((project, index) => {
+                const isActive = index === activeProject
 
-            // Calculate widths for mobile carousel
-            let mobileWidth
-            if (isDesktop) {
-              mobileWidth = 'auto'
-            } else {
-              // Determine which pair this project belongs to
-              const isInFirstPair = index <= 1
-              const showingFirstPair = activeProject <= 1
+                // Calculate widths for mobile carousel
+                let mobileWidth
+                if (isDesktop) {
+                  mobileWidth = 'auto'
+                } else {
+                  // Determine which pair this project belongs to
+                  const isInFirstPair = index <= 1
+                  const showingFirstPair = activeProject <= 1
 
-              // Calculate width based on whether it's active in its pair
-              const isActivePairMember =
-                (isInFirstPair && showingFirstPair) ||
-                (!isInFirstPair && !showingFirstPair)
+                  // Calculate width based on whether it's active in its pair
+                  const isActivePairMember =
+                    (isInFirstPair && showingFirstPair) ||
+                    (!isInFirstPair && !showingFirstPair)
 
-              if (isActivePairMember) {
-                // Visible pair: active gets 2/3, inactive gets 1/3
-                // KEY FIX: Use 100% (parent container width) not 100vw
-                mobileWidth = isActive
-                  ? 'calc((100% - 0.75rem) * 2 / 3)'
-                  : 'calc((100% - 0.75rem) / 3)'
-              } else {
-                // Off-screen pair: maintain similar proportions
-                const wouldBeActiveInPair =
-                  (isInFirstPair && index === 0) ||
-                  (!isInFirstPair && index === 2)
-                mobileWidth = wouldBeActiveInPair
-                  ? 'calc((100% - 0.75rem) * 2 / 3)'
-                  : 'calc((100% - 0.75rem) / 3)'
-              }
-            }
+                  if (isActivePairMember) {
+                    // Visible pair: active gets 2/3, inactive gets 1/3
+                    // KEY FIX: Use 100% (parent container width) not 100vw
+                    mobileWidth = isActive
+                      ? 'calc((100% - 0.75rem) * 2 / 3)'
+                      : 'calc((100% - 0.75rem) / 3)'
+                  } else {
+                    // Off-screen pair: maintain similar proportions
+                    const wouldBeActiveInPair =
+                      (isInFirstPair && index === 0) ||
+                      (!isInFirstPair && index === 2)
+                    mobileWidth = wouldBeActiveInPair
+                      ? 'calc((100% - 0.75rem) * 2 / 3)'
+                      : 'calc((100% - 0.75rem) / 3)'
+                  }
+                }
 
-            return (
-              <a
-                key={index}
-                href={project.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='group relative block transition-all duration-700 ease-in-out shrink-0'
-                style={{
-                  width: mobileWidth,
-                  flex: isDesktop ? (isActive ? '2' : '1') : '0 0 auto'
-                }}
-                onMouseEnter={() => {
-                  setIsHovering(true)
-                  setActiveProject(index)
-                }}
-                onMouseLeave={() => setIsHovering(false)}
-                onClick={() => setActiveProject(index)}
-              >
-                <div className='relative w-full h-64 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
-                  />
-
-                  {/* Overlay with project name - visible when active or on hover */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 transition-opacity duration-300 ${
-                      isActive
-                        ? 'opacity-100'
-                        : 'opacity-0 group-hover:opacity-100'
-                    }`}
+                return (
+                  <a
+                    key={index}
+                    href={project.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='group relative block transition-all duration-700 ease-in-out shrink-0'
+                    style={{
+                      width: mobileWidth,
+                      flex: isDesktop ? (isActive ? '2' : '1') : '0 0 auto'
+                    }}
+                    onMouseEnter={() => {
+                      setIsHovering(true)
+                      setActiveProject(index)
+                    }}
+                    onMouseLeave={() => setIsHovering(false)}
+                    onClick={() => setActiveProject(index)}
                   >
-                    <div className='absolute bottom-0 left-0 right-0 p-4'>
+                    <div className='relative w-full h-64 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
+                      <Image
+                        src={project.image}
+                        alt={project.name}
+                        className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-105'
+                      />
+
+                      {/* Overlay with project name - visible when active or on hover */}
                       <div
-                        className={`flex items-center justify-between transition-opacity duration-300 delay-300 ${
-                          isActive ? 'opacity-100' : 'opacity-0'
+                        className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 transition-opacity duration-300 ${
+                          isActive
+                            ? 'opacity-100'
+                            : 'opacity-0 group-hover:opacity-100'
                         }`}
                       >
-                        <h3 className='text-base font-semibold text-white drop-shadow-lg'>
-                          {project.name}
-                        </h3>
-                        <Globe className='h-4 w-4 text-white drop-shadow-lg' />
+                        <div className='absolute bottom-0 left-0 right-0 p-4'>
+                          <div
+                            className={`flex items-center justify-between transition-opacity duration-300 delay-300 ${
+                              isActive ? 'opacity-100' : 'opacity-0'
+                            }`}
+                          >
+                            <h3 className='text-base font-semibold text-white drop-shadow-lg'>
+                              {project.name}
+                            </h3>
+                            <Globe className='h-4 w-4 text-white drop-shadow-lg' />
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </a>
-            )
-          })}
+                  </a>
+                )
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

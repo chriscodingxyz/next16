@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Calendar, Globe, MapPin, ChevronRight, ChevronDown } from 'lucide-react'
+import { Calendar, Globe, MapPin, ChevronRight } from 'lucide-react'
 import { Experience } from '@/types'
 
 interface ExperienceSectionProps {
@@ -9,32 +9,17 @@ interface ExperienceSectionProps {
 }
 
 export function ExperienceSection({ experiences }: ExperienceSectionProps) {
-  const [isExpanded, setIsExpanded] = useState(true)
   const [expandedExperience, setExpandedExperience] = useState<number | null>(
     null
   )
 
   return (
     <section className='w-full space-y-4'>
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className='flex items-center gap-2 text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight cursor-pointer hover:text-zinc-700 transition-colors'
-      >
+      <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
         experience
-        <ChevronDown
-          className={`h-6 w-6 transition-transform duration-300 ${
-            isExpanded ? 'rotate-180' : ''
-          }`}
-        />
-      </button>
+      </h2>
 
-      <div
-        className={`grid transition-all duration-300 ease-in-out ${
-          isExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-        }`}
-      >
-        <div className='overflow-hidden'>
-          <div className='bg-white overflow-hidden'>
+      <div className='bg-white overflow-hidden'>
             {experiences.map((experience, index) => (
               <div
                 key={experience.id}
@@ -95,8 +80,6 @@ export function ExperienceSection({ experiences }: ExperienceSectionProps) {
               </div>
             ))}
           </div>
-        </div>
-      </div>
     </section>
   )
 }

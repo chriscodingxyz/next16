@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Globe, ChevronDown } from 'lucide-react'
+import { Globe } from 'lucide-react'
 import { Project } from '@/types'
 
 interface ProjectsSectionProps {
@@ -10,7 +10,6 @@ interface ProjectsSectionProps {
 }
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
-  const [isExpanded, setIsExpanded] = useState(true)
   const [activeProject, setActiveProject] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
   const [isDesktop, setIsDesktop] = useState(false)
@@ -40,26 +39,12 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
 
   return (
     <section className='w-full space-y-4'>
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className='flex items-center gap-2 text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight cursor-pointer hover:text-zinc-700 transition-colors'
-      >
+      <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
         projects
-        <ChevronDown
-          className={`h-6 w-6 transition-transform duration-300 ${
-            isExpanded ? 'rotate-180' : ''
-          }`}
-        />
-      </button>
+      </h2>
 
-      <div
-        className={`grid transition-all duration-300 ease-in-out ${
-          isExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-        }`}
-      >
-        <div className='overflow-hidden'>
-          {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
-          <div className='overflow-hidden md:overflow-visible'>
+      {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
+      <div className='overflow-hidden md:overflow-visible'>
             <div
               className='flex flex-row gap-3 transition-transform duration-700 ease-in-out'
               style={{
@@ -156,8 +141,6 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
               })}
             </div>
           </div>
-        </div>
-      </div>
     </section>
   )
 }

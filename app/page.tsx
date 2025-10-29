@@ -108,8 +108,36 @@ export default function Home() {
     null
   )
   const [isDesktop, setIsDesktop] = useState(false)
+  const [showAllTech, setShowAllTech] = useState(false)
   const formRef = useRef<HTMLDivElement>(null)
   const nameInputRef = useRef<HTMLInputElement>(null)
+
+  // Tech stack configuration
+  const techStack = [
+    { name: 'JavaScript', icon: JavaScriptIcon, isMain: false },
+    { name: 'TypeScript', icon: TypeScriptIcon, isMain: true },
+    { name: 'React', icon: ReactIcon, isMain: true },
+    { name: 'Next.js', icon: Nextjs, isMain: true },
+    { name: 'Tailwind', icon: TailwindCSS, isMain: true },
+    { name: 'shadcn/ui', icon: Shadcnui, isMain: false },
+    { name: 'TanStack', icon: TanStack, isMain: false },
+    { name: 'Node.js', icon: Nodejs, isMain: true },
+    { name: 'PostgreSQL', icon: PostgreSQL, isMain: true },
+    { name: 'Drizzle', icon: DrizzleORM, isMain: false },
+    { name: 'Supabase', icon: Supabase, isMain: false },
+    { name: 'Convex', icon: Convex, isMain: false },
+    { name: 'Better Auth', icon: BetterAuth, isMain: false },
+    { name: 'Git', icon: Git, isMain: false },
+    { name: 'GitHub', icon: GitHubIcon, isMain: false },
+    { name: 'Docker', icon: Docker, isMain: false },
+    { name: 'Vercel', icon: Vercel, isMain: false },
+    { name: 'Figma', icon: Figma, isMain: false },
+    { name: 'Claude', icon: ClaudeAI, isMain: false },
+    { name: 'Stripe', icon: Stripe, isMain: false }
+  ]
+
+  const mainTechCount = techStack.filter(t => t.isMain).length
+  const additionalTechCount = techStack.length - mainTechCount
 
   useEffect(() => {
     const handleResize = () => {
@@ -198,87 +226,53 @@ export default function Home() {
             </div>
 
             {/* Tech Stack - Tiny Monochrome Icons */}
-            <div className='flex flex-wrap items-center gap-x-3 gap-y-2.5'>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <JavaScriptIcon className='h-3.5 w-3.5 grayscale opacity-60' />
-                JavaScript
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <TypeScriptIcon className='h-3.5 w-3.5 grayscale opacity-60' />
-                TypeScript
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <ReactIcon className='h-3.5 w-3.5 grayscale opacity-60' />
-                React
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Nextjs className='h-3.5 w-3.5 grayscale opacity-60' />
-                Next.js
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <TailwindCSS className='h-3.5 w-3.5 grayscale opacity-60' />
-                Tailwind
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Shadcnui className='h-3.5 w-3.5 grayscale opacity-60' />
-                shadcn/ui
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <TanStack className='h-3.5 w-3.5 grayscale opacity-60' />
-                TanStack
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Nodejs className='h-3.5 w-3.5 grayscale opacity-60' />
-                Node.js
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <PostgreSQL className='h-3.5 w-3.5 grayscale opacity-60' />
-                PostgreSQL
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <DrizzleORM className='h-3.5 w-3.5 grayscale opacity-60' />
-                Drizzle
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Supabase className='h-3.5 w-3.5 grayscale opacity-60' />
-                Supabase
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Convex className='h-3.5 w-3.5 grayscale opacity-60' />
-                Convex
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <BetterAuth className='h-3.5 w-3.5 grayscale opacity-60' />
-                Better Auth
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Git className='h-3.5 w-3.5 grayscale opacity-60' />
-                Git
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <GitHubIcon className='h-3.5 w-3.5 grayscale opacity-60' />
-                GitHub
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Docker className='h-3.5 w-3.5 grayscale opacity-60' />
-                Docker
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Vercel className='h-3.5 w-3.5 grayscale opacity-60' />
-                Vercel
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Figma className='h-3.5 w-3.5 grayscale opacity-60' />
-                Figma
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <ClaudeAI className='h-3.5 w-3.5 grayscale opacity-60' />
-                Claude
-              </span>
-              <span className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600'>
-                <Stripe className='h-3.5 w-3.5 grayscale opacity-60' />
-                Stripe
-              </span>
+            <div className='space-y-3'>
+              <div className='flex flex-wrap items-center gap-x-3 gap-y-2.5'>
+                {(showAllTech
+                  ? techStack
+                  : techStack.filter(t => t.isMain)
+                ).map((tech, displayIndex) => {
+                  const Icon = tech.icon
+                  const originalIndex = techStack.findIndex(
+                    t => t.name === tech.name
+                  )
+
+                  // Calculate stagger delay based on position in full array
+                  // When expanding: stagger from start to end
+                  // When collapsing: reverse stagger (last items fade first)
+                  const totalItems = techStack.length
+                  const expandDelay = originalIndex * 50
+                  const collapseDelay = (totalItems - originalIndex) * 40
+                  const delay = showAllTech ? expandDelay : collapseDelay
+
+                  return (
+                    <span
+                      key={tech.name}
+                      className='inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600 transition-all duration-300 ease-out animate-in fade-in slide-in-from-left-4'
+                      style={{
+                        animationDelay: `${delay}ms`,
+                        animationFillMode: 'backwards'
+                      }}
+                    >
+                      <Icon className='h-3.5 w-3.5 grayscale opacity-60 shrink-0' />
+                      <span className='whitespace-nowrap'>{tech.name}</span>
+                    </span>
+                  )
+                })}
+              </div>
+
+              {/* Show more/less button */}
+              <button
+                onClick={() => setShowAllTech(!showAllTech)}
+                className='text-xs font-medium text-zinc-400 hover:text-zinc-600 transition-colors flex items-center gap-1 cursor-pointer'
+              >
+                <span className='text-[10px]'>+{additionalTechCount}</span>
+                <ChevronRight
+                  className={`h-3 w-3 transition-transform duration-300 ${
+                    showAllTech ? '-rotate-90' : 'rotate-90'
+                  }`}
+                />
+              </button>
             </div>
 
             {/* GitHub Calendar - Toggleable */}

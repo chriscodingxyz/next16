@@ -39,7 +39,7 @@ export function ExperienceSection({
       {/* Main folder body */}
       <div
         className={cn(
-          'relative bg-black rounded-t-[3rem] z-[60]',
+          'relative bg-black rounded-t-[3rem] z-60',
           isActive
             ? 'pb-8 px-4 md:px-16 pt-4 space-y-4 pointer-events-auto min-h-[50vh]'
             : 'invisible'

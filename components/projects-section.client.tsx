@@ -66,12 +66,19 @@ export function ProjectsSection({
       {/* Main folder body */}
       <div
         className={cn(
-          'relative bg-zinc-100 rounded-tr-[3rem] z-[60]',
-          isActive ? 'pb-8 px-4 md:px-16 pt-4 space-y-4 pointer-events-auto min-h-[50vh]' : 'invisible'
+          'relative bg-zinc-100 rounded-tr-[3rem] z-60',
+          isActive
+            ? 'pb-8 px-4 md:px-16 pt-8 space-y-4 pointer-events-auto min-h-[50vh]'
+            : 'invisible'
         )}
       >
         {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
-        <div className={cn('overflow-x-hidden md:overflow-visible', !isActive && 'hidden')}>
+        <div
+          className={cn(
+            'overflow-x-hidden md:overflow-visible',
+            !isActive && 'hidden'
+          )}
+        >
           <div
             className='flex flex-row gap-3 transition-transform duration-700 ease-in-out'
             style={{
@@ -146,7 +153,7 @@ export function ProjectsSection({
 
                     {/* Overlay with project name - visible when active or on hover */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 transition-opacity duration-300 ${
+                      className={`absolute inset-0 bg-linear-to-t from-black/60 via-black/0 to-black/0 transition-opacity duration-300 ${
                         isActive
                           ? 'opacity-100'
                           : 'opacity-0 group-hover:opacity-100'

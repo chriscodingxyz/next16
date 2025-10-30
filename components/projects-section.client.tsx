@@ -53,10 +53,10 @@ export function ProjectsSection({
     >
       {/* Folder tab - raised portion starting from left - always visible and clickable */}
       <div
-        className='inline-block relative z-50 cursor-pointer pointer-events-auto -mb-1 hover:-translate-y-1 transition-transform'
+        className='inline-block relative z-50 cursor-pointer pointer-events-auto -mb-12 hover:-translate-y-1 transition-transform'
         onClick={onClick}
       >
-        <div className='bg-zinc-100 px-6 py-3 rounded-t-2xl'>
+        <div className='bg-zinc-100 px-6 pt-3 pb-16 rounded-t-2xl'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
             projects
           </h2>
@@ -66,11 +66,12 @@ export function ProjectsSection({
       {/* Main folder body */}
       <div
         className={cn(
-          'relative bg-zinc-100 pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-tr-[3rem] pointer-events-auto h-full'
+          'relative bg-zinc-100 rounded-tr-[3rem] z-[60]',
+          isActive ? 'pb-8 px-4 md:px-16 pt-4 space-y-4 pointer-events-auto min-h-[50vh]' : 'invisible'
         )}
       >
         {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
-        <div className='overflow-hidden md:overflow-visible'>
+        <div className={cn('overflow-x-hidden md:overflow-visible', !isActive && 'hidden')}>
           <div
             className='flex flex-row gap-3 transition-transform duration-700 ease-in-out'
             style={{

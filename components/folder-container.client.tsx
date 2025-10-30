@@ -16,7 +16,7 @@ export function FolderContainer({ projects, experiences }: FolderContainerProps)
   const [activeFolder, setActiveFolder] = useState<FolderType>('projects')
 
   return (
-    <div className='grid'>
+    <div className='grid [grid-template-rows:auto]'>
       {activeFolder === 'projects' ? (
         <>
           <ExperienceSection

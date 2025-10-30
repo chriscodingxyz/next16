@@ -87,8 +87,8 @@ export default async function Home() {
   const cryptoPrices = await getCryptoPrices()
 
   return (
-    <div className='flex min-h-screen items-center justify-center font-sans'>
-      <main className='flex h-full w-full max-w-3xl bg-white flex-col items-center px-4 md:px-16 sm:items-start mx-2 mt-2 overflow-x-hidden'>
+    <div className='flex min-h-screen justify-center font-sans'>
+      <main className='flex w-full max-w-3xl bg-white flex-col items-center px-4 md:px-16 sm:items-start mx-2 mt-2 overflow-x-hidden'>
         {/* Crypto Prices - Top ticker */}
         {cryptoPrices && (
           <div className='w-full pt-6 md:pt-8'>

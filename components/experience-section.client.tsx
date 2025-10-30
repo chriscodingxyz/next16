@@ -24,10 +24,10 @@ export function ExperienceSection({
     >
       {/* Folder tab - raised portion starting from left - always visible and clickable */}
       <div
-        className='inline-block relative z-50 ml-36 md:ml-48 cursor-pointer pointer-events-auto -mb-1 hover:-translate-y-1 transition-transform'
+        className='inline-block relative z-50 ml-36 md:ml-48 cursor-pointer pointer-events-auto -mb-12 hover:-translate-y-1 transition-transform'
         onClick={onClick}
       >
-        <div className='bg-black px-6 py-3 rounded-t-2xl'>
+        <div className='bg-black px-6 pt-3 pb-16 rounded-t-2xl'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-white tracking-tight'>
             experience
           </h2>
@@ -37,10 +37,11 @@ export function ExperienceSection({
       {/* Main folder body */}
       <div
         className={cn(
-          'relative bg-black pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-t-[3rem] pointer-events-auto h-full'
+          'relative bg-black rounded-t-[3rem] z-[60]',
+          isActive ? 'pb-8 px-4 md:px-16 pt-4 space-y-4 pointer-events-auto min-h-[50vh]' : 'invisible'
         )}
       >
-        <div className='overflow-hidden rounded-lg'>
+        <div className={cn('overflow-hidden rounded-lg', !isActive && 'hidden')}>
           {experiences.map(experience => (
             <div
               key={experience.id}

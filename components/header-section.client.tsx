@@ -135,7 +135,7 @@ export function HeaderSection() {
       <div className='space-y-4'>
         <div className='space-y-2'>
           <div className='flex items-center gap-3'>
-            <h1 className='text-5xl md:text-6xl font-bold font-space-grotesk text-black tracking-tight'>
+            <h1 className='text-5xl sm:text-6xl font-bold font-space-grotesk text-black tracking-tight'>
               chris wiz
             </h1>
             <Badge
@@ -146,20 +146,18 @@ export function HeaderSection() {
               London, UK
             </Badge>
           </div>
-          <p className='text-lg md:text-xl text-zinc-600 font-medium'>
+          <p className='text-lg sm:text-xl text-zinc-600 font-medium'>
             Fullstack Developer crafting modern web experiences
           </p>
         </div>
 
         {/* CTA & Social Links */}
-        <div className='flex items-center gap-3'>
+        <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-3'>
           <Dialog open={showContactForm} onOpenChange={setShowContactForm}>
             <DialogTrigger asChild>
-              <Button className='rounded-full px-6 cursor-pointer'>
-                <Mail className='h-4 w-4 md:mr-2' />
-                <span className='hidden md:inline font-medium'>
-                  Get in touch
-                </span>
+              <Button size='lg' className='rounded-full px-6 cursor-pointer '>
+                <Mail className='h-4 w-4 mr-2' />
+                <span className='font-medium'>Get in touch</span>
               </Button>
             </DialogTrigger>
             <DialogContent className='sm:max-w-[425px]'>
@@ -240,45 +238,47 @@ export function HeaderSection() {
 
           <Button
             variant='secondary'
-            className='rounded-full px-6 cursor-pointer'
+            size='lg'
+            className='rounded-full px-6 cursor-pointer '
             asChild
           >
             <a
               href='/ChrisWisniewskiCV2025.pdf'
               download='ChrisWisniewskiCV2025.pdf'
             >
-              <Download className='h-4 w-4' />
-              <span className='md:hidden font-medium'>CV</span>
-              <span className='hidden md:inline font-medium'>Download CV</span>
+              <Download className='h-4 w-4 mr-2' />
+              <span className='font-medium'>Download CV</span>
             </a>
           </Button>
 
-          <a
-            href='https://github.com/chriscodingxyz'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='inline-flex items-center justify-center h-9 w-9 rounded-full  transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
-          >
-            <GitHubIcon className='h-4 w-4' />
-          </a>
+          <div className='flex flex-row items-center gap-3'>
+            <a
+              href='https://github.com/chriscodingxyz'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-flex items-center justify-center h-9 w-9 rounded-full  transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
+            >
+              <GitHubIcon className='h-4 w-4' />
+            </a>
 
-          <a
-            href='https://x.com/chriscodingxyz'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='inline-flex items-center justify-center h-9 w-9 rounded-full transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
-          >
-            <XLogo className='h-4 w-4' weight='bold' />
-          </a>
+            <a
+              href='https://x.com/chriscodingxyz'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-flex items-center justify-center h-9 w-9 rounded-full transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
+            >
+              <XLogo className='h-4 w-4' weight='bold' />
+            </a>
 
-          <a
-            href='https://www.linkedin.com/in/wisniewskichris/'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='inline-flex items-center justify-center h-9 w-9 rounded-full transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
-          >
-            <Linkedin className='h-4 w-4' />
-          </a>
+            <a
+              href='https://www.linkedin.com/in/wisniewskichris/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-flex items-center justify-center h-9 w-9 rounded-full transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
+            >
+              <Linkedin className='h-4 w-4' />
+            </a>
+          </div>
         </div>
       </div>
 

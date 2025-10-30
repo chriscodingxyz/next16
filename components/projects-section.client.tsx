@@ -23,7 +23,7 @@ export function ProjectsSection({
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768)
+      setIsDesktop(window.innerWidth >= 640)
     }
 
     // Set initial value
@@ -47,7 +47,7 @@ export function ProjectsSection({
   return (
     <section
       className={cn(
-        'w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16 relative transition-all duration-300 [grid-area:1/1] pointer-events-none',
+        'w-[calc(100%+2rem)] -mx-4 sm:w-[calc(100%+8rem)] sm:-mx-16 -ml-4 sm:-ml-16 relative transition-all duration-300 [grid-area:1/1] pointer-events-none',
         isActive ? 'z-20' : 'z-10 mt-2'
       )}
     >
@@ -57,7 +57,7 @@ export function ProjectsSection({
         onClick={onClick}
       >
         <div className='bg-secondary px-6 pt-3 pb-16 rounded-t-2xl'>
-          <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
+          <h2 className='text-3xl sm:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
             projects
           </h2>
         </div>
@@ -68,14 +68,14 @@ export function ProjectsSection({
         className={cn(
           'relative bg-secondary rounded-tr-[3rem] z-60',
           isActive
-            ? 'pb-8 px-4 md:px-16 pt-8 space-y-4 pointer-events-auto min-h-[50vh]'
+            ? 'pb-8 px-4 sm:px-16 pt-8 space-y-4 pointer-events-auto min-h-[50vh]'
             : 'invisible'
         )}
       >
         {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
         <div
           className={cn(
-            'overflow-x-hidden md:overflow-visible',
+            'overflow-x-hidden sm:overflow-x-visible',
             !isActive && 'hidden'
           )}
         >

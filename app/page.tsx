@@ -88,20 +88,20 @@ export default async function Home() {
 
   return (
     <div className='flex min-h-screen justify-center font-sans'>
-      <main className='flex w-full max-w-3xl bg-white flex-col items-center px-4 md:px-16 sm:items-start mx-2 mt-2 overflow-x-hidden'>
+      <main className='flex w-full max-w-3xl bg-white flex-col items-center px-4 sm:px-16 sm:items-start mx-2 mt-2 overflow-x-hidden'>
         {/* Crypto Prices - Top ticker */}
         {cryptoPrices && (
-          <div className='w-full pt-6 md:pt-8'>
+          <div className='w-full pt-6 sm:pt-8'>
             <CryptoPrices initialData={cryptoPrices} />
           </div>
         )}
 
         {/* Main content sections with uniform spacing */}
-        <div className='w-full pt-6 md:pt-8'>
-          <div className='space-y-12 md:space-y-16'>
+        <div className='w-full pt-6 sm:pt-8'>
+          <div className='space-y-12 sm:space-y-16'>
             <HeaderSection />
           </div>
-          <div className='pt-12 md:pt-16'>
+          <div className='pt-12 sm:pt-16'>
             <FolderContainer projects={projects} experiences={experiences} />
           </div>
         </div>

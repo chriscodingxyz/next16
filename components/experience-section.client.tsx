@@ -22,15 +22,17 @@ export function ExperienceSection({
         isActive ? 'z-20' : 'z-10'
       )}
     >
-      {/* Folder tab - raised portion starting from left - always visible and clickable */}
-      <div
-        className='inline-block relative z-50 ml-36 md:ml-48 cursor-pointer pointer-events-auto -mb-12 hover:-translate-y-1 transition-transform'
-        onClick={onClick}
-      >
-        <div className='bg-black px-6 pt-3 pb-16 rounded-t-2xl'>
-          <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-white tracking-tight'>
-            experience
-          </h2>
+      {/* Folder tab - raised portion at far right on mobile, next to projects on desktop - always visible and clickable */}
+      <div className='flex justify-end md:justify-start -mb-12'>
+        <div
+          className='inline-block relative z-50 md:ml-48 cursor-pointer pointer-events-auto hover:-translate-y-1 transition-transform'
+          onClick={onClick}
+        >
+          <div className='bg-black px-6 pt-3 pb-16 rounded-t-2xl'>
+            <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-white tracking-tight'>
+              experience
+            </h2>
+          </div>
         </div>
       </div>
 
@@ -38,10 +40,14 @@ export function ExperienceSection({
       <div
         className={cn(
           'relative bg-black rounded-t-[3rem] z-[60]',
-          isActive ? 'pb-8 px-4 md:px-16 pt-4 space-y-4 pointer-events-auto min-h-[50vh]' : 'invisible'
+          isActive
+            ? 'pb-8 px-4 md:px-16 pt-4 space-y-4 pointer-events-auto min-h-[50vh]'
+            : 'invisible'
         )}
       >
-        <div className={cn('overflow-hidden rounded-lg', !isActive && 'hidden')}>
+        <div
+          className={cn('overflow-hidden rounded-lg', !isActive && 'hidden')}
+        >
           {experiences.map(experience => (
             <div
               key={experience.id}

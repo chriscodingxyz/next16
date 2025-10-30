@@ -10,7 +10,11 @@ interface ExperienceSectionProps {
   onClick: () => void
 }
 
-export function ExperienceSection({ experiences, isActive, onClick }: ExperienceSectionProps) {
+export function ExperienceSection({
+  experiences,
+  isActive,
+  onClick
+}: ExperienceSectionProps) {
   return (
     <section
       className={cn(
@@ -20,7 +24,7 @@ export function ExperienceSection({ experiences, isActive, onClick }: Experience
     >
       {/* Folder tab - raised portion starting from left - always visible and clickable */}
       <div
-        className='inline-block relative z-50 ml-36 md:ml-48 cursor-pointer pointer-events-auto'
+        className='inline-block relative z-50 ml-36 md:ml-48 cursor-pointer pointer-events-auto -mb-1 hover:-translate-y-1 transition-transform'
         onClick={onClick}
       >
         <div className='bg-black px-6 py-3 rounded-t-2xl'>
@@ -33,12 +37,11 @@ export function ExperienceSection({ experiences, isActive, onClick }: Experience
       {/* Main folder body */}
       <div
         className={cn(
-          'relative bg-black pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-t-[3rem] pointer-events-auto',
-          !isActive && 'hidden'
+          'relative bg-black pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-t-[3rem] pointer-events-auto h-full'
         )}
       >
         <div className='overflow-hidden rounded-lg'>
-          {experiences.map((experience) => (
+          {experiences.map(experience => (
             <div
               key={experience.id}
               className='relative py-3 px-4 md:py-4 md:px-6'

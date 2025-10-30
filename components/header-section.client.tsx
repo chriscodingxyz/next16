@@ -199,7 +199,7 @@ export function HeaderSection() {
             href='https://github.com/chriscodingxyz'
             target='_blank'
             rel='noopener noreferrer'
-            className='inline-flex items-center justify-center h-10 w-10 rounded-full border border-solid border-black/8 transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
+            className='inline-flex items-center justify-center h-9 w-9 rounded-full border border-solid border-black/8 transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
           >
             <GitHubIcon className='h-4 w-4' />
           </a>
@@ -208,7 +208,7 @@ export function HeaderSection() {
             href='https://x.com/chriscodingxyz'
             target='_blank'
             rel='noopener noreferrer'
-            className='inline-flex items-center justify-center h-10 w-10 rounded-full border border-solid border-black/8 transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
+            className='inline-flex items-center justify-center h-9 w-9 rounded-full border border-solid border-black/8 transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
           >
             <XLogo className='h-4 w-4' weight='bold' />
           </a>
@@ -217,7 +217,7 @@ export function HeaderSection() {
             href='https://www.linkedin.com/in/wisniewskichris/'
             target='_blank'
             rel='noopener noreferrer'
-            className='inline-flex items-center justify-center h-10 w-10 rounded-full border border-solid border-black/8 transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
+            className='inline-flex items-center justify-center h-9 w-9 rounded-full border border-solid border-black/8 transition-colors hover:border-transparent hover:bg-black/4 bg-white cursor-pointer'
           >
             <Linkedin className='h-4 w-4' />
           </a>

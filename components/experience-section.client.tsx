@@ -1,24 +1,40 @@
+'use client'
+
 import { Calendar, Globe, MapPin } from 'lucide-react'
 import { Experience } from '@/types'
+import { cn } from '@/lib/utils'
 
 interface ExperienceSectionProps {
   experiences: Experience[]
+  isActive: boolean
+  onClick: () => void
 }
 
-export function ExperienceSection({ experiences }: ExperienceSectionProps) {
+export function ExperienceSection({ experiences, isActive, onClick }: ExperienceSectionProps) {
   return (
-    <section className='w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16 relative z-20'>
-      {/* Folder tab - raised portion starting from left */}
-      <div className='inline-block relative z-30 ml-36 md:ml-48'>
-        <div className='bg-black px-6 py-3 rounded-t-2xl'>
+    <section
+      className={cn(
+        'w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16 relative transition-all duration-300 [grid-area:1/1] pointer-events-none',
+        isActive ? 'z-20' : 'z-10'
+      )}
+    >
+      {/* Folder tab - raised portion starting from left - always visible and clickable */}
+      <div
+        className='inline-block relative z-50 ml-36 md:ml-48 cursor-pointer pointer-events-auto'
+        onClick={onClick}
+      >
+        <div className='bg-black px-6 py-3 rounded-t-2xl hover:brightness-110 transition-all'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-white tracking-tight'>
             experience
           </h2>
         </div>
       </div>
 
-      {/* Main folder body */}
-      <div className='relative bg-black pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-t-[3rem] z-20'>
+      {/* Main folder body - hidden when not active */}
+      <div
+        className='relative bg-black pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-t-[3rem] pointer-events-auto'
+        style={{ display: isActive ? 'block' : 'none' }}
+      >
         <div className='overflow-hidden rounded-lg'>
           {experiences.map((experience) => (
             <div

@@ -4,12 +4,15 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Globe } from 'lucide-react'
 import { Project } from '@/types'
+import { cn } from '@/lib/utils'
 
 interface ProjectsSectionProps {
   projects: Project[]
+  isActive: boolean
+  onClick: () => void
 }
 
-export function ProjectsSection({ projects }: ProjectsSectionProps) {
+export function ProjectsSection({ projects, isActive, onClick }: ProjectsSectionProps) {
   const [activeProject, setActiveProject] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
   const [isDesktop, setIsDesktop] = useState(false)
@@ -38,18 +41,32 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
   }, [isHovering, projects.length])
 
   return (
-    <section className='w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16 relative z-10'>
-      {/* Folder tab - raised portion starting from left */}
-      <div className='inline-block relative z-20'>
-        <div className='bg-zinc-100 px-6 py-3 rounded-t-2xl'>
+    <section
+      className={cn(
+        'w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16 relative transition-all duration-300 [grid-area:1/1] pointer-events-none',
+        isActive ? 'z-20' : 'z-10'
+      )}
+    >
+      {/* Folder tab - raised portion starting from left - always visible and clickable */}
+      <div
+        className='inline-block relative z-50 cursor-pointer pointer-events-auto'
+        onClick={onClick}
+      >
+        <div className='bg-zinc-100 px-6 py-3 rounded-t-2xl hover:brightness-95 transition-all'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
             projects
           </h2>
         </div>
       </div>
 
-      {/* Main folder body */}
-      <div className='relative bg-zinc-100 pb-24 px-4 md:px-16 pt-4 space-y-4 rounded-tr-[3rem] z-10'>
+      {/* Main folder body - hidden when not active */}
+      <div
+        className='relative bg-zinc-100 pb-24 px-4 md:px-16 pt-4 space-y-4 rounded-tr-[3rem] pointer-events-auto'
+        style={{
+          display: isActive ? 'block' : 'none',
+          marginRight: '9rem'
+        }}
+      >
 
         {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}
         <div className='overflow-hidden md:overflow-visible'>
@@ -113,7 +130,10 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                       setActiveProject(index)
                     }}
                     onMouseLeave={() => setIsHovering(false)}
-                    onClick={() => setActiveProject(index)}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setActiveProject(index)
+                    }}
                   >
                     <div className='relative w-full h-64 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:border-zinc-300'>
                       <Image

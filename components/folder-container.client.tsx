@@ -12,11 +12,14 @@ interface FolderContainerProps {
   experiences: Experience[]
 }
 
-export function FolderContainer({ projects, experiences }: FolderContainerProps) {
+export function FolderContainer({
+  projects,
+  experiences
+}: FolderContainerProps) {
   const [activeFolder, setActiveFolder] = useState<FolderType>('projects')
 
   return (
-    <div className='grid [grid-template-rows:auto]'>
+    <div className='grid [grid-rows:auto]'>
       {activeFolder === 'projects' ? (
         <>
           <ExperienceSection

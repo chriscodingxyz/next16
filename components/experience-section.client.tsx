@@ -19,7 +19,7 @@ export function ExperienceSection({
     <section
       className={cn(
         'w-[calc(100%+2rem)] -mx-4 md:w-[calc(100%+8rem)] md:-mx-16 -ml-4 md:-ml-16 relative transition-all duration-300 [grid-area:1/1] pointer-events-none',
-        isActive ? 'z-20' : 'z-10'
+        isActive ? 'z-20' : 'z-10 mt-2'
       )}
     >
       {/* Folder tab - raised portion at far right on mobile, next to projects on desktop - always visible and clickable */}
@@ -28,7 +28,7 @@ export function ExperienceSection({
           className='inline-block relative z-50 md:ml-48 cursor-pointer pointer-events-auto hover:-translate-y-1 transition-transform'
           onClick={onClick}
         >
-          <div className='bg-black px-6 pt-3 pb-16 rounded-t-2xl'>
+          <div className='bg-foreground px-6 pt-3 pb-16 rounded-t-2xl'>
             <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-white tracking-tight'>
               experience
             </h2>
@@ -39,7 +39,7 @@ export function ExperienceSection({
       {/* Main folder body */}
       <div
         className={cn(
-          'relative bg-black rounded-t-[3rem] z-60',
+          'relative bg-foreground rounded-t-[3rem] z-60',
           isActive
             ? 'pb-8 px-4 md:px-16 pt-4 space-y-4 pointer-events-auto min-h-[50vh]'
             : 'invisible'

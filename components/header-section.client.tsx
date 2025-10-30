@@ -78,13 +78,52 @@ export function HeaderSection() {
     email: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error'
+    message: string
+  } | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert("Thanks for reaching out! I'll get back to you soon.")
-    setShowContactForm(false)
-    setFormData({ name: '', email: '', message: '' })
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message')
+      }
+
+      setSubmitStatus({
+        type: 'success',
+        message: "Thanks for reaching out! I'll get back to you soon."
+      })
+      setFormData({ name: '', email: '', message: '' })
+
+      // Close dialog after 2 seconds on success
+      setTimeout(() => {
+        setShowContactForm(false)
+        setSubmitStatus(null)
+      }, 2000)
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message:
+          error instanceof Error ? error.message : 'Failed to send message'
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const mainTechCount = techStack.filter(t => t.isMain).length
@@ -139,6 +178,7 @@ export function HeaderSection() {
                     }
                     placeholder='Your name'
                     required
+                    disabled={isSubmitting}
                   />
                 </Field>
 
@@ -154,6 +194,7 @@ export function HeaderSection() {
                     }
                     placeholder='your@email.com'
                     required
+                    disabled={isSubmitting}
                   />
                 </Field>
 
@@ -169,12 +210,29 @@ export function HeaderSection() {
                     placeholder='Your message...'
                     rows={5}
                     required
+                    disabled={isSubmitting}
                   />
                 </Field>
 
-                <Button type='submit' className='w-full cursor-pointer'>
+                {submitStatus && (
+                  <div
+                    className={`rounded-lg p-3 text-sm ${
+                      submitStatus.type === 'success'
+                        ? 'bg-green-50 text-green-800'
+                        : 'bg-red-50 text-red-800'
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </div>
+                )}
+
+                <Button
+                  type='submit'
+                  className='w-full cursor-pointer'
+                  disabled={isSubmitting}
+                >
                   <Send className='h-4 w-4 mr-2' />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </DialogContent>

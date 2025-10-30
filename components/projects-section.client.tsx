@@ -52,20 +52,19 @@ export function ProjectsSection({ projects, isActive, onClick }: ProjectsSection
         className='inline-block relative z-50 cursor-pointer pointer-events-auto'
         onClick={onClick}
       >
-        <div className='bg-zinc-100 px-6 py-3 rounded-t-2xl hover:brightness-95 transition-all'>
+        <div className='bg-zinc-100 px-6 py-3 rounded-t-2xl'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-black tracking-tight'>
             projects
           </h2>
         </div>
       </div>
 
-      {/* Main folder body - hidden when not active */}
+      {/* Main folder body */}
       <div
-        className='relative bg-zinc-100 pb-24 px-4 md:px-16 pt-4 space-y-4 rounded-tr-[3rem] pointer-events-auto'
-        style={{
-          display: isActive ? 'block' : 'none',
-          marginRight: '9rem'
-        }}
+        className={cn(
+          'relative bg-zinc-100 pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-tr-[3rem] pointer-events-auto',
+          !isActive && 'hidden'
+        )}
       >
 
         {/* Rotating Width Layout - 2 visible on mobile with sliding, 4 on desktop */}

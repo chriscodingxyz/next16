@@ -23,17 +23,19 @@ export function ExperienceSection({ experiences, isActive, onClick }: Experience
         className='inline-block relative z-50 ml-36 md:ml-48 cursor-pointer pointer-events-auto'
         onClick={onClick}
       >
-        <div className='bg-black px-6 py-3 rounded-t-2xl hover:brightness-110 transition-all'>
+        <div className='bg-black px-6 py-3 rounded-t-2xl'>
           <h2 className='text-3xl md:text-4xl font-bold font-space-grotesk text-white tracking-tight'>
             experience
           </h2>
         </div>
       </div>
 
-      {/* Main folder body - hidden when not active */}
+      {/* Main folder body */}
       <div
-        className='relative bg-black pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-t-[3rem] pointer-events-auto'
-        style={{ display: isActive ? 'block' : 'none' }}
+        className={cn(
+          'relative bg-black pb-8 px-4 md:px-16 pt-4 space-y-4 rounded-t-[3rem] pointer-events-auto',
+          !isActive && 'hidden'
+        )}
       >
         <div className='overflow-hidden rounded-lg'>
           {experiences.map((experience) => (

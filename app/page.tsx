@@ -67,37 +67,37 @@ const experiences: Experience[] = [
 ]
 
 // Server-side data fetching
-async function getCryptoPrices(): Promise<CryptoPricesType | null> {
-  try {
-    const response = await fetch(
-      'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,pax-gold&vs_currencies=usd&include_24hr_change=true',
-      {
-        next: { revalidate: 3600 } // Cache for 1 hour
-      }
-    )
-    if (!response.ok) throw new Error('Failed to fetch crypto prices')
-    return response.json()
-  } catch (error) {
-    console.error('Failed to fetch crypto prices:', error)
-    return null
-  }
-}
+// async function getCryptoPrices(): Promise<CryptoPricesType | null> {
+//   try {
+//     const response = await fetch(
+//       'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,pax-gold&vs_currencies=usd&include_24hr_change=true',
+//       {
+//         next: { revalidate: 3600 } // Cache for 1 hour
+//       }
+//     )
+//     if (!response.ok) throw new Error('Failed to fetch crypto prices')
+//     return response.json()
+//   } catch (error) {
+//     console.error('Failed to fetch crypto prices:', error)
+//     return null
+//   }
+// }
 
 export default async function Home() {
-  const cryptoPrices = await getCryptoPrices()
+  // const cryptoPrices = await getCryptoPrices()
 
   return (
     <div className='flex min-h-screen justify-center font-sans'>
       <main className='flex w-full max-w-3xl bg-white flex-col items-center px-4 sm:px-16 sm:items-start mx-2 mt-2 overflow-x-hidden'>
         {/* Crypto Prices - Top ticker */}
-        {cryptoPrices && (
+        {/* {cryptoPrices && (
           <div className='w-full pt-6 sm:pt-8'>
             <CryptoPrices initialData={cryptoPrices} />
           </div>
-        )}
+        )} */}
 
         {/* Main content sections with uniform spacing */}
-        <div className='w-full pt-6 sm:pt-8'>
+        <div className='w-full pt-12 sm:pt-16'>
           <div className='space-y-12 sm:space-y-16'>
             <HeaderSection />
           </div>
